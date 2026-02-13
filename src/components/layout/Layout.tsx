@@ -1,0 +1,27 @@
+import React, { type ReactNode } from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { useLocation } from "react-router-dom";
+
+interface LayoutProps {
+	children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+	const location = useLocation();
+
+	// Reset scroll on route change
+	React.useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname]);
+
+	return (
+		<div className="flex flex-col min-h-screen">
+			<Navbar />
+			<main className="flex-grow">{children}</main>
+			<Footer />
+		</div>
+	);
+};
+
+export default Layout;
