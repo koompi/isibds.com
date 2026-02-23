@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -82,6 +83,15 @@ const Technology = () => {
 
 	return (
 		<div className="min-h-screen">
+			<Helmet>
+				<title>Software &amp; Technology | ISI Building Solutions</title>
+				<meta name="description" content="ISI uses Tekla BIM, MBS, ETABS, and Microsoft Dynamics AX to deliver precision-engineered steel buildings with full digital integration from design to installation." />
+				<meta property="og:title" content="Software &amp; Technology | ISI Building Solutions" />
+				<meta property="og:description" content="ISI uses Tekla BIM, MBS, ETABS, and Microsoft Dynamics AX to deliver precision-engineered steel buildings with full digital integration from design to installation." />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://isibds.com/technology" />
+				<link rel="canonical" href="https://isibds.com/technology" />
+			</Helmet>
 			{/* Hero Banner */}
 			<section className="relative pt-[72px]">
 				<div className="relative h-[50vh] min-h-[400px] overflow-hidden">

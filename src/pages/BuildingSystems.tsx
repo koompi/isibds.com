@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -28,7 +29,7 @@ const BuildingSystems = () => {
 				"/images/Homes-2.jpg",
 		},
 		{
-			title: "Multi-Story Structures",
+			title: "Heavy Steel Structures",
 			description:
 				"Office buildings, parking structures, and mixed-use developments.",
 			image: "/images/multi-story-systems.jpg",
@@ -49,7 +50,7 @@ const BuildingSystems = () => {
 			image: "/images/building-systems.jpg",
 		},
 		{
-			title: "Multi-Story Building Systems",
+			title: "Heavy Steel Structures",
 			description:
 				"Specialized steel structural systems for vertical construction projects including office buildings, parking structures, and mixed-use developments. Engineered for strength, efficiency, and architectural flexibility.",
 			benefits: [
@@ -64,6 +65,15 @@ const BuildingSystems = () => {
 
 	return (
 		<div className="min-h-screen">
+			<Helmet>
+				<title>Building Systems | ISI Building Solutions</title>
+				<meta name="description" content="Explore ISI&apos;s pre-engineered building systems and heavy steel structures — delivering cost-efficient, high-quality factory-manufactured buildings across Southeast Asia." />
+				<meta property="og:title" content="Building Systems | ISI Building Solutions" />
+				<meta property="og:description" content="Explore ISI&apos;s pre-engineered building systems and heavy steel structures — delivering cost-efficient, high-quality factory-manufactured buildings across Southeast Asia." />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://isibds.com/services/building-systems" />
+				<link rel="canonical" href="https://isibds.com/services/building-systems" />
+			</Helmet>
 			{/* Hero Banner */}
 			<section className="relative pt-[72px]">
 				<div className="relative h-[50vh] min-h-[400px] overflow-hidden">

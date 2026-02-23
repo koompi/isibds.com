@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight, Shield, Lightbulb, Heart, Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -57,21 +58,30 @@ const About = () => {
 		},
 		{
 			year: "Today",
-			title: "450+ Projects",
+			title: "1000+ Projects",
 			description:
-				"Continuing to lead the pre-engineered building industry in Cambodia with over 450 completed projects.",
+				"Continuing to lead the pre-engineered building industry in Cambodia with over 1000 completed projects.",
 		},
 	];
 
 	const stats = [
-		{ value: "450+", label: "Projects Completed" },
-		{ value: "300+", label: "Team Members" },
-		{ value: "12+", label: "Years of Experience" },
-		{ value: "ISO", label: "9001:2015 Certified" },
+		{ value: "300+", label: "Skilled Professionals", icon: "/icons/skills-professionals.svg" },
+		{ value: "1st PEB", label: "Manufacturing in Cambodia", icon: "/icons/1st-peb.svg" },
+		{ value: "1000+", label: "Landmark Projects", icon: "/icons/landmark-projects.svg" },
+		{ value: "Best Award", label: "for Steel Contractor", icon: "/icons/best-award.svg" },
 	];
 
 	return (
 		<div className="min-h-screen">
+			<Helmet>
+				<title>About Us | ISI Building Solutions Cambodia</title>
+				<meta name="description" content="Discover ISI Building Solutions — Cambodia&apos;s pioneer in pre-engineered steel buildings with 300+ professionals, 1000+ landmark projects, and ISO 9001:2015 certification." />
+				<meta property="og:title" content="About Us | ISI Building Solutions Cambodia" />
+				<meta property="og:description" content="Discover ISI Building Solutions — Cambodia&apos;s pioneer in pre-engineered steel buildings with 300+ professionals, 1000+ landmark projects, and ISO 9001:2015 certification." />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://isibds.com/about" />
+				<link rel="canonical" href="https://isibds.com/about" />
+			</Helmet>
 			{/* Hero Banner */}
 			<section className="relative pt-[72px]">
 				<div className="relative h-[50vh] min-h-[400px] overflow-hidden">
@@ -130,7 +140,7 @@ const About = () => {
 								to 300+ Strong
 							</h2>
 							<p className="text-steel text-base leading-relaxed mb-6">
-								ISI Building Solutions (Formerly Fuxin) was established in 2012 with
+								ISI Building Solutions was established in 2012 with
 								the mission to transform the construction of
 								warehouse and factory from using conventional truss
 								design to pre-engineered building.
@@ -138,7 +148,7 @@ const About = () => {
 							<p className="text-steel text-base leading-relaxed mb-6">
 								Starting with just four fresh graduate engineers, we
 								have grown to over three hundred dedicated staff
-								members. We have successfully completed over 450
+								members. We have successfully completed over 1000
 								projects, including iconic structures such as the
 								Aeon Mall Sen Sok Parking Structure and the
 								International Exhibition Hall.
@@ -198,8 +208,9 @@ const About = () => {
 									duration: 0.5,
 									delay: i * 0.1,
 								}}
-								className="py-10 px-6 lg:px-8"
+								className="py-10 px-6 lg:px-8 text-center"
 							>
+								<img src={stat.icon} alt={stat.label} className="w-8 h-8 mb-3 mx-auto opacity-80" />
 								<div className="text-3xl lg:text-4xl font-bold tracking-tight mb-1">
 									{stat.value}
 								</div>
@@ -294,8 +305,22 @@ const About = () => {
 			</section>
 
 			{/* Values */}
-			<section className="py-28 bg-white">
-				<div className="container mx-auto px-4 lg:px-8">
+			<section className="py-28 bg-primary-dark relative overflow-hidden">
+				{/* Blueprint grid */}
+				<div
+					className="absolute inset-0 pointer-events-none"
+					style={{
+						backgroundImage: `linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)`,
+						backgroundSize: "64px 64px",
+					}}
+				/>
+				<div className="absolute -bottom-8 right-0 text-[18vw] font-bold text-white/[0.025] leading-none select-none pointer-events-none tracking-tighter">
+					VALUES
+				</div>
+				<div className="absolute left-0 top-0 bottom-0 w-1 bg-accent/20" />
+				<div className="absolute left-0 top-0 h-40 w-1 bg-accent" />
+
+				<div className="container mx-auto px-4 lg:px-8 relative z-10">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -304,17 +329,17 @@ const About = () => {
 						className="mb-16"
 					>
 						<div className="flex items-center gap-3 mb-6">
-							<div className="w-8 h-px bg-accent"></div>
+							<div className="w-8 h-px bg-accent" />
 							<span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
 								What We Stand For
 							</span>
 						</div>
-						<h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-							Our Values & Beliefs
+						<h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-tight tracking-tight">
+							Our Values &amp; Beliefs
 						</h2>
 					</motion.div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
 						{values.map((item, index) => (
 							<motion.div
 								key={index}
@@ -325,18 +350,18 @@ const About = () => {
 									duration: 0.5,
 									delay: index * 0.1,
 								}}
-								className="bg-white p-8 lg:p-10"
+								className="group bg-primary-dark p-8 lg:p-10 border border-white/10 hover:border-accent/50 hover:bg-white/[0.05] transition-all duration-300"
 							>
-								<div className="w-12 h-12 border border-slate-200 flex items-center justify-center mb-6">
-									<item.icon
-										size={22}
-										className="text-accent"
-									/>
+								<div className="text-[10px] text-white/25 tracking-[0.25em] uppercase font-mono mb-5">
+									{String(index + 1).padStart(2, "0")} —
 								</div>
-								<h3 className="text-lg font-bold text-primary tracking-tight mb-3">
+								<div className="w-10 h-10 border border-white/15 flex items-center justify-center mb-6 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300">
+									<item.icon size={20} className="text-accent" />
+								</div>
+								<h3 className="text-lg font-bold text-white tracking-tight mb-3">
 									{item.title}
 								</h3>
-								<p className="text-steel text-[15px] leading-relaxed">
+								<p className="text-white/45 text-[15px] leading-relaxed">
 									{item.description}
 								</p>
 							</motion.div>
@@ -490,50 +515,6 @@ const About = () => {
 				</div>
 			</section>
 
-			{/* CTA */}
-			<section className="py-20 bg-primary text-white">
-				<div className="container mx-auto px-4 lg:px-8">
-					<div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.7 }}
-							className="lg:col-span-7 mb-8 lg:mb-0"
-						>
-							<h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
-								Ready to Build
-								<br />
-								With Us?
-							</h2>
-						</motion.div>
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.7, delay: 0.1 }}
-							className="lg:col-span-5 flex flex-col sm:flex-row gap-4 lg:justify-end"
-						>
-							<Link
-								to="/contact"
-								className="group inline-flex items-center justify-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
-							>
-								Get a Quote
-								<ArrowRight
-									size={16}
-									className="group-hover:translate-x-1 transition-transform"
-								/>
-							</Link>
-							<Link
-								to="/portfolios"
-								className="inline-flex items-center justify-center gap-3 border border-white/20 text-white font-semibold text-sm py-4 px-8 hover:bg-white/5 transition-all duration-200 cursor-pointer"
-							>
-								View Projects
-							</Link>
-						</motion.div>
-					</div>
-				</div>
-			</section>
 		</div>
 	);
 };

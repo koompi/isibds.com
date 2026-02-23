@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
 	MapPin,
@@ -69,6 +70,15 @@ const Careers = () => {
 
 	return (
 		<div className="min-h-screen">
+			<Helmet>
+				<title>Careers | Join ISI Building Solutions</title>
+				<meta name="description" content="Build your career with ISI Building Solutions — Cambodia&apos;s leading steel structure company with 300+ professionals and a commitment to innovation and excellence." />
+				<meta property="og:title" content="Careers | Join ISI Building Solutions" />
+				<meta property="og:description" content="Build your career with ISI Building Solutions — Cambodia&apos;s leading steel structure company with 300+ professionals and a commitment to innovation and excellence." />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://isibds.com/careers" />
+				<link rel="canonical" href="https://isibds.com/careers" />
+			</Helmet>
 			{/* Hero Banner */}
 			<section className="relative pt-[72px]">
 				<div className="relative h-[50vh] min-h-[400px] overflow-hidden">
@@ -269,8 +279,22 @@ const Careers = () => {
 			</section>
 
 			{/* Current Openings */}
-			<section className="py-28 bg-surface-light">
-				<div className="container mx-auto px-4 lg:px-8">
+			<section className="py-28 bg-primary-dark relative overflow-hidden">
+				{/* Blueprint grid */}
+				<div
+					className="absolute inset-0 pointer-events-none"
+					style={{
+						backgroundImage: `linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)`,
+						backgroundSize: "64px 64px",
+					}}
+				/>
+				<div className="absolute -bottom-8 right-0 text-[13vw] font-bold text-white/[0.025] leading-none select-none pointer-events-none tracking-tighter">
+					POSITIONS
+				</div>
+				<div className="absolute left-0 top-0 bottom-0 w-1 bg-accent/20" />
+				<div className="absolute left-0 top-0 h-40 w-1 bg-accent" />
+
+				<div className="container mx-auto px-4 lg:px-8 relative z-10">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -279,17 +303,17 @@ const Careers = () => {
 						className="mb-16"
 					>
 						<div className="flex items-center gap-3 mb-6">
-							<div className="w-8 h-px bg-accent"></div>
+							<div className="w-8 h-px bg-accent" />
 							<span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
 								Open Positions
 							</span>
 						</div>
-						<h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
+						<h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-tight tracking-tight">
 							Current Job Openings
 						</h2>
 					</motion.div>
 
-					<div className="space-y-4">
+					<div className="space-y-px">
 						{openings.map((job, index) => (
 							<motion.div
 								key={index}
@@ -300,40 +324,34 @@ const Careers = () => {
 									duration: 0.5,
 									delay: index * 0.1,
 								}}
-								className="bg-white border border-slate-200 p-6 lg:p-8 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
+								className="group bg-primary-dark border border-white/10 p-8 hover:border-accent/50 hover:bg-white/[0.05] transition-all duration-300"
 							>
 								<div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-									<div className="lg:col-span-7 mb-4 lg:mb-0">
-										<h3 className="text-xl font-bold text-primary tracking-tight mb-2">
+									<div className="lg:col-span-6 mb-6 lg:mb-0">
+										<div className="text-[10px] text-white/25 tracking-[0.25em] uppercase font-mono mb-3">
+											{String(index + 1).padStart(2, "0")} — Position
+										</div>
+										<h3 className="text-xl font-bold text-white tracking-tight mb-2">
 											{job.title}
 										</h3>
-										<span className="text-sm text-steel">
+										<span className="text-sm text-accent font-semibold">
 											{job.positions}
 										</span>
 									</div>
 
-									<div className="lg:col-span-5 flex flex-wrap items-center gap-4">
-										<div className="flex items-center gap-2 text-steel text-sm">
-											<MapPin
-												size={14}
-												className="text-accent"
-											/>
-											<span>{job.location}</span>
-										</div>
-										<div className="flex items-center gap-2 text-steel text-sm">
-											<Clock
-												size={14}
-												className="text-accent"
-											/>
-											<span>{job.type}</span>
-										</div>
-										<div className="flex items-center gap-2 text-steel text-sm">
-											<Calendar
-												size={14}
-												className="text-accent"
-											/>
-											<span>By {job.deadline}</span>
-										</div>
+									<div className="lg:col-span-6 flex flex-wrap items-center gap-3">
+										<span className="border border-white/15 px-3 py-1.5 text-[11px] font-mono tracking-[0.1em] text-white/40 uppercase flex items-center gap-2">
+											<MapPin size={11} className="text-accent flex-shrink-0" />
+											{job.location}
+										</span>
+										<span className="border border-white/15 px-3 py-1.5 text-[11px] font-mono tracking-[0.1em] text-white/40 uppercase flex items-center gap-2">
+											<Clock size={11} className="text-accent flex-shrink-0" />
+											{job.type}
+										</span>
+										<span className="border border-white/15 px-3 py-1.5 text-[11px] font-mono tracking-[0.1em] text-white/40 uppercase flex items-center gap-2">
+											<Calendar size={11} className="text-accent flex-shrink-0" />
+											By {job.deadline}
+										</span>
 									</div>
 								</div>
 							</motion.div>

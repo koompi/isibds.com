@@ -10,9 +10,9 @@ const Footer = () => {
 					{/* Company Info */}
 					<div className="lg:col-span-4 mb-10 lg:mb-0">
 						<img
-							src="/logo.png"
+							src="/logo-dark.png"
 							alt="ISI Building Solutions"
-							className="h-10 mb-6"
+							className="h-16 mb-6"
 						/>
 						<p className="text-white/40 text-sm leading-relaxed mb-8 max-w-xs">
 							Aspiring to be the Leader in Pre-engineered Building,
@@ -22,17 +22,17 @@ const Footer = () => {
 						<div className="flex gap-3">
 							<a
 								href="#"
-								className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/40 hover:text-accent hover:border-accent/30 transition-colors cursor-pointer"
+								className="w-10 h-10 border border-white/50 flex items-center justify-center text-white hover:text-accent hover:border-accent/50 transition-colors cursor-pointer"
 								aria-label="Facebook"
 							>
-								<Facebook size={15} />
+								<Facebook size={18} />
 							</a>
 							<a
 								href="#"
-								className="w-9 h-9 border border-white/10 flex items-center justify-center text-white/40 hover:text-accent hover:border-accent/30 transition-colors cursor-pointer"
+								className="w-10 h-10 border border-white/50 flex items-center justify-center text-white hover:text-accent hover:border-accent/50 transition-colors cursor-pointer"
 								aria-label="LinkedIn"
 							>
-								<Linkedin size={15} />
+								<Linkedin size={18} />
 							</a>
 						</div>
 					</div>
@@ -72,8 +72,7 @@ const Footer = () => {
 						</h4>
 						<ul className="space-y-3 text-sm text-white/40">
 							<li>Building Systems</li>
-							<li>Design & Build</li>
-							<li>Industrial Park Planning</li>
+							<li>Architectural Steel Structures</li>
 							<li>Software & Technology</li>
 						</ul>
 					</div>
@@ -90,9 +89,9 @@ const Footer = () => {
 									className="mt-0.5 flex-shrink-0 text-accent"
 								/>
 								<span>
-									F14 KMH Industrial Park, Phum Tropian
-									Thloeng, Sangkat Choam Choa, Khan Posenchey,
-									Phnom Penh Cambodia
+									ISI Park National Road 2, Phum Kraing
+									Sbov, Preah Puth Commune, Kandal Steung
+									District, Kandal Province, Cambodia
 								</span>
 							</li>
 							<li className="flex items-center gap-3">
@@ -107,7 +106,7 @@ const Footer = () => {
 									size={15}
 									className="flex-shrink-0 text-accent"
 								/>
-								<span>info@isibuildingsolutions.com</span>
+								<span>sales@isibds.com</span>
 							</li>
 						</ul>
 					</div>

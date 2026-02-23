@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Box, PenTool, LayoutTemplate } from "lucide-react";
+import { ArrowRight, Box, PenTool } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
@@ -16,20 +16,11 @@ const ServicesSection = () => {
 		{
 			num: "02",
 			icon: PenTool,
-			title: "Design & Build",
+			title: "Architectural Steel Structures",
 			description:
-				"Comprehensive design-build services leveraging prefabrication for seamless project execution from concept to completion.",
+				"Comprehensive architectural steel and roofing solutions leveraging prefabrication for seamless project execution from concept to completion.",
 			link: "/services/design-build",
 			image: "/images/design-build.jpg",
-		},
-		{
-			num: "03",
-			icon: LayoutTemplate,
-			title: "Industrial Park Master Planning",
-			description:
-				"Strategic master planning infrastructure for modern industrial parks and economic zones with sustainable design principles.",
-			link: "/services/planning",
-			image: "/images/industrial-park.jpg",
 		},
 	];
 
@@ -72,7 +63,7 @@ const ServicesSection = () => {
 				</div>
 
 				{/* Service cards — editorial numbered */}
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-200 lg:border-x lg:border-slate-200">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-200 lg:border-x lg:border-slate-200">
 					{services.map((service, index) => (
 						<motion.div
 							key={index}

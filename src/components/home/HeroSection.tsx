@@ -7,7 +7,7 @@ const HeroSection = () => {
 		<section className="relative min-h-screen flex items-end overflow-hidden pb-0">
 			{/* Background */}
 			<div className="absolute inset-0">
-				<div className="absolute inset-0 bg-[url('/images/s2xPow.jpg')] bg-cover bg-center"></div>
+				<div className="absolute inset-0 bg-[url('/images/building-system-main.jpg')] bg-cover bg-center"></div>
 				<div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-primary-dark/70 to-primary-dark/40"></div>
 			</div>
 
@@ -94,8 +94,8 @@ const HeroSection = () => {
 							<div className="grid grid-cols-2 lg:grid-cols-2 border-t lg:border-t-0 lg:border-l border-white/10 py-8 lg:py-0 lg:pl-12">
 								{[
 									{ value: "450+", label: "Projects Completed" },
-									{ value: "10+", label: "Years of Innovation" },
-									{ value: "200+", label: "Team Members" },
+									{ value: "12+", label: "Years of Innovation" },
+									{ value: "300+", label: "Team Members" },
 									{ value: "ISO", label: "9001:2015 Certified" },
 								].map((stat, i) => (
 									<div key={i} className="py-5 lg:py-8 pr-8">
@@ -112,30 +112,7 @@ const HeroSection = () => {
 					</div>
 				</div>
 
-				{/* Client trust bar */}
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 1, delay: 1.1 }}
-					className="border-t border-white/10 py-8 flex flex-col sm:flex-row items-center gap-6"
-				>
-					<span className="text-xs text-white/25 tracking-wider uppercase whitespace-nowrap">
-						Trusted by
-					</span>
-					<div className="flex items-center gap-8 lg:gap-12 opacity-30">
-						{["Aeon Mall", "KMH Industrial", "CBRE", "Booyoung"].map(
-							(client) => (
-								<span
-									key={client}
-									className="text-white text-sm font-medium tracking-wide whitespace-nowrap"
-								>
-									{client}
-								</span>
-							)
-						)}
-					</div>
-				</motion.div>
-			</div>
+				</div>
 		</section>
 	);
 };

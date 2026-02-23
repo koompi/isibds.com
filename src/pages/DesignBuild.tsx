@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import {
 	ArrowRight,
 	Leaf,
@@ -85,6 +86,15 @@ const DesignBuild = () => {
 
 	return (
 		<div className="min-h-screen">
+			<Helmet>
+				<title>Architectural Steel Structures &amp; Roofing Solutions | ISI Building Solutions</title>
+				<meta name="description" content="ISI delivers architectural steel structures and roofing solutions through an integrated design-build approach that saves time, reduces costs, and ensures superior quality." />
+				<meta property="og:title" content="Architectural Steel Structures &amp; Roofing Solutions | ISI Building Solutions" />
+				<meta property="og:description" content="ISI delivers architectural steel structures and roofing solutions through an integrated design-build approach that saves time, reduces costs, and ensures superior quality." />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://isibds.com/services/design-build" />
+				<link rel="canonical" href="https://isibds.com/services/design-build" />
+			</Helmet>
 			{/* Hero Banner */}
 			<section className="relative pt-[72px]">
 				<div className="relative h-[50vh] min-h-[400px] overflow-hidden">
@@ -104,7 +114,9 @@ const DesignBuild = () => {
 									</span>
 								</div>
 								<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-3xl">
-									Design & Build
+									Architectural Steel Structures
+									<br />
+									and Roofing Solutions
 								</h1>
 								<p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
 									Identifying projects with opportunities for
@@ -135,7 +147,7 @@ const DesignBuild = () => {
 								</span>
 							</div>
 							<h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-6">
-								Why Design & Build?
+								Why Architectural Steel Structures?
 							</h2>
 							<p className="text-steel text-lg leading-relaxed mb-6">
 								Design-Build saves time and money for the owner
@@ -189,8 +201,22 @@ const DesignBuild = () => {
 			</section>
 
 			{/* Why Prefab - Benefits */}
-			<section className="py-28 bg-surface-light">
-				<div className="container mx-auto px-4 lg:px-8">
+			<section className="py-28 bg-primary-dark relative overflow-hidden">
+				{/* Blueprint grid */}
+				<div
+					className="absolute inset-0 pointer-events-none"
+					style={{
+						backgroundImage: `linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)`,
+						backgroundSize: "64px 64px",
+					}}
+				/>
+				<div className="absolute -bottom-8 right-0 text-[16vw] font-bold text-white/[0.025] leading-none select-none pointer-events-none tracking-tighter">
+					PREFAB
+				</div>
+				<div className="absolute left-0 top-0 bottom-0 w-1 bg-accent/20" />
+				<div className="absolute left-0 top-0 h-40 w-1 bg-accent" />
+
+				<div className="container mx-auto px-4 lg:px-8 relative z-10">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -199,17 +225,17 @@ const DesignBuild = () => {
 						className="mb-16"
 					>
 						<div className="flex items-center gap-3 mb-6">
-							<div className="w-8 h-px bg-accent"></div>
+							<div className="w-8 h-px bg-accent" />
 							<span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
 								Prefabrication Benefits
 							</span>
 						</div>
-						<h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
+						<h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-tight tracking-tight">
 							Why Prefab?
 						</h2>
 					</motion.div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
 						{benefits.map((benefit, index) => (
 							<motion.div
 								key={index}
@@ -220,18 +246,18 @@ const DesignBuild = () => {
 									duration: 0.5,
 									delay: index * 0.1,
 								}}
-								className="bg-white p-8 lg:p-10 border border-slate-200 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
+								className="group bg-primary-dark p-8 lg:p-10 border border-white/10 hover:border-accent/50 hover:bg-white/[0.05] transition-all duration-300"
 							>
-								<div className="w-12 h-12 border border-slate-200 flex items-center justify-center mb-6">
-									<benefit.icon
-										size={22}
-										className="text-accent"
-									/>
+								<div className="text-[10px] text-white/25 tracking-[0.25em] uppercase font-mono mb-5">
+									{String(index + 1).padStart(2, "0")} —
 								</div>
-								<h3 className="text-xl font-bold text-primary tracking-tight mb-3">
+								<div className="w-10 h-10 border border-white/15 flex items-center justify-center mb-6 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300">
+									<benefit.icon size={20} className="text-accent" />
+								</div>
+								<h3 className="text-xl font-bold text-white tracking-tight mb-3">
 									{benefit.title}
 								</h3>
-								<p className="text-steel text-[15px] leading-relaxed">
+								<p className="text-white/45 text-[15px] leading-relaxed">
 									{benefit.description}
 								</p>
 							</motion.div>
@@ -375,8 +401,8 @@ const DesignBuild = () => {
 								Your Project?
 							</h2>
 							<p className="text-steel text-base leading-relaxed mt-4 max-w-lg">
-								Let's explore how our Design & Build approach can
-								bring value to your next construction project.
+								Let's explore how our integrated approach can
+								bring value to your next steel structure project.
 							</p>
 						</motion.div>
 						<motion.div

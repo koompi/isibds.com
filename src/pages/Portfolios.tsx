@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { MapPin, Calendar, ArrowUpRight } from "lucide-react";
 
@@ -8,8 +9,8 @@ const Portfolios = () => {
 	const filters = [
 		"All",
 		"Pre-Engineered Buildings",
-		"Multi-Story Buildings",
-		"Design & Build",
+		"Heavy Steel Structures",
+		"Architectural Steel Structures and Roofing Solutions",
 	];
 
 	const projects = [
@@ -82,7 +83,7 @@ const Portfolios = () => {
 			title: "Raintree",
 			location: "Phnom Penh",
 			year: "2015",
-			category: "Multi-Story Buildings",
+			category: "Heavy Steel Structures",
 			image: "/images/portfolio-raintree.jpg",
 		},
 		{
@@ -90,7 +91,7 @@ const Portfolios = () => {
 			title: "Chip Mong Baktouk Commercial Center",
 			location: "Phnom Penh",
 			year: "2019",
-			category: "Multi-Story Buildings",
+			category: "Heavy Steel Structures",
 			image: "/images/portfolio-chipmong.jpg",
 		},
 		{
@@ -98,7 +99,7 @@ const Portfolios = () => {
 			title: "The Point Community Mall",
 			location: "Phnom Penh",
 			year: "2019",
-			category: "Multi-Story Buildings",
+			category: "Heavy Steel Structures",
 			image: "/images/portfolio-point.jpg",
 		},
 		{
@@ -106,7 +107,7 @@ const Portfolios = () => {
 			title: "Aeon Mall Sen Sok City",
 			location: "Phnom Penh",
 			year: "2018",
-			category: "Multi-Story Buildings",
+			category: "Heavy Steel Structures",
 			image: "/images/portfolio-aeon.jpg",
 		},
 		{
@@ -114,7 +115,7 @@ const Portfolios = () => {
 			title: "One KMH Tower",
 			location: "Phnom Penh",
 			year: "2020",
-			category: "Design & Build",
+			category: "Architectural Steel Structures and Roofing Solutions",
 			image: "/images/portfolio-kmh.jpg",
 		},
 	];
@@ -126,6 +127,15 @@ const Portfolios = () => {
 
 	return (
 		<div className="min-h-screen">
+			<Helmet>
+				<title>Project Portfolio — 1000+ Landmark Projects | ISI Building Solutions</title>
+				<meta name="description" content="Browse ISI Building Solutions&apos; portfolio of 1000+ landmark projects in Cambodia including pre-engineered buildings, heavy steel structures, and architectural steel." />
+				<meta property="og:title" content="Project Portfolio — 1000+ Landmark Projects | ISI Building Solutions" />
+				<meta property="og:description" content="Browse ISI Building Solutions&apos; portfolio of 1000+ landmark projects in Cambodia including pre-engineered buildings, heavy steel structures, and architectural steel." />
+				<meta property="og:type" content="website" />
+				<meta property="og:url" content="https://isibds.com/portfolios" />
+				<link rel="canonical" href="https://isibds.com/portfolios" />
+			</Helmet>
 			{/* Hero Banner */}
 			<section className="relative pt-[72px]">
 				<div className="relative h-[40vh] min-h-[350px] overflow-hidden">
@@ -148,10 +158,10 @@ const Portfolios = () => {
 									Portfolios
 								</h1>
 								<p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
-									Over 450 completed projects showcasing our
+									Over 1000 completed projects showcasing our
 									expertise in pre-engineered buildings,
-									multi-story structures, and design-build
-									solutions.
+									heavy steel structures, and architectural
+									steel solutions.
 								</p>
 							</motion.div>
 						</div>
@@ -213,12 +223,12 @@ const Portfolios = () => {
 													"PEB"
 												)
 												.replace(
-													"Multi-Story Buildings",
-													"Multi-Story"
+													"Heavy Steel Structures",
+													"Heavy Steel"
 												)
 												.replace(
-													"Design & Build",
-													"D&B"
+													"Architectural Steel Structures and Roofing Solutions",
+													"Arch Steel"
 												)}
 										</span>
 									</div>
@@ -269,16 +279,10 @@ const Portfolios = () => {
 				<div className="container mx-auto px-4 lg:px-8">
 					<div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
 						{[
-							{ value: "450+", label: "Projects Completed" },
-							{ value: "12+", label: "Years of Excellence" },
-							{
-								value: "300+",
-								label: "Team Members",
-							},
-							{
-								value: "ISO",
-								label: "9001:2015 Certified",
-							},
+							{ value: "300+", label: "Skilled Professionals", icon: "/icons/skills-professionals.svg" },
+							{ value: "1st PEB", label: "Manufacturing in Cambodia", icon: "/icons/1st-peb.svg" },
+							{ value: "1000+", label: "Landmark Projects", icon: "/icons/landmark-projects.svg" },
+							{ value: "Best Award", label: "for Steel Contractor", icon: "/icons/best-award.svg" },
 						].map((stat, i) => (
 							<motion.div
 								key={i}
@@ -291,6 +295,7 @@ const Portfolios = () => {
 								}}
 								className="py-8 px-6 text-center"
 							>
+								<img src={stat.icon} alt={stat.label} className="w-8 h-8 mb-3 mx-auto opacity-80" />
 								<div className="text-3xl lg:text-4xl font-bold tracking-tight mb-1">
 									{stat.value}
 								</div>

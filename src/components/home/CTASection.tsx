@@ -68,12 +68,6 @@ const CTASection = () => {
 									className="group-hover:translate-x-1 transition-transform"
 								/>
 							</Link>
-							<Link
-								to="/careers"
-								className="inline-flex items-center justify-center gap-3 border border-white/20 text-white font-semibold text-sm py-4 px-10 hover:bg-white/5 transition-all duration-200 cursor-pointer"
-							>
-								Start Your Career
-							</Link>
 						</div>
 					</motion.div>
 				</div>
