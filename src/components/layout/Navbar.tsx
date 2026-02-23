@@ -173,7 +173,7 @@ const Navbar = () => {
 					{/* CTA + Mobile Button */}
 					<div className="flex items-center gap-3">
 						<a
-							href="https://drive.google.com/file/d/10TlYn6-VzOAym8WLg41vS6qMUOAeeO-T/view?pli=1"
+							href="https://drive.google.com/file/d/1MVUZQZyBtY8Q0CGS8Izg5tmQROgYOFIw/view?usp=sharing"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="hidden lg:inline-flex items-center gap-1.5 text-[13px] font-semibold px-5 py-2.5 bg-accent text-white hover:bg-accent-dark transition-all duration-200 cursor-pointer"
@@ -256,7 +256,7 @@ const Navbar = () => {
 								}
 							})}
 							<a
-								href="https://drive.google.com/file/d/10TlYn6-VzOAym8WLg41vS6qMUOAeeO-T/view?pli=1"
+								href="https://drive.google.com/file/d/1MVUZQZyBtY8Q0CGS8Izg5tmQROgYOFIw/view?usp=sharing"
 								target="_blank"
 								rel="noopener noreferrer"
 								onClick={() => setIsOpen(false)}

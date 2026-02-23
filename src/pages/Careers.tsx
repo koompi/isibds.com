@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import {
-	ArrowRight,
 	MapPin,
 	Clock,
 	Calendar,
@@ -8,7 +7,6 @@ import {
 	Briefcase,
 	GraduationCap,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Careers = () => {
 	const openings = [
@@ -344,54 +342,6 @@ const Careers = () => {
 				</div>
 			</section>
 
-			{/* CTA */}
-			<section className="py-20 bg-primary-dark text-white">
-				<div className="container mx-auto px-4 lg:px-8">
-					<div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.7 }}
-							className="lg:col-span-7 mb-8 lg:mb-0"
-						>
-							<h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
-								Ready to Join
-								<br />
-								Our Team?
-							</h2>
-							<p className="text-white/45 text-base leading-relaxed mt-4 max-w-lg">
-								Send your CV and cover letter to learn more about
-								opportunities at ISI Building Solutions.
-							</p>
-						</motion.div>
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.7, delay: 0.1 }}
-							className="lg:col-span-5 flex flex-col sm:flex-row gap-4 lg:justify-end"
-						>
-							<Link
-								to="/contact"
-								className="group inline-flex items-center justify-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
-							>
-								Apply Now
-								<ArrowRight
-									size={16}
-									className="group-hover:translate-x-1 transition-transform"
-								/>
-							</Link>
-							<Link
-								to="/about/team"
-								className="inline-flex items-center justify-center gap-3 border border-white/20 text-white font-semibold text-sm py-4 px-8 hover:bg-white/5 transition-all duration-200 cursor-pointer"
-							>
-								Meet the Team
-							</Link>
-						</motion.div>
-					</div>
-				</div>
-			</section>
 		</div>
 	);
 };

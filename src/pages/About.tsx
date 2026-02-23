@@ -130,7 +130,7 @@ const About = () => {
 								to 300+ Strong
 							</h2>
 							<p className="text-steel text-base leading-relaxed mb-6">
-								ISI Building Solutions was established in 2012 with
+								ISI Building Solutions (Formerly Fuxin) was established in 2012 with
 								the mission to transform the construction of
 								warehouse and factory from using conventional truss
 								design to pre-engineered building.
@@ -172,7 +172,7 @@ const About = () => {
 							<div className="relative">
 								<div className="aspect-[16/10] overflow-hidden">
 									<img
-										src="/images/about-company.jpg"
+										src="https://storage.koompi.cloud/org_696e0a5fc000d653d67ae4b9/isi-bds/8ce10993-da3a-4461-892a-c29315c97142.png"
 										alt="ISI Building Solutions construction site"
 										className="w-full h-full object-cover"
 									/>
@@ -381,17 +381,15 @@ const About = () => {
 										duration: 0.5,
 										delay: index * 0.1,
 									}}
-									className={`lg:grid lg:grid-cols-2 lg:gap-16 lg:py-10 relative ${
-										index % 2 === 0 ? "" : "lg:direction-rtl"
-									}`}
+									className={`lg:grid lg:grid-cols-2 lg:gap-16 lg:py-10 relative ${index % 2 === 0 ? "" : "lg:direction-rtl"
+										}`}
 								>
 									{/* Content */}
 									<div
-										className={`${
-											index % 2 === 0
-												? "lg:text-right lg:pr-16"
-												: "lg:col-start-2 lg:pl-16"
-										}`}
+										className={`${index % 2 === 0
+											? "lg:text-right lg:pr-16"
+											: "lg:col-start-2 lg:pl-16"
+											}`}
 									>
 										<span className="text-accent text-sm font-bold tracking-wider">
 											{item.year}

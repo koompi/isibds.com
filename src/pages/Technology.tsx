@@ -401,12 +401,6 @@ const Technology = () => {
 									className="group-hover:translate-x-1 transition-transform"
 								/>
 							</Link>
-							<Link
-								to="/contact"
-								className="inline-flex items-center justify-center gap-3 border border-slate-300 text-primary font-semibold text-sm py-4 px-8 hover:bg-slate-50 transition-all duration-200 cursor-pointer"
-							>
-								Contact Us
-							</Link>
 						</motion.div>
 					</div>
 				</div>
