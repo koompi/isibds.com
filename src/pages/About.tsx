@@ -210,7 +210,9 @@ const About = () => {
 								}}
 								className="py-10 px-6 lg:px-8 text-center"
 							>
-								<img src={stat.icon} alt={stat.label} className="w-8 h-8 mb-3 mx-auto opacity-80" />
+								<div className="w-14 h-14 rounded-full border-[3px] border-accent/50 flex items-center justify-center mx-auto mb-4">
+								<img src={stat.icon} alt={stat.label} className="w-7 h-7" />
+							</div>
 								<div className="text-3xl lg:text-4xl font-bold tracking-tight mb-1">
 									{stat.value}
 								</div>
@@ -350,7 +352,7 @@ const About = () => {
 									duration: 0.5,
 									delay: index * 0.1,
 								}}
-								className="group bg-primary-dark p-8 lg:p-10 border border-white/10 hover:border-accent/50 hover:bg-white/[0.05] transition-all duration-300"
+								className="group bg-primary-dark p-8 lg:p-10 border border-white/10 hover:border-accent/20 hover:bg-white/[0.05] transition-all duration-300"
 							>
 								<div className="text-[10px] text-white/25 tracking-[0.25em] uppercase font-mono mb-5">
 									{String(index + 1).padStart(2, "0")} —

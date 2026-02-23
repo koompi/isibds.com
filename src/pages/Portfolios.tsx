@@ -295,7 +295,9 @@ const Portfolios = () => {
 								}}
 								className="py-8 px-6 text-center"
 							>
-								<img src={stat.icon} alt={stat.label} className="w-8 h-8 mb-3 mx-auto opacity-80" />
+								<div className="w-14 h-14 rounded-full border-[3px] border-accent/50 flex items-center justify-center mx-auto mb-4">
+								<img src={stat.icon} alt={stat.label} className="w-7 h-7" />
+							</div>
 								<div className="text-3xl lg:text-4xl font-bold tracking-tight mb-1">
 									{stat.value}
 								</div>
