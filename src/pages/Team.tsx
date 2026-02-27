@@ -7,8 +7,7 @@ const Team = () => {
 		{
 			name: "Sen KANG",
 			role: "CEO & Co-Founder",
-			image:
-				"https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80",
+			image: "/images/kang-sen.jpg",
 			education:
 				"Bachelor's in Civil Engineering (UNSW), Master's in Construction Management (USC)",
 			bio: "Returned to Cambodia in 2011 with a focus on prefabrication and safer construction. Co-founded FUXIN and Mekong Homes under ISI GROUP. Also involved in ventures including BROWN Coffee and KMH Football Tournaments.",
@@ -16,8 +15,7 @@ const Team = () => {
 		{
 			name: "Sovanara IM",
 			role: "Chief Operating Officer",
-			image:
-				"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80",
+			image: "/images/im-sovanara.jpg",
 			education:
 				"Bachelor's in Civil Engineering (Institute of Technology Cambodia)",
 			bio: "A homegrown talent who progressed internally from intern to production supervisor to plant manager over seven years. Now oversees Engineering, Production, and Project Management.",

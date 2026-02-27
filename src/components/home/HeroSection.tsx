@@ -93,7 +93,7 @@ const HeroSection = () => {
 						>
 							<div className="grid grid-cols-2 lg:grid-cols-2 border-t lg:border-t-0 lg:border-l border-white/10 py-8 lg:py-0 lg:pl-12">
 								{[
-									{ value: "450+", label: "Projects Completed" },
+									{ value: "1,000+", label: "Projects Completed" },
 									{ value: "12+", label: "Years of Innovation" },
 									{ value: "300+", label: "Team Members" },
 									{ value: "ISO", label: "9001:2015 Certified" },
@@ -112,7 +112,7 @@ const HeroSection = () => {
 					</div>
 				</div>
 
-				</div>
+			</div>
 		</section>
 	);
 };

@@ -94,7 +94,7 @@ const CompanyProfileSection = () => {
 						{/* Stats strip */}
 						<div className="grid grid-cols-3 divide-x divide-white/10">
 							{[
-								{ value: "450+", label: "Projects" },
+								{ value: "1,000+", label: "Projects" },
 								{ value: "12+", label: "Years" },
 								{ value: "300+", label: "Team" },
 							].map((stat, i) => (
