@@ -260,9 +260,8 @@ const Contact = () => {
 										{schedule.day}
 									</span>
 									<span
-										className={`text-xl font-bold tracking-tight ${
-											schedule.open ? "text-white" : "text-white/25"
-										}`}
+										className={`text-xl font-bold tracking-tight ${schedule.open ? "text-white" : "text-white/25"
+											}`}
 									>
 										{schedule.hours}
 									</span>

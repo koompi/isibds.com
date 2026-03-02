@@ -89,7 +89,7 @@ const PeopleCultureSection = () => {
 						</Link>
 					</motion.div>
 
-					{/* Images — right, masonry style */}
+					{/* images — right, masonry style */}
 					<motion.div
 						initial={{ opacity: 0, x: 30 }}
 						whileInView={{ opacity: 1, x: 0 }}

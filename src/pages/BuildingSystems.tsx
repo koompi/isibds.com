@@ -208,15 +208,13 @@ const BuildingSystems = () => {
 									duration: 0.6,
 									delay: index * 0.1,
 								}}
-								className={`lg:grid lg:grid-cols-12 lg:gap-12 items-center ${
-									index % 2 === 1 ? "lg:direction-rtl" : ""
-								}`}
+								className={`lg:grid lg:grid-cols-12 lg:gap-12 items-center ${index % 2 === 1 ? "lg:direction-rtl" : ""
+									}`}
 							>
 								{/* Content */}
 								<div
-									className={`lg:col-span-6 mb-8 lg:mb-0 ${
-										index % 2 === 1 ? "lg:col-start-7" : ""
-									}`}
+									className={`lg:col-span-6 mb-8 lg:mb-0 ${index % 2 === 1 ? "lg:col-start-7" : ""
+										}`}
 								>
 									<h3 className="text-2xl md:text-3xl font-bold text-primary tracking-tight mb-4">
 										{system.title}
@@ -242,9 +240,8 @@ const BuildingSystems = () => {
 
 								{/* Image */}
 								<div
-									className={`lg:col-span-6 ${
-										index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
-									}`}
+									className={`lg:col-span-6 ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+										}`}
 								>
 									<div className="aspect-[4/3] overflow-hidden">
 										<img

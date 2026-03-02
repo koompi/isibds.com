@@ -177,11 +177,10 @@ const Portfolios = () => {
 							<button
 								key={filter}
 								onClick={() => setActiveFilter(filter)}
-								className={`px-5 py-2.5 text-[13px] font-semibold whitespace-nowrap transition-all duration-200 ${
-									activeFilter === filter
-										? "bg-accent text-white"
-										: "bg-slate-100 text-slate-700 hover:bg-slate-200"
-								}`}
+								className={`px-5 py-2.5 text-[13px] font-semibold whitespace-nowrap transition-all duration-200 ${activeFilter === filter
+									? "bg-accent text-white"
+									: "bg-slate-100 text-slate-700 hover:bg-slate-200"
+									}`}
 							>
 								{filter}
 							</button>
@@ -296,8 +295,8 @@ const Portfolios = () => {
 								className="py-8 px-6 text-center"
 							>
 								<div className="w-14 h-14 rounded-full border-[3px] border-accent/50 flex items-center justify-center mx-auto mb-4">
-								<img src={stat.icon} alt={stat.label} className="w-7 h-7" />
-							</div>
+									<img src={stat.icon} alt={stat.label} className="w-7 h-7" />
+								</div>
 								<div className="text-3xl lg:text-4xl font-bold tracking-tight mb-1">
 									{stat.value}
 								</div>
