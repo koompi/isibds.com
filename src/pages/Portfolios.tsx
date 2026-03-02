@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { MapPin, Calendar, ArrowUpRight } from "lucide-react";
+import { AnimatedCounter } from "../components/ui/AnimatedCounter";
 
 const Portfolios = () => {
 	const [activeFilter, setActiveFilter] = useState("All");
@@ -278,10 +279,10 @@ const Portfolios = () => {
 				<div className="container mx-auto px-4 lg:px-8">
 					<div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
 						{[
-							{ value: "300+", label: "Skilled Professionals", icon: "/icons/skills-professionals.svg" },
-							{ value: "1st PEB", label: "Manufacturing in Cambodia", icon: "/icons/1st-peb.svg" },
-							{ value: "1000+", label: "Landmark Projects", icon: "/icons/landmark-projects.svg" },
-							{ value: "Best Award", label: "for Steel Contractor", icon: "/icons/best-award.svg" },
+							{ value: 300, suffix: "+", label: "Skilled Professionals", icon: "/icons/skills-professionals.svg" },
+							{ value: 0, suffix: "", label: "Manufacturing in Cambodia", icon: "/icons/1st-peb.svg", text: "1st PEB" },
+							{ value: 1000, suffix: "+", label: "Landmark Projects", icon: "/icons/landmark-projects.svg" },
+							{ value: 0, suffix: "", label: "Best Award", icon: "/icons/best-award.svg", text: "Best Award" },
 						].map((stat, i) => (
 							<motion.div
 								key={i}
@@ -298,7 +299,7 @@ const Portfolios = () => {
 									<img src={stat.icon} alt={stat.label} className="w-7 h-7" />
 								</div>
 								<div className="text-3xl lg:text-4xl font-bold tracking-tight mb-1">
-									{stat.value}
+									{stat.text || <AnimatedCounter end={stat.value} suffix={stat.suffix} />}
 								</div>
 								<div className="text-xs text-white/40 tracking-wider uppercase">
 									{stat.label}

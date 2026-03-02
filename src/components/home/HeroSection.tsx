@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AnimatedCounter } from "../ui/AnimatedCounter";
 
 const HeroSection = () => {
 	return (
@@ -93,17 +94,17 @@ const HeroSection = () => {
 						>
 							<div className="grid grid-cols-2 lg:grid-cols-2 border-t lg:border-t-0 lg:border-l border-white/10 py-8 lg:py-0 lg:pl-12">
 								{[
-									{ value: "1,000+", label: "Projects Completed" },
-									{ value: "12+", label: "Years of Innovation" },
-									{ value: "300+", label: "Team Members" },
-									{ value: "ISO", label: "9001:2015 Certified" },
+									{ value: 1000, suffix: "+", label: "Projects Completed" },
+									{ value: 12, suffix: "+", label: "Years of Innovation" },
+									{ value: 300, suffix: "+", label: "Team Members" },
+									{ value: 0, suffix: "", label: "ISO", text: "ISO", subtext: "9001:2015 Certified" },
 								].map((stat, i) => (
 									<div key={i} className="py-5 lg:py-8 pr-8">
 										<div className="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-1">
-											{stat.value}
+											{stat.text || <AnimatedCounter end={stat.value} suffix={stat.suffix} />}
 										</div>
 										<div className="text-xs text-white/35 tracking-wide uppercase">
-											{stat.label}
+											{stat.subtext || stat.label}
 										</div>
 									</div>
 								))}

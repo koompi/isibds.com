@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { AnimatedCounter } from "../components/ui/AnimatedCounter";
 
 const containerVariants = {
 	hidden: {},
@@ -113,19 +114,19 @@ const Contact = () => {
 							{/* Mini stats strip */}
 							<div className="grid grid-cols-3 border border-white/10">
 								{[
-									{ value: "300+", label: "Team" },
-									{ value: "12+", label: "Years" },
-									{ value: "ISO", label: "9001:2015" },
+									{ value: 300, suffix: "+", label: "Team" },
+									{ value: 12, suffix: "+", label: "Years" },
+									{ value: 0, suffix: "", label: "ISO", text: "ISO", subtext: "9001:2015" },
 								].map((stat, i) => (
 									<div
 										key={i}
 										className="py-5 px-4 border-r border-white/10 last:border-r-0"
 									>
 										<div className="text-xl font-bold text-white tracking-tight">
-											{stat.value}
+											{stat.text || <AnimatedCounter end={stat.value} suffix={stat.suffix} />}
 										</div>
 										<div className="text-[10px] text-white/30 tracking-[0.15em] uppercase mt-1">
-											{stat.label}
+											{stat.subtext || stat.label}
 										</div>
 									</div>
 								))}

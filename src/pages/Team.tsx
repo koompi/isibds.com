@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AnimatedCounter } from "../components/ui/AnimatedCounter";
 
 const Team = () => {
 	const leadership = [
@@ -13,21 +14,20 @@ const Team = () => {
 			bio: "Returned to Cambodia in 2011 with a focus on prefabrication and safer construction. Co-founded FUXIN and Mekong Homes under ISI GROUP. Also involved in ventures including BROWN Coffee and KMH Football Tournaments.",
 		},
 		{
-			name: "Sovanara IM",
-			role: "Chief Operating Officer",
-			image: "/images/im-sovanara.jpg",
-			education:
-				"Bachelor's in Civil Engineering (Institute of Technology Cambodia)",
-			bio: "A homegrown talent who progressed internally from intern to production supervisor to plant manager over seven years. Now oversees Engineering, Production, and Project Management.",
-		},
-		{
 			name: "Pav Ing CHAO",
 			role: "Finance Director",
-			image:
-				"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+			image: "/images/pav-ing.JPG",
 			education:
 				"Associate's in Art (Marymount College), Bachelor's in Business Administration (CSU Long Beach)",
 			bio: "Manages Finance and Accounting functions while championing people-focused culture initiatives. Brings international experience and a passion for building strong teams.",
+		},
+		{
+			name: "Sovanara IM",
+			role: "Supply Chain Director",
+			image: "/images/im-sovanara.png",
+			education:
+				"Bachelor's in Civil Engineering (Institute of Technology Cambodia)",
+			bio: "A homegrown talent who progressed internally from intern to production supervisor to plant manager over seven years. Now oversees Engineering, Production, and Project Management.",
 		},
 	];
 
@@ -157,15 +157,18 @@ const Team = () => {
 							<div className="grid grid-cols-3 gap-4">
 								{[
 									{
-										value: "300+",
+										value: 300,
+										suffix: "+",
 										label: "Team Members",
 									},
 									{
-										value: "6",
+										value: 6,
+										suffix: "",
 										label: "Departments",
 									},
 									{
-										value: "12+",
+										value: 12,
+										suffix: "+",
 										label: "Years Together",
 									},
 								].map((stat, i) => (
@@ -174,7 +177,10 @@ const Team = () => {
 										className="bg-surface-light p-6 lg:p-8 text-center"
 									>
 										<div className="text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-1">
-											{stat.value}
+											<AnimatedCounter
+												end={stat.value}
+												suffix={stat.suffix}
+											/>
 										</div>
 										<div className="text-xs text-steel tracking-wider uppercase">
 											{stat.label}
