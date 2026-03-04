@@ -27,7 +27,7 @@ const Team = () => {
       name: "Sovanara IM",
       role: "Supply Chain Director",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/im-sovanara.png",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/im-sovanara-2.png",
       education:
         "Bachelor's in Civil Engineering (Institute of Technology Cambodia)",
       bio: "A homegrown talent who progressed internally from intern to production supervisor to plant manager over seven years. Now oversees Engineering, Production, and Project Management.",
