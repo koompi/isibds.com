@@ -98,7 +98,6 @@ const Navbar = () => {
 	// Using the primary logo
 	const logoSrc = "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isibds-logo.png";
 
-	const isHome = location.pathname === "/";
 	const navBg = "bg-white shadow-md";
 
 	return (
