@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { X, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const PDF_URL = "/resources/ISI-building-solution-digital.pdf";
+const PDF_URL = "/isibds-brochure.pdf";
 
 type Props = {
 	isOpen: boolean;
@@ -52,7 +52,7 @@ const PDFModal = ({ isOpen, onClose }: Props) => {
 						<div className="flex items-center gap-2">
 							<a
 								href={PDF_URL}
-								download="ISI-building-solution-digital.pdf"
+								download="isibds-brochure.pdf"
 								className="inline-flex items-center gap-2 bg-accent text-white text-[13px] font-semibold px-4 py-2 hover:bg-accent-dark transition-colors"
 							>
 								<Download size={14} />

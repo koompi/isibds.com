@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Menu, X, ChevronDown, ArrowRight, Box, PenTool, Landmark, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -23,18 +23,9 @@ type NavItem = {
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [pdfOpen, setPdfOpen] = useState(false);
-	const [scrolled, setScrolled] = useState(false);
 	const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 	const closeTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 	const location = useLocation();
-
-	useEffect(() => {
-		const handleScroll = () => {
-			setScrolled(window.scrollY > 60);
-		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
 
 	const navItems: NavItem[] = [
 		{
@@ -104,15 +95,11 @@ const Navbar = () => {
 		(i) => i.isMega && i.name === activeDropdown
 	);
 
-	// Both transparent (over dark hero) and solid navy are dark — always use the dark logo
-	// logo-dark.png: white circle + navy ISI + orange text (visible on dark backgrounds)
-	// logo.png: navy circle + light ISI + orange text (for light backgrounds)
-	const logoSrc = scrolled ? "/logo-dark.png" : "/logo-dark.png";
+	// Using the primary logo
+	const logoSrc = "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isibds-logo.png";
 
 	const isHome = location.pathname === "/";
-	const navBg = scrolled || activeDropdown || !isHome
-		? "bg-primary-dark shadow-lg shadow-black/20"
-		: "bg-transparent";
+	const navBg = "bg-white shadow-md";
 
 	return (
 		<>
@@ -124,7 +111,7 @@ const Navbar = () => {
 						<img
 							src={logoSrc}
 							alt="ISI Building Solutions"
-							className="h-9 transition-all duration-300"
+							className="h-12 lg:h-14 transition-all duration-300"
 						/>
 					</Link>
 
@@ -144,7 +131,7 @@ const Navbar = () => {
 											className={`relative px-3 xl:px-4 py-2 text-[13px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer flex items-center gap-1.5 ${
 												isActive
 													? "text-accent"
-													: "text-white/80 hover:text-white"
+													: "text-primary hover:text-primary-dark"
 											}`}
 										>
 											{item.name}
@@ -172,7 +159,7 @@ const Navbar = () => {
 										className={`relative px-3 xl:px-4 py-2 text-[13px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer ${
 											isActive
 												? "text-accent"
-												: "text-white/80 hover:text-white"
+												: "text-primary hover:text-primary-dark"
 										}`}
 									>
 										{item.name}
@@ -200,7 +187,7 @@ const Navbar = () => {
 
 						<button
 							onClick={() => setIsOpen(!isOpen)}
-							className="lg:hidden p-2 cursor-pointer transition-colors text-white hover:bg-white/10"
+							className="lg:hidden p-2 cursor-pointer transition-colors text-primary hover:bg-primary/5"
 							aria-label="Toggle menu"
 						>
 							{isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -218,7 +205,7 @@ const Navbar = () => {
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: 8 }}
 						transition={{ duration: 0.18 }}
-						className="hidden lg:block w-full bg-[#111e35] border-t border-white/10 shadow-2xl"
+						className="hidden lg:block w-full bg-white border-t border-slate-200 shadow-xl"
 						onMouseEnter={() => openDropdown(activeMegaItem.name)}
 						onMouseLeave={scheduleClose}
 					>
@@ -235,23 +222,23 @@ const Navbar = () => {
 											className={`group/card p-6 border transition-all duration-200 ${
 												subActive
 													? "border-accent/40 bg-accent/5"
-													: "border-white/10 hover:border-accent/40 hover:bg-white/5"
+													: "border-slate-200 hover:border-accent/40 hover:bg-slate-50"
 											}`}
 										>
 											{Icon && (
-												<div className="w-10 h-10 border border-white/20 flex items-center justify-center mb-4">
+												<div className="w-10 h-10 border border-slate-200 flex items-center justify-center mb-4">
 													<Icon size={18} className="text-accent" />
 												</div>
 											)}
 											<h4
 												className={`font-bold text-base mb-2 tracking-tight ${
-													subActive ? "text-accent" : "text-white"
+													subActive ? "text-accent" : "text-primary"
 												}`}
 											>
 												{subItem.name}
 											</h4>
 											{subItem.description && (
-												<p className="text-white/50 text-[13px] leading-relaxed mb-4">
+												<p className="text-slate-500 text-[13px] leading-relaxed mb-4">
 													{subItem.description}
 												</p>
 											)}
@@ -259,7 +246,7 @@ const Navbar = () => {
 												className={`inline-flex items-center gap-1.5 text-[12px] font-semibold tracking-wide uppercase transition-colors ${
 													subActive
 														? "text-accent"
-														: "text-white/40 group-hover/card:text-accent"
+														: "text-slate-400 group-hover/card:text-accent"
 												}`}
 											>
 												Learn more
@@ -282,7 +269,7 @@ const Navbar = () => {
 						animate={{ opacity: 1, height: "auto" }}
 						exit={{ opacity: 0, height: 0 }}
 						transition={{ duration: 0.25 }}
-						className="lg:hidden bg-primary-dark border-t border-white/10 shadow-2xl overflow-hidden"
+						className="lg:hidden bg-white border-t border-slate-200 shadow-xl overflow-hidden"
 					>
 						<div className="flex flex-col px-6 py-4 gap-1">
 							{navItems.map((item, index) => {
@@ -292,7 +279,7 @@ const Navbar = () => {
 										<div key={index}>
 											<div
 												className={`py-3 px-4 text-[11px] font-bold tracking-[0.15em] uppercase ${
-													isActive ? "text-accent" : "text-white/40"
+													isActive ? "text-accent" : "text-slate-400"
 												}`}
 											>
 												{item.name}
@@ -307,7 +294,7 @@ const Navbar = () => {
 														className={`py-3 px-4 pl-6 text-[14px] font-medium transition-colors cursor-pointer block border-l-2 ${
 															subActive
 																? "text-accent bg-accent/10 border-accent"
-																: "text-white/70 hover:text-white hover:bg-white/5 border-transparent"
+																: "text-slate-600 hover:text-primary hover:bg-slate-50 border-transparent"
 														}`}
 													>
 														{subItem.name}
@@ -326,7 +313,7 @@ const Navbar = () => {
 											className={`py-3 px-4 text-[15px] font-medium transition-colors cursor-pointer border-l-2 ${
 												isActive
 													? "text-accent bg-accent/10 border-accent"
-													: "text-white/70 hover:text-white hover:bg-white/5 border-transparent"
+													: "text-slate-600 hover:text-primary hover:bg-slate-50 border-transparent"
 											}`}
 										>
 											{item.name}

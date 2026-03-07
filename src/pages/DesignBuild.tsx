@@ -201,7 +201,7 @@ const DesignBuild = () => {
               <div className="relative">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/design-build-project.jpg"
+                    src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-techo-airport-2.jpg"
                     alt="Design & Build Process"
                     className="w-full h-full object-cover"
                   />
@@ -248,7 +248,8 @@ const DesignBuild = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
+          {/* Asymmetric grid: first row has 2 larger items, second row has 3 standard items */}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-px bg-white/[0.06]">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -259,18 +260,18 @@ const DesignBuild = () => {
                   duration: 0.5,
                   delay: index * 0.1,
                 }}
-                className="group bg-primary-dark p-8 lg:p-10 border border-white/10 hover:border-accent/50 hover:bg-white/[0.05] transition-all duration-300"
+                className={`group bg-primary-dark border border-white/10 hover:border-accent/50 hover:bg-white/[0.05] transition-all duration-300 ${index < 2 ? "md:col-span-3 p-10 lg:p-12" : "md:col-span-2 p-8 lg:p-10"}`}
               >
                 <div className="text-[10px] text-white/25 tracking-[0.25em] uppercase font-mono mb-5">
                   {String(index + 1).padStart(2, "0")} —
                 </div>
-                <div className="w-10 h-10 border border-white/15 flex items-center justify-center mb-6 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300">
-                  <benefit.icon size={20} className="text-accent" />
+                <div className={`border border-white/15 flex items-center justify-center mb-6 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300 ${index < 2 ? "w-12 h-12" : "w-10 h-10"}`}>
+                  <benefit.icon size={index < 2 ? 24 : 20} className="text-accent" />
                 </div>
-                <h3 className="text-xl font-bold text-white tracking-tight mb-3">
+                <h3 className={`font-bold text-white tracking-tight mb-3 ${index < 2 ? "text-2xl" : "text-xl"}`}>
                   {benefit.title}
                 </h3>
-                <p className="text-white/45 text-[15px] leading-relaxed">
+                <p className={`leading-relaxed text-white/45 ${index < 2 ? "text-base" : "text-[15px]"}`}>
                   {benefit.description}
                 </p>
               </motion.div>
@@ -428,7 +429,7 @@ const DesignBuild = () => {
                 to="/contact"
                 className="group inline-flex items-center justify-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
               >
-                Get a Quote
+                Contact Us
                 <ArrowRight
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"

@@ -53,12 +53,12 @@ const Portfolios = () => {
     },
     {
       id: 5,
-      title: "Phnom Penh International Aircraft Shed",
-      location: "Phnom Penh",
-      year: "2019",
+      title: "Techo International Airport",
+      location: "Kandal Province",
+      year: "2023",
       category: "Pre-Engineered Buildings",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-aircraft.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-techo-airport-2.jpg",
     },
     {
       id: 6,
@@ -130,7 +130,7 @@ const Portfolios = () => {
       year: "2020",
       category: "Architectural Steel Structures and Roofing Solutions",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-kmh.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-techo-airport-2.jpg",
     },
   ];
 

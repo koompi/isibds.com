@@ -354,7 +354,7 @@ const BuildingSystems = () => {
                 to="/contact"
                 className="group inline-flex items-center justify-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
               >
-                Get a Quote
+                Contact Us
                 <ArrowRight
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"

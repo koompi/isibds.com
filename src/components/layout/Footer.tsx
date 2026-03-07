@@ -14,7 +14,7 @@ const Footer = () => {
 							alt="ISI Building Solutions"
 							className="h-16 mb-6"
 						/>
-						<p className="text-white/40 text-sm leading-relaxed mb-8 max-w-xs">
+						<p className="text-white text-sm leading-relaxed mb-8 max-w-xs">
 							Aspiring to be the Leader in Pre-engineered Building,
 							Specialist in Steel Structure, and Pioneer in
 							Prefabrication.
@@ -39,7 +39,7 @@ const Footer = () => {
 
 					{/* Quick Links */}
 					<div className="lg:col-span-2 mb-10 lg:mb-0">
-						<h4 className="text-xs font-bold tracking-[0.15em] uppercase text-white/60 mb-6">
+						<h4 className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-6">
 							Quick Links
 						</h4>
 						<ul className="space-y-3 text-sm">
@@ -56,7 +56,7 @@ const Footer = () => {
 								<li key={link.path}>
 									<Link
 										to={link.path}
-										className="text-white/40 hover:text-accent transition-colors cursor-pointer"
+										className="text-white hover:text-accent transition-colors cursor-pointer"
 									>
 										{link.name}
 									</Link>
@@ -67,10 +67,10 @@ const Footer = () => {
 
 					{/* Services */}
 					<div className="lg:col-span-2 mb-10 lg:mb-0">
-						<h4 className="text-xs font-bold tracking-[0.15em] uppercase text-white/60 mb-6">
+						<h4 className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-6">
 							Services
 						</h4>
-						<ul className="space-y-3 text-sm text-white/40">
+						<ul className="space-y-3 text-sm text-white">
 							<li>Building Systems</li>
 							<li>Architectural Steel Structures</li>
 							<li>Software & Technology</li>
@@ -79,10 +79,10 @@ const Footer = () => {
 
 					{/* Contact Info */}
 					<div className="lg:col-span-4">
-						<h4 className="text-xs font-bold tracking-[0.15em] uppercase text-white/60 mb-6">
+						<h4 className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-6">
 							Contact Us
 						</h4>
-						<ul className="space-y-4 text-sm text-white/40">
+						<ul className="space-y-4 text-sm text-white">
 							<li className="flex items-start gap-3">
 								<MapPin
 									size={15}
@@ -114,11 +114,11 @@ const Footer = () => {
 
 				{/* Bottom bar */}
 				<div className="border-t border-white/10 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-					<p className="text-xs text-white/25">
+					<p className="text-xs text-white">
 						&copy; {new Date().getFullYear()} ISI Building Solutions.
 						All Rights Reserved.
 					</p>
-					<p className="text-xs text-white/15 tracking-wider uppercase">
+					<p className="text-xs text-white tracking-wider uppercase">
 						Built with Precision
 					</p>
 				</div>
