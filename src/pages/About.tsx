@@ -500,25 +500,7 @@ const About = () => {
                 initiatives in education, environment, sports, and healthcare.
               </p>
 
-              {/* ISI Group sectors */}
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  "Building Materials",
-                  "Building Solutions",
-                  "Property Development",
-                  "Education",
-                ].map((sector, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-3 py-3 border-b border-slate-200"
-                  >
-                    <div className="w-1.5 h-1.5 bg-accent flex-shrink-0"></div>
-                    <span className="text-sm font-medium text-primary">
-                      {sector}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              {/* ISI Group sectors removed as requested */}
             </motion.div>
 
             <motion.div

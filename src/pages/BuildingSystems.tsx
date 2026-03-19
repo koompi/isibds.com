@@ -19,21 +19,21 @@ const BuildingSystems = () => {
       description:
         "Warehouses, factories, and manufacturing plants with wide-span requirements.",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/Homes-10.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/product-and-service-1.jpg",
     },
     {
       title: "Commercial Buildings",
       description:
         "Retail centers, showrooms, and commercial complexes built with precision.",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/Homes-2.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/product-and-service-2.jpg",
     },
     {
       title: "Heavy Steel Structures",
       description:
         "Office buildings, parking structures, and mixed-use developments.",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/multi-story-systems.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/product-and-service-3.jpg",
     },
   ];
 
@@ -219,15 +219,13 @@ const BuildingSystems = () => {
                   duration: 0.6,
                   delay: index * 0.1,
                 }}
-                className={`lg:grid lg:grid-cols-12 lg:gap-12 items-center ${
-                  index % 2 === 1 ? "lg:direction-rtl" : ""
-                }`}
+                className={`lg:grid lg:grid-cols-12 lg:gap-12 items-center ${index % 2 === 1 ? "lg:direction-rtl" : ""
+                  }`}
               >
                 {/* Content */}
                 <div
-                  className={`lg:col-span-6 mb-8 lg:mb-0 ${
-                    index % 2 === 1 ? "lg:col-start-7" : ""
-                  }`}
+                  className={`lg:col-span-6 mb-8 lg:mb-0 ${index % 2 === 1 ? "lg:col-start-7" : ""
+                    }`}
                 >
                   <h3 className="text-2xl md:text-3xl font-bold text-primary tracking-tight mb-4">
                     {system.title}
@@ -250,9 +248,8 @@ const BuildingSystems = () => {
 
                 {/* Image */}
                 <div
-                  className={`lg:col-span-6 ${
-                    index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
-                  }`}
+                  className={`lg:col-span-6 ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+                    }`}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
                     <img

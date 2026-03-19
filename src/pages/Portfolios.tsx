@@ -132,6 +132,60 @@ const Portfolios = () => {
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-techo-airport-2.jpg",
     },
+    {
+      id: 14,
+      title: "Aeon Mall Mean Chey",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
+    },
+    {
+      id: 15,
+      title: "ISI Training Ground",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isi-tranning-ground.jpg",
+    },
+    {
+      id: 16,
+      title: "ISI Park Stadium",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isi-park-stadiumx.jpg",
+    },
+    {
+      id: 17,
+      title: "Maha Panha Vihara",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-maha-vihara.jpg",
+    },
+    {
+      id: 18,
+      title: "Chip Mong Mega Mall",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/ChipMongMegaMall.webp",
+    },
+    {
+      id: 19,
+      title: "Techo International Airport",
+      location: "Kandal Province",
+      year: "2023",
+      category: "Architectural Steel Structures and Roofing Solutions",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-techo-airport.jpg",
+    },
   ];
 
   const filteredProjects =
