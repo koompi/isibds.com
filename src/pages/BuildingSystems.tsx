@@ -219,7 +219,7 @@ const BuildingSystems = () => {
                   duration: 0.6,
                   delay: index * 0.1,
                 }}
-                className={`lg:grid lg:grid-cols-12 lg:gap-12 items-center ${index % 2 === 1 ? "lg:direction-rtl" : ""
+                className={`lg:grid lg:grid-cols-12 lg:gap-12 items-start ${index % 2 === 1 ? "lg:direction-rtl" : ""
                   }`}
               >
                 {/* Content */}
