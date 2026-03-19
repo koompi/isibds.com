@@ -303,7 +303,7 @@ const DesignBuild = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-x-12 md:gap-y-16">
             {process.map((item, index) => (
               <motion.div
                 key={index}
@@ -314,20 +314,23 @@ const DesignBuild = () => {
                   duration: 0.5,
                   delay: index * 0.08,
                 }}
-                className="relative"
+                className="group relative"
               >
-                <div className="absolute -top-3 -left-3 text-7xl font-bold text-accent/5 leading-none select-none">
-                  {item.step}
+                {/* Step Header: Number and Line */}
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-4xl font-black text-accent/20 group-hover:text-accent transition-all duration-500 font-mono">
+                    {item.step}
+                  </span>
+                  <div className="flex-grow h-[1px] bg-slate-200 group-hover:bg-accent/40 transition-all duration-500"></div>
                 </div>
-                <div className="relative pt-8 pl-8">
-                  <div className="w-10 h-1 bg-accent mb-5"></div>
-                  <h3 className="text-lg font-bold text-primary tracking-tight mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-steel text-[15px] leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+
+                <h3 className="text-xl font-bold text-primary tracking-tight mb-4 group-hover:text-accent transition-colors duration-500">
+                  {item.title}
+                </h3>
+
+                <p className="text-steel-dark text-[15px] leading-relaxed">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>
