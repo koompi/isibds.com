@@ -179,7 +179,7 @@ const Technology = () => {
               <div className="relative">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/industrial-park.jpg"
+                    src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/technology-bds.png"
                     alt="Technology in Action"
                     className="w-full h-full object-cover"
                   />
@@ -207,10 +207,9 @@ const Technology = () => {
                 Core Systems
               </span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              Integrated Technology
-              <br />
-              Platform
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary tracking-tight leading-tight">
+              <span className="block mb-2 lg:mb-3">Integrated Technology</span>
+              <span className="block">Platform</span>
             </h2>
           </motion.div>
 
