@@ -10,14 +10,14 @@ const Technology = () => {
       category: "ERP System",
       description:
         "Manages finance and operations with comprehensive functionality for managing resources and processes connected to manufacturing, planning, supply chain, sales, financials and more.",
-      logo: "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/logo-microsoft-dynamics.png",
+      logo: "/images/micro.png",
     },
     {
       name: "Tekla BIM",
       category: "Building Information Modeling",
       description:
         "Creates structure models with accurate, reliable detailed information and generates automated shop and erection drawings for production.",
-      logo: "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/logo-tekla.png",
+      logo: "/images/tekla.png",
     },
     {
       name: "Metal Building Software (MBS)",
@@ -282,11 +282,11 @@ const Technology = () => {
                 }}
                 className="bg-white border border-slate-200 p-8 hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
               >
-                <div className="h-16 flex items-center justify-start mb-6">
+                <div className="h-10 flex items-center justify-start mb-8">
                   <img
                     src={tool.logo}
                     alt={tool.name}
-                    className="max-h-full w-auto object-contain"
+                    className="max-h-full w-auto object-contain opacity-70  group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
                 <span className="text-xs text-accent font-bold tracking-wider uppercase block mb-2">
