@@ -1,11 +1,12 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
-import { MapPin, Calendar, ArrowUpRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { MapPin, Calendar, ArrowUpRight, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatedCounter } from "../components/ui/AnimatedCounter";
 
 const Portfolios = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedProjectIndex, setSelectedProjectIndex] = useState<number | null>(null);
 
   const filters = [
     "All",
@@ -310,6 +311,41 @@ const Portfolios = () => {
       ? projects
       : projects.filter((project) => project.category === activeFilter);
 
+  // Modal navigation
+  const handleNext = () => {
+    if (selectedProjectIndex !== null) {
+      setSelectedProjectIndex((selectedProjectIndex + 1) % filteredProjects.length);
+    }
+  };
+
+  const handlePrev = () => {
+    if (selectedProjectIndex !== null) {
+      setSelectedProjectIndex(
+        (selectedProjectIndex - 1 + filteredProjects.length) % filteredProjects.length
+      );
+    }
+  };
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedProjectIndex(null);
+      if (e.key === "ArrowRight") handleNext();
+      if (e.key === "ArrowLeft") handlePrev();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedProjectIndex]);
+
+  // Prevent scroll when modal is open
+  useEffect(() => {
+    if (selectedProjectIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [selectedProjectIndex]);
+
   return (
     <div className="min-h-screen">
       <Helmet>
@@ -320,17 +356,6 @@ const Portfolios = () => {
           name="description"
           content="Browse ISI Building Solutions' portfolio of 1000+ landmark projects in Cambodia including pre-engineered buildings, heavy steel structures, and architectural steel."
         />
-        <meta
-          property="og:title"
-          content="Project Portfolio — 1000+ Landmark Projects | ISI Building Solutions"
-        />
-        <meta
-          property="og:description"
-          content="Browse ISI Building Solutions' portfolio of 1000+ landmark projects in Cambodia including pre-engineered buildings, heavy steel structures, and architectural steel."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://isibds.com/portfolios" />
-        <link rel="canonical" href="https://isibds.com/portfolios" />
       </Helmet>
       {/* Hero Banner */}
       <section className="relative pt-[72px]">
@@ -397,6 +422,7 @@ const Portfolios = () => {
                   duration: 0.5,
                   delay: index * 0.05,
                 }}
+                onClick={() => setSelectedProjectIndex(index)}
                 className="group bg-white border border-slate-200 overflow-hidden hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 transition-all duration-300 cursor-pointer"
               >
                 {/* Image */}
@@ -518,6 +544,86 @@ const Portfolios = () => {
           </div>
         </div>
       </section>
+
+      {/* Fullscreen Modal / Lightbox */}
+      <AnimatePresence>
+        {selectedProjectIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-primary-dark/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedProjectIndex(null)}
+              className="absolute top-8 right-8 text-white/60 hover:text-white transition-colors p-2 z-10"
+            >
+              <X size={32} />
+            </button>
+
+            {/* Navigation - Next/Prev */}
+            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-between px-4 md:px-10 pointer-events-none">
+              <button
+                onClick={(e) => { e.stopPropagation(); handlePrev(); }}
+                className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-white/5 hover:bg-accent text-white rounded-full transition-all pointer-events-auto"
+              >
+                <ChevronLeft size={32} />
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); handleNext(); }}
+                className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-white/5 hover:bg-accent text-white rounded-full transition-all pointer-events-auto"
+              >
+                <ChevronRight size={32} />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="relative max-w-6xl w-full bg-white shadow-2xl flex flex-col md:flex-row h-auto max-h-[90vh] overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Image Area */}
+              <div className="flex-grow bg-black flex items-center justify-center overflow-hidden">
+                <img
+                  src={filteredProjects[selectedProjectIndex].image}
+                  alt={filteredProjects[selectedProjectIndex].title}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* Info Sidebar */}
+              <div className="w-full md:w-[320px] lg:w-[400px] p-8 lg:p-10 flex flex-col justify-center bg-white">
+                <div className="w-12 h-1 bg-accent mb-6"></div>
+                <span className="text-accent text-xs font-bold tracking-widest uppercase mb-2">
+                  {filteredProjects[selectedProjectIndex].category}
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-primary tracking-tight mb-6">
+                  {filteredProjects[selectedProjectIndex].title}
+                </h3>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-steel">
+                    <MapPin size={18} className="text-accent" />
+                    <span className="text-base">{filteredProjects[selectedProjectIndex].location}</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-steel">
+                    <Calendar size={18} className="text-accent" />
+                    <span className="text-base">{filteredProjects[selectedProjectIndex].year}</span>
+                  </div>
+                </div>
+
+                <div className="mt-auto pt-10 text-[13px] text-steel-light">
+                  Project {selectedProjectIndex + 1} of {filteredProjects.length}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
