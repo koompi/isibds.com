@@ -10,12 +10,12 @@ const Footer = () => {
 					{/* Company Info */}
 					<div className="lg:col-span-4 mb-10 lg:mb-0">
 						<img
-							src="/logo-dark.png"
+							src="/white.png"
 							alt="ISI Building Solutions"
 							className="h-16 mb-6"
 						/>
 						<p className="text-white text-sm leading-relaxed mb-8 max-w-xs">
-							Aspiring to be the Leader in Pre-engineered Building,
+							A Leader in Pre-engineered Building,
 							Specialist in Steel Structure, and Pioneer in
 							Prefabrication.
 						</p>

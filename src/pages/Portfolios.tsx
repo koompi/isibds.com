@@ -201,11 +201,10 @@ const Portfolios = () => {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-5 py-2.5 text-[13px] font-semibold whitespace-nowrap transition-all duration-200 ${
-                  activeFilter === filter
-                    ? "bg-accent text-white"
-                    : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                }`}
+                className={`px-5 py-2.5 text-[13px] font-semibold whitespace-nowrap transition-all duration-200 ${activeFilter === filter
+                  ? "bg-accent text-white"
+                  : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                  }`}
               >
                 {filter}
               </button>
@@ -303,7 +302,7 @@ const Portfolios = () => {
               {
                 value: 0,
                 suffix: "",
-                label: "Manufacturing in Cambodia",
+                label: "Manufacturer in Cambodia",
                 icon: "/icons/1st-peb.svg",
                 text: "1st PEB",
               },
@@ -316,7 +315,7 @@ const Portfolios = () => {
               {
                 value: 0,
                 suffix: "",
-                label: "Best Award",
+                label: "for Steel Constractor",
                 icon: "/icons/best-award.svg",
                 text: "Best Award",
               },
