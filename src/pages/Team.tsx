@@ -38,42 +38,42 @@ const Team = () => {
     {
       name: "Engineering",
       image:
-        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-1.jpg",
       description:
         "Our engineering team drives innovation in structural design, BIM modeling, and pre-engineered building systems.",
     },
     {
       name: "Finance & Accounting",
       image:
-        "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-2.jpg",
       description:
         "Managing financial operations with transparency and precision to support sustainable growth.",
     },
     {
       name: "Operation, HR & IT",
       image:
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-3.jpg",
       description:
         "The backbone of our organization — ensuring smooth operations, talent development, and technology infrastructure.",
     },
     {
       name: "Project Management",
       image:
-        "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-4.jpg",
       description:
         "Coordinating end-to-end project delivery from planning through construction to handover.",
     },
     {
       name: "Project Sales",
       image:
-        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-5.jpg",
       description:
         "Connecting clients with the right solutions and building lasting partnerships across industries.",
     },
     {
       name: "Production",
       image:
-        "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-6.jpg",
       description:
         "Operating our manufacturing facility with precision — from steel fabrication to quality assurance.",
     },
