@@ -186,6 +186,123 @@ const Portfolios = () => {
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-techo-airport.jpg",
     },
+    {
+      id: 20,
+      title: "Hanuman Brewery Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-hanuman.jpg",
+    },
+    {
+      id: 21,
+      title: "Khmer Beverages Factory",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg",
+    },
+    {
+      id: 22,
+      title: "Sunfair Factory",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
+    },
+    {
+      id: 23,
+      title: "Taral Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-taral.jpg",
+    },
+    {
+      id: 24,
+      title: "Marvel Factory",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-marvel.jpg",
+    },
+    {
+      id: 25,
+      title: "New Wide Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-new-wide.jpg",
+    },
+    {
+      id: 26,
+      title: "Bonny Factory",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-bonny.jpg",
+    },
+    {
+      id: 27,
+      title: "Heng Pao He Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-heng-pao-he.jpg",
+    },
+    {
+      id: 28,
+      title: "OCIC Leasing Factories",
+      location: "Phnom Penh",
+      year: "2023",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-ocic-leasing.jpg",
+    },
+    {
+      id: 29,
+      title: "TH Automotive Manufacturing",
+      location: "Phnom Penh",
+      year: "2023",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-th-automotive.jpg",
+    },
+    {
+      id: 30,
+      title: "Carina Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-carina-factory.jpg",
+    },
+    {
+      id: 31,
+      title: "Orlon Zinc Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-orlon-zinc.jpg",
+    },
+    {
+      id: 32,
+      title: "Elysian Dreams International Factory",
+      location: "Phnom Penh",
+      year: "2023",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-elysian-dreams.jpg",
+    },
   ];
 
   const filteredProjects =
