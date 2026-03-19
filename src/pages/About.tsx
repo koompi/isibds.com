@@ -75,7 +75,7 @@ const About = () => {
     {
       value: 0,
       suffix: "",
-      label: "1st PEB",
+      label: "Manufacturer in Cambodia",
       icon: "/icons/1st-peb.svg",
       text: "1st PEB",
     },
@@ -88,7 +88,7 @@ const About = () => {
     {
       value: 0,
       suffix: "",
-      label: "Best Award",
+      label: "for Steel Constractor",
       icon: "/icons/best-award.svg",
       text: "Best Award",
     },
@@ -380,18 +380,18 @@ const About = () => {
                   duration: 0.5,
                   delay: index * 0.1,
                 }}
-                className="group bg-primary-dark p-8 lg:p-10 border border-white/10 hover:border-accent/20 hover:bg-white/[0.05] transition-all duration-300"
+                className="group cursor-pointer bg-primary-dark p-8 lg:p-10 border border-white/10 hover:border-transparent hover:bg-white hover:shadow-2xl transition-all duration-500"
               >
-                <div className="text-[10px] text-white/25 tracking-[0.25em] uppercase font-mono mb-5">
+                <div className="text-[10px] text-white/25 group-hover:text-primary/20 tracking-[0.25em] uppercase font-mono mb-5 transition-colors duration-500">
                   {String(index + 1).padStart(2, "0")} —
                 </div>
-                <div className="w-10 h-10 border border-white/15 flex items-center justify-center mb-6 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300">
+                <div className="w-10 h-10 border border-white/15 flex items-center justify-center mb-6 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-500">
                   <item.icon size={20} className="text-accent" />
                 </div>
-                <h3 className="text-lg font-bold text-white tracking-tight mb-3">
+                <h3 className="text-lg font-bold text-white group-hover:text-primary tracking-tight mb-3 transition-colors duration-500">
                   {item.title}
                 </h3>
-                <p className="text-white/45 text-[15px] leading-relaxed">
+                <p className="text-white/45 group-hover:text-steel text-[15px] leading-relaxed transition-colors duration-500">
                   {item.description}
                 </p>
               </motion.div>
@@ -436,17 +436,15 @@ const About = () => {
                     duration: 0.5,
                     delay: index * 0.1,
                   }}
-                  className={`lg:grid lg:grid-cols-2 lg:gap-16 lg:py-10 relative ${
-                    index % 2 === 0 ? "" : "lg:direction-rtl"
-                  }`}
+                  className={`lg:grid lg:grid-cols-2 lg:gap-16 lg:py-10 relative ${index % 2 === 0 ? "" : "lg:direction-rtl"
+                    }`}
                 >
                   {/* Content */}
                   <div
-                    className={`${
-                      index % 2 === 0
-                        ? "lg:text-right lg:pr-16"
-                        : "lg:col-start-2 lg:pl-16"
-                    }`}
+                    className={`${index % 2 === 0
+                      ? "lg:text-right lg:pr-16"
+                      : "lg:col-start-2 lg:pl-16"
+                      }`}
                   >
                     <span className="text-accent text-sm font-bold tracking-wider">
                       {item.year}
