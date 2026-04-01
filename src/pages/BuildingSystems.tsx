@@ -1,82 +1,159 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const BuildingSystems = () => {
-  const features = [
-    "Cost-effective and time-efficient construction",
-    "Superior structural integrity and durability",
-    "Flexible design adaptable to various applications",
-    "Reduced on-site construction time",
-    "Environmentally sustainable prefabrication",
-    "Quality-controlled factory manufacturing",
-  ];
+  const [activeSlide, setActiveSlide] = useState(0);
 
-  const applications = [
+  const industryVerticals = [
     {
-      title: "Industrial Facilities",
-      description:
-        "Warehouses, factories, and manufacturing plants with wide-span requirements.",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/product-and-service-1.jpg",
+      title: "Manufacturing",
+      applications: [
+        "Garment and Textile Factory",
+        "Fabric Processing Factory",
+        "Footwear Factory",
+        "Automotive Assembly Plant",
+        "Electronic Factory",
+        "Steel Furniture Factory",
+      ],
+      brochure: "Manufacturing Solutions Brochure",
     },
     {
-      title: "Commercial Buildings",
-      description:
-        "Retail centers, showrooms, and commercial complexes built with precision.",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/product-and-service-2.jpg",
+      title: "Foods & Beverages",
+      applications: ["Brewery Factory", "Beverage Production Factory", "Food Processing Factory"],
+      brochure: "F&B Solutions Brochure",
     },
     {
-      title: "Heavy Steel Structures",
-      description:
-        "Office buildings, parking structures, and mixed-use developments.",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/product-and-service-3.jpg",
+      title: "Logistics",
+      applications: ["Distribution Center", "Warehouse", "Logistics Center", "Cold Storage"],
+      brochure: "Logistics Solutions Brochure",
+    },
+    {
+      title: "Agriculture",
+      applications: ["Greenhouse", "Rice Mill Factory", "Animal Food Factory", "Animal Shed Farm", "Feed Mill Factory"],
+      brochure: "Agri-industry Solutions Brochure",
+    },
+    {
+      title: "Residential",
+      applications: ["Steel Roofing", "Steel Cladding"],
+      brochure: "Roofing Systems & Solutions Manual",
     },
   ];
 
   const systems = [
     {
-      title: "Pre-Engineered Buildings",
+      title: "ISI PEB (Pre-Engineered Buildings)",
       description:
-        "Our pre-engineered building systems offer standardized, cost-effective structural solutions for warehouses, factories, and industrial facilities. Designed with precision and manufactured in controlled factory conditions for superior quality.",
+        "ISI Pre-Engineered Buildings (PEB) is a complete systems package that incorporates new features of standing seam roofing solution, attractive wall cladding, standardized trim, and other accessories, providing excellent performance in terms of speed, cost effectiveness, long-term durability, functionality, appearance, and especially water leakage prevention. Ideal for both industrial and commercial applications such as warehouses, logistics facilities, and complex structures.",
       benefits: [
+        "Adaptable building codes",
+        "Superior materials specifications",
         "Fast design and delivery timelines",
         "Cost savings up to 30% vs conventional",
         "Wide clear spans up to 60+ meters",
         "Easy future expansion capabilities",
       ],
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/building-systems.jpg",
+      images: [
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-marvel.jpg",
+      ],
     },
     {
       title: "Heavy Steel Structures",
       description:
-        "Specialized steel structural systems for vertical construction projects including office buildings, parking structures, and mixed-use developments. Engineered for strength, efficiency, and architectural flexibility.",
+        "Specialized steel structural systems for vertical construction projects, including office buildings, shopping malls, showrooms, parking structures, and mixed-use developments. Engineered for strength, efficiency, and architectural flexibility. Our steel structures are fabricated into precise shapes and sizes according to the technical requirements of each project.",
       benefits: [
-        "Accelerated construction schedules",
-        "Enhanced seismic performance",
-        "Flexible floor plans and layouts",
-        "Sustainable construction methods",
+        "Launch business sooner with 30% faster construction",
+        "Maximize space with 90-meter column-free spans",
+        "Reduce foundation costs with lightweight steel frames",
+        "Ensure perfect assembly using precision 3D design",
+        "Achieve modern looks impossible with traditional concrete",
       ],
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/multi-story-systems.jpg",
+      images: [
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/aeon.jpg",
+      ],
+    },
+    {
+      title: "ISI Greenhouse",
+      description:
+        "ISI Greenhouse is designed as a high-quality, pre-engineered structural solution tailored for the modern agricultural landscape. It focuses on durability, climate control, and rapid assembly to support sustainable farming and commercial operations.",
+      benefits: [
+        "Control climate for consistent, year-round farming success",
+        "Maximize profits with durable and stable structures",
+        "Withstand high winds using UV-protected, rust-resistant steel",
+        "Expand easily with fast installation and relocation",
+        "Aesthetic design, built for multi-purpose creativity",
+      ],
+      images: [
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/fdbb47e0-1a89-4d40-873f-db814d12c4fc.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/29e4080a-07b0-43e5-a85d-d6ab1b9b4bb3.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/b606730b-936b-421f-8047-dacdc4e39861.jpg",
+      ],
+    },
+    {
+      title: "ISI Roofing Solutions",
+      description:
+        "ISI Roofing Solutions offers a comprehensive range of roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates. We cater to residential, commercial, warehouse, and heavy industrial applications, focusing on advanced coating technologies and structural integrity.",
+      benefits: [
+        "Water leakage prevention",
+        "Lower electricity bills with heat-reflecting advanced insulation",
+        "Lock out water with 360-degree seaming technology.",
+        "Extend building life with climate-resistant protective coatings.",
+      ],
+      images: [
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-solution-1.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-2.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-3.jpg",
+      ],
+    },
+    {
+      title: "ISI Home",
+      description:
+        "ISI Homes offers innovative housing solutions that blend traditional Khmer aesthetics with modern engineering. Designed for safety, health, and affordability, we provide rural and suburban communities with high-quality homes built for lasting stability.",
+      benefits: [
+        "Integrated bathrooms and clean water for a healthy home.",
+        "Advanced insulation to maintain a cool, energy-efficient interior.",
+        "Strong steel frames built to last generations.",
+        "Quick on-site assembly without cutting quality.",
+      ],
+      images: [
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-1.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-2.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-3.jpg",
+      ],
+    },
+    {
+      title: "ISI Truss",
+      description:
+        "High-strength, lightweight steel truss systems engineered for precision and durability. Ideal for residential and commercial roofing support, providing a cost-effective alternative to traditional timber while ensuring long-term structural integrity.",
+      benefits: [
+        "Precision-engineered for perfect fit and alignment",
+        "High-quality galvanized steel for corrosion resistance",
+        "Lightweight design reducing load on building structures",
+        "Termite-proof and non-combustible material",
+        "Fast installation process on-site",
+      ],
+      images: [
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/building-systems.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/product-and-service-1.jpg",
+      ],
     },
   ];
 
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Building Systems | ISI Building Solutions</title>
+        <title>Products & Solutions | ISI Building Solutions</title>
         <meta
           name="description"
           content="Explore ISI's pre-engineered building systems and heavy steel structures — delivering cost-efficient, high-quality factory-manufactured buildings across Southeast Asia."
         />
         <meta
           property="og:title"
-          content="Building Systems | ISI Building Solutions"
+          content="Products & Solutions | ISI Building Solutions"
         />
         <meta
           property="og:description"
@@ -107,11 +184,11 @@ const BuildingSystems = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Products & Services
+                    Products & Solutions
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-3xl">
-                  Building Systems
+                <h1 className="text-4xl md:text-5xl lg:text-3xl font-bold text-white leading-tight tracking-tight max-w-3xl uppercase">
+                  Products & Solutions
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
                   Developing practical solutions that streamline steel structure
@@ -124,70 +201,56 @@ const BuildingSystems = () => {
         </div>
       </section>
 
-      {/* Key Features */}
-      <section className="py-28 bg-white">
+      {/* Industry Vertical Solutions */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="lg:col-span-5 mb-12 lg:mb-0"
-            >
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-8 h-px bg-accent"></div>
-                <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Our Approach
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-6">
-                Engineered for
-                <br />
-                Excellence
-              </h2>
-              <p className="text-steel text-base leading-relaxed mb-8">
-                Our building systems combine cutting-edge engineering with
-                proven manufacturing processes to deliver structures that exceed
-                industry standards in quality, efficiency, and sustainability.
-              </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-px bg-accent"></div>
+              <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
+                Industry Specific
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight uppercase">
+              Solutions by Sector
+            </h2>
+          </motion.div>
 
-              <div className="space-y-0 divide-y divide-slate-200 border-y border-slate-200">
-                {features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-3 py-4">
-                    <CheckCircle2
-                      size={18}
-                      className="text-accent flex-shrink-0 mt-0.5"
-                    />
-                    <span className="text-steel text-[15px]">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="lg:col-span-7"
-            >
-              <div className="relative">
-                <div className="aspect-[16/10] overflow-hidden">
-                  <img
-                    src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/building-system-main.jpg"
-                    alt="Building Systems"
-                    className="w-full h-full object-cover"
-                  />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {industryVerticals.map((sector, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-surface-light p-8 border-t-2 border-accent/20 hover:border-accent transition-colors group flex flex-col h-full"
+              >
+                <h3 className="text-xl font-bold text-primary mb-6">{sector.title}</h3>
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {sector.applications.map((app, i) => (
+                    <li key={i} className="text-steel text-sm flex items-start gap-2">
+                      <div className="w-1 h-1 bg-accent mt-1.5 flex-shrink-0"></div>
+                      {app}
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-4 border-t border-slate-200 mt-auto">
+                    <span className="text-[10px] font-bold text-accent uppercase tracking-widest block mb-1">Resource</span>
+                    <span className="text-xs font-bold text-primary group-hover:text-accent transition-colors">{sector.brochure}</span>
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/20 -z-10"></div>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Building System Types */}
+      {/* Building Systems Sections */}
       <section className="py-28 bg-surface-light">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
@@ -204,117 +267,115 @@ const BuildingSystems = () => {
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              Building System Types
+              Products & Solutions
             </h2>
+            <p className="text-steel text-base mt-4 max-w-2xl">
+              Highlighting our core products and their key features, simplified for a superior building experience.
+            </p>
           </motion.div>
 
-          <div className="space-y-16">
-            {systems.map((system, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.1,
-                }}
-                className={`lg:grid lg:grid-cols-12 lg:gap-12 items-start ${index % 2 === 1 ? "lg:direction-rtl" : ""
-                  }`}
-              >
-                {/* Content */}
-                <div
-                  className={`lg:col-span-6 mb-8 lg:mb-0 ${index % 2 === 1 ? "lg:col-start-7" : ""
+          <div className="space-y-32">
+            {systems.map((system, index) => {
+              const [currentImg, setCurrentImg] = useState(0);
+              const nextImg = () => setCurrentImg((prev) => (prev + 1) % system.images.length);
+              const prevImg = () => setCurrentImg((prev) => (prev - 1 + system.images.length) % system.images.length);
+
+              // Generate ID for industry menu links
+              const sectionId = system.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '');
+
+              return (
+                <motion.div
+                  key={index}
+                  id={sectionId}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.05,
+                  }}
+                  className={`lg:grid lg:grid-cols-12 lg:gap-16 items-center pt-16 -mt-16 ${index % 2 === 1 ? "lg:direction-rtl" : ""
                     }`}
                 >
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary tracking-tight mb-4">
-                    {system.title}
-                  </h3>
-                  <p className="text-steel text-base leading-relaxed mb-6">
-                    {system.description}
-                  </p>
+                  {/* Content */}
+                  <div
+                    className={`lg:col-span-6 mb-12 lg:mb-0 ${index % 2 === 1 ? "lg:col-start-7 text-right" : ""
+                      }`}
+                  >
+                    <div className={`flex items-center gap-4 mb-4 ${index % 2 === 1 ? "justify-end" : ""}`}>
+                      <span className="text-accent/40 text-4xl font-black tracking-tighter">0{index + 1}</span>
+                      <div className="h-px w-8 bg-accent/20"></div>
+                    </div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-primary tracking-tight mb-6 uppercase">
+                      {system.title}
+                    </h3>
+                    <p className="text-steel text-lg leading-relaxed mb-10">
+                      {system.description}
+                    </p>
 
-                  <div className="space-y-3">
-                    {system.benefits.map((benefit, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 bg-accent flex-shrink-0 mt-2"></div>
-                        <span className="text-steel text-[15px]">
-                          {benefit}
-                        </span>
+                    <div className={`grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 ${index % 2 === 1 ? "text-right" : ""}`}>
+                      <div className="col-span-full mb-2">
+                        <h4 className="text-accent text-[11px] font-bold tracking-[0.2em] uppercase">Key Features & Benefits</h4>
                       </div>
-                    ))}
+                      {system.benefits.map((benefit, i) => (
+                        <div key={i} className={`flex items-start gap-3 ${index % 2 === 1 ? "flex-row-reverse" : ""}`}>
+                          <div className="w-1.5 h-1.5 bg-accent flex-shrink-0 mt-2"></div>
+                          <span className="text-steel text-[15px] font-medium leading-snug">
+                            {benefit}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Image */}
-                <div
-                  className={`lg:col-span-6 ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
-                    }`}
-                >
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={system.image}
-                      alt={system.title}
-                      className="w-full h-full object-cover"
-                    />
+                  {/* Slider Image */}
+                  <div
+                    className={`lg:col-span-6 ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+                      }`}
+                  >
+                    <div className="relative group">
+                      <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                        <AnimatePresence mode="wait">
+                          <motion.img
+                            key={currentImg}
+                            src={system.images[currentImg]}
+                            alt={`${system.title} scene ${currentImg + 1}`}
+                            initial={{ opacity: 0, scale: 1.1 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            className="w-full h-full object-cover"
+                          />
+                        </AnimatePresence>
+                      </div>
+
+                      {/* Navigation Controls */}
+                      <div className={`absolute bottom-6 ${index % 2 === 1 ? "left-6" : "right-6"} flex gap-2 z-10`}>
+                        <button
+                          onClick={prevImg}
+                          className="w-12 h-12 bg-white/90 hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center cursor-pointer shadow-lg"
+                        >
+                          <ChevronLeft size={20} />
+                        </button>
+                        <button
+                          onClick={nextImg}
+                          className="w-12 h-12 bg-white/90 hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center cursor-pointer shadow-lg"
+                        >
+                          <ChevronRight size={20} />
+                        </button>
+                      </div>
+
+                      {/* Counter */}
+                      <div className={`absolute top-6 ${index % 2 === 1 ? "right-6 font-bold" : "left-6 font-bold"} text-white drop-shadow-md text-xs tracking-widest`}>
+                        {currentImg + 1} / {system.images.length}
+                      </div>
+
+                      <div className={`absolute -bottom-6 ${index % 2 === 1 ? "-left-6" : "-right-6"} w-full h-full border-2 border-accent/10 -z-10`}></div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Applications */}
-      <section className="py-28 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-px bg-accent"></div>
-              <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Applications
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              Built for Every Need
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {applications.map((app, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.12,
-                }}
-                className="group"
-              >
-                <div className="relative overflow-hidden aspect-[4/3] mb-5">
-                  <img
-                    src={app.image}
-                    alt={app.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent"></div>
-                  <h3 className="absolute bottom-5 left-5 text-xl font-bold text-white tracking-tight">
-                    {app.title}
-                  </h3>
-                </div>
-                <p className="text-steel text-[15px] leading-relaxed">
-                  {app.description}
-                </p>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

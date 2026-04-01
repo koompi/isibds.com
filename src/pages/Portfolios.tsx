@@ -17,58 +17,193 @@ const Portfolios = () => {
 
   const projects = [
     {
-      id: 1,
-      title: "OCIC",
+      id: 28,
+      title: "OCIC Leasing Factories",
       location: "Phnom Penh",
-      year: "2019",
+      year: "2023",
       category: "Pre-Engineered Buildings",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-ocic.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-ocic-leasing.jpg",
     },
     {
-      id: 2,
-      title: "Storage Warehouse",
+      id: 29,
+      title: "TH Automotive Manufacturing",
       location: "Phnom Penh",
-      year: "2019",
+      year: "2023",
       category: "Pre-Engineered Buildings",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-warehouse.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-th-automotive.jpg",
     },
     {
-      id: 3,
-      title: "MTPC Factory",
-      location: "Phnom Penh",
-      year: "2019",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-mtpc.jpg",
-    },
-    {
-      id: 4,
-      title: "Garment Factory",
-      location: "PPSEZ",
-      year: "2019",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-garment.jpg",
-    },
-    {
-      id: 5,
+      id: 19,
       title: "Techo International Airport",
       location: "Kandal Province",
       year: "2023",
+      category: "Architectural Steel Structures and Roofing Solutions",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-techo-airport.jpg",
+    },
+    {
+      id: 20,
+      title: "Hanuman Brewery Factory",
+      location: "Phnom Penh",
+      year: "2022",
       category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-hanuman.jpg",
+    },
+    {
+      id: 23,
+      title: "Taral Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-taral.jpg",
+    },
+    {
+      id: 25,
+      title: "New Wide Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-new-wide.jpg",
+    },
+    {
+      id: 27,
+      title: "Heng Pao He Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-heng-pao-he.jpg",
+    },
+    {
+      id: 30,
+      title: "Carina Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-carina-factory.jpg",
+    },
+    {
+      id: 31,
+      title: "Orlon Zinc Factory",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-orlon-zinc.jpg",
+    },
+    {
+      id: 14,
+      title: "Aeon Mall Mean Chey",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
+    },
+    {
+      id: 16,
+      title: "ISI Park Stadium",
+      location: "Phnom Penh",
+      year: "2022",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isi-park-stadiumx.jpg",
+    },
+    {
+      id: 21,
+      title: "Khmer Beverages Factory",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg",
+    },
+    {
+      id: 22,
+      title: "Sunfair Factory",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
+    },
+    {
+      id: 24,
+      title: "Marvel Factory",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-marvel.jpg",
+    },
+    {
+      id: 26,
+      title: "Bonny Factory",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Pre-Engineered Buildings",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-bonny.jpg",
+    },
+    {
+      id: 15,
+      title: "ISI Training Ground",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isi-tranning-ground.jpg",
+    },
+    {
+      id: 17,
+      title: "Maha Panha Vihara",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-maha-vihara.jpg",
+    },
+    {
+      id: 18,
+      title: "Chip Mong Mega Mall",
+      location: "Phnom Penh",
+      year: "2021",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/ChipMongMegaMall.webp",
+    },
+    {
+      id: 13,
+      title: "One KMH Tower",
+      location: "Phnom Penh",
+      year: "2020",
+      category: "Architectural Steel Structures and Roofing Solutions",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-techo-airport-2.jpg",
     },
     {
-      id: 6,
-      title: "Rice Mill",
-      location: "Kampong Thom",
+      id: 10,
+      title: "Chip Mong Baktouk Commercial Center",
+      location: "Phnom Penh",
       year: "2019",
-      category: "Pre-Engineered Buildings",
+      category: "Heavy Steel Structures",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-ricemill.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-chipmong.jpg",
+    },
+    {
+      id: 11,
+      title: "The Point Community Mall",
+      location: "Phnom Penh",
+      year: "2019",
+      category: "Heavy Steel Structures",
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-point.jpg",
     },
     {
       id: 7,
@@ -96,204 +231,6 @@ const Portfolios = () => {
       category: "Heavy Steel Structures",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-raintree.jpg",
-    },
-    {
-      id: 10,
-      title: "Chip Mong Baktouk Commercial Center",
-      location: "Phnom Penh",
-      year: "2019",
-      category: "Heavy Steel Structures",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-chipmong.jpg",
-    },
-    {
-      id: 11,
-      title: "The Point Community Mall",
-      location: "Phnom Penh",
-      year: "2019",
-      category: "Heavy Steel Structures",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-point.jpg",
-    },
-    {
-      id: 12,
-      title: "Aeon Mall Sen Sok City",
-      location: "Phnom Penh",
-      year: "2018",
-      category: "Heavy Steel Structures",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-aeon.jpg",
-    },
-    {
-      id: 13,
-      title: "One KMH Tower",
-      location: "Phnom Penh",
-      year: "2020",
-      category: "Architectural Steel Structures and Roofing Solutions",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-techo-airport-2.jpg",
-    },
-    {
-      id: 14,
-      title: "Aeon Mall Mean Chey",
-      location: "Phnom Penh",
-      year: "2022",
-      category: "Heavy Steel Structures",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
-    },
-    {
-      id: 15,
-      title: "ISI Training Ground",
-      location: "Phnom Penh",
-      year: "2021",
-      category: "Heavy Steel Structures",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isi-tranning-ground.jpg",
-    },
-    {
-      id: 16,
-      title: "ISI Park Stadium",
-      location: "Phnom Penh",
-      year: "2022",
-      category: "Heavy Steel Structures",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isi-park-stadiumx.jpg",
-    },
-    {
-      id: 17,
-      title: "Maha Panha Vihara",
-      location: "Phnom Penh",
-      year: "2021",
-      category: "Heavy Steel Structures",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-maha-vihara.jpg",
-    },
-    {
-      id: 18,
-      title: "Chip Mong Mega Mall",
-      location: "Phnom Penh",
-      year: "2021",
-      category: "Heavy Steel Structures",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/ChipMongMegaMall.webp",
-    },
-    {
-      id: 19,
-      title: "Techo International Airport",
-      location: "Kandal Province",
-      year: "2023",
-      category: "Architectural Steel Structures and Roofing Solutions",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-techo-airport.jpg",
-    },
-    {
-      id: 20,
-      title: "Hanuman Brewery Factory",
-      location: "Phnom Penh",
-      year: "2022",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-hanuman.jpg",
-    },
-    {
-      id: 21,
-      title: "Khmer Beverages Factory",
-      location: "Phnom Penh",
-      year: "2021",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg",
-    },
-    {
-      id: 22,
-      title: "Sunfair Factory",
-      location: "Phnom Penh",
-      year: "2021",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
-    },
-    {
-      id: 23,
-      title: "Taral Factory",
-      location: "Phnom Penh",
-      year: "2022",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-taral.jpg",
-    },
-    {
-      id: 24,
-      title: "Marvel Factory",
-      location: "Phnom Penh",
-      year: "2021",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-marvel.jpg",
-    },
-    {
-      id: 25,
-      title: "New Wide Factory",
-      location: "Phnom Penh",
-      year: "2022",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-new-wide.jpg",
-    },
-    {
-      id: 26,
-      title: "Bonny Factory",
-      location: "Phnom Penh",
-      year: "2021",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-bonny.jpg",
-    },
-    {
-      id: 27,
-      title: "Heng Pao He Factory",
-      location: "Phnom Penh",
-      year: "2022",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-heng-pao-he.jpg",
-    },
-    {
-      id: 28,
-      title: "OCIC Leasing Factories",
-      location: "Phnom Penh",
-      year: "2023",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-ocic-leasing.jpg",
-    },
-    {
-      id: 29,
-      title: "TH Automotive Manufacturing",
-      location: "Phnom Penh",
-      year: "2023",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-th-automotive.jpg",
-    },
-    {
-      id: 30,
-      title: "Carina Factory",
-      location: "Phnom Penh",
-      year: "2022",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-carina-factory.jpg",
-    },
-    {
-      id: 31,
-      title: "Orlon Zinc Factory",
-      location: "Phnom Penh",
-      year: "2022",
-      category: "Pre-Engineered Buildings",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-orlon-zinc.jpg",
     },
     {
       id: 32,

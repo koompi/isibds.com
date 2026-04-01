@@ -6,6 +6,7 @@ import Services from "./pages/Services";
 import Portfolios from "./pages/Portfolios";
 import Team from "./pages/Team";
 import BuildingSystems from "./pages/BuildingSystems";
+import IndustrySpecific from "./pages/IndustrySpecific";
 import DesignBuild from "./pages/DesignBuild";
 import Technology from "./pages/Technology";
 import Careers from "./pages/Careers";
@@ -23,6 +24,10 @@ function App() {
 					<Route
 						path="/services/building-systems"
 						element={<BuildingSystems />}
+					/>
+					<Route
+						path="/services/industry-specific"
+						element={<IndustrySpecific />}
 					/>
 					<Route
 						path="/services/design-build"

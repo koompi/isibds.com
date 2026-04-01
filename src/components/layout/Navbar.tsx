@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Menu, X, ChevronDown, ArrowRight, Box, PenTool, Landmark, Users } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Box, PenTool, Landmark, Users, Truck, Sprout, Utensils, Home } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
@@ -50,23 +50,55 @@ const Navbar = () => {
 			],
 		},
 		{
-			name: "Products & Services",
+			name: "Products & Solutions",
+			path: "/services/building-systems",
+			hasDropdown: false,
+		},
+		{
+			name: "Industry Specific",
 			hasDropdown: true,
 			isMega: true,
 			items: [
 				{
-					name: "Building Systems",
-					path: "/services/building-systems",
+					name: "Manufacturing",
+					path: "/services/building-systems#isi-peb-pre-engineered-buildings",
 					icon: Box,
 					description:
-						"Pre-engineered building systems for industrial and commercial applications.",
+						"Garment, Textile, Automotive, and Electronic factory solutions.",
 				},
 				{
-					name: "Architectural Steel Structures",
-					path: "/services/design-build",
-					icon: PenTool,
+					name: "Foods & Beverages",
+					path: "/services/building-systems#isi-peb-pre-engineered-buildings",
+					icon: Utensils,
 					description:
-						"Comprehensive steel and roofing solutions through integrated design-build.",
+						"Brewery, Beverage, and Food processing facility systems.",
+				},
+				{
+					name: "Logistics",
+					path: "/services/building-systems#isi-peb-pre-engineered-buildings",
+					icon: Truck,
+					description:
+						"Distribution centers, Warehouses, and Cold storage solutions.",
+				},
+				{
+					name: "Agriculture",
+					path: "/services/building-systems#isi-greenhouse",
+					icon: Sprout,
+					description:
+						"Greenhouse, Rice mills, and Agri-industry building systems.",
+				},
+				{
+					name: "Residential",
+					path: "/services/building-systems#isi-home",
+					icon: Home,
+					description:
+						"Steel roofing, cladding, and modern Khmer housing solutions.",
+				},
+				{
+					name: "View All Industries",
+					path: "/services/industry-specific",
+					icon: Landmark,
+					description: "Full sector analysis and downloadable brochures.",
 				},
 			],
 		},
@@ -208,8 +240,8 @@ const Navbar = () => {
 						onMouseEnter={() => openDropdown(activeMegaItem.name)}
 						onMouseLeave={scheduleClose}
 					>
-						<div className="container mx-auto px-4 lg:px-8 py-8">
-							<div className="grid grid-cols-2 gap-4 max-w-3xl">
+						<div className="container mx-auto px-4 lg:px-8 py-10">
+							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 								{activeMegaItem.items.map((subItem, subIndex) => {
 									const subActive = isPathActive(subItem.path);
 									const Icon = subItem.icon;
@@ -218,38 +250,40 @@ const Navbar = () => {
 											key={subIndex}
 											to={subItem.path}
 											onClick={() => setActiveDropdown(null)}
-											className={`group/card p-6 border transition-all duration-200 ${
+											className={`group/card p-5 border transition-all duration-200 flex flex-col ${
 												subActive
 													? "border-accent/40 bg-accent/5"
-													: "border-slate-200 hover:border-accent/40 hover:bg-slate-50"
+													: "border-slate-100 hover:border-accent/30 hover:bg-surface-light"
 											}`}
 										>
-											{Icon && (
-												<div className="w-10 h-10 border border-slate-200 flex items-center justify-center mb-4">
-													<Icon size={18} className="text-accent" />
-												</div>
-											)}
-											<h4
-												className={`font-bold text-base mb-2 tracking-tight ${
-													subActive ? "text-accent" : "text-primary"
-												}`}
-											>
-												{subItem.name}
-											</h4>
+											<div className="flex items-center gap-3 mb-3">
+												{Icon && (
+													<div className="w-10 h-10 flex items-center justify-center bg-accent/5 text-accent group-hover/card:bg-accent group-hover/card:text-white transition-all duration-200 flex-shrink-0">
+														<Icon size={18} />
+													</div>
+												)}
+												<h4
+													className={`font-bold text-sm tracking-tight ${
+														subActive ? "text-accent" : "text-primary group-hover/card:text-accent"
+													}`}
+												>
+													{subItem.name}
+												</h4>
+											</div>
 											{subItem.description && (
-												<p className="text-slate-500 text-[13px] leading-relaxed mb-4">
+												<p className="text-steel text-xs leading-relaxed mb-4 flex-grow">
 													{subItem.description}
 												</p>
 											)}
 											<span
-												className={`inline-flex items-center gap-1.5 text-[12px] font-semibold tracking-wide uppercase transition-colors ${
+												className={`inline-flex items-center gap-1.5 text-[11px] font-bold tracking-widest uppercase transition-colors mt-auto ${
 													subActive
 														? "text-accent"
-														: "text-slate-400 group-hover/card:text-accent"
+														: "text-accent/60 group-hover/card:text-accent"
 												}`}
 											>
 												Learn more
-												<ArrowRight size={12} />
+												<ArrowRight size={11} className="group-hover/card:translate-x-0.5 transition-transform" />
 											</span>
 										</Link>
 									);
