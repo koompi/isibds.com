@@ -7,41 +7,6 @@ import { useState } from "react";
 const BuildingSystems = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
-  const industryVerticals = [
-    {
-      title: "Manufacturing",
-      applications: [
-        "Garment and Textile Factory",
-        "Fabric Processing Factory",
-        "Footwear Factory",
-        "Automotive Assembly Plant",
-        "Electronic Factory",
-        "Steel Furniture Factory",
-      ],
-      brochure: "Manufacturing Solutions Brochure",
-    },
-    {
-      title: "Foods & Beverages",
-      applications: ["Brewery Factory", "Beverage Production Factory", "Food Processing Factory"],
-      brochure: "F&B Solutions Brochure",
-    },
-    {
-      title: "Logistics",
-      applications: ["Distribution Center", "Warehouse", "Logistics Center", "Cold Storage"],
-      brochure: "Logistics Solutions Brochure",
-    },
-    {
-      title: "Agriculture",
-      applications: ["Greenhouse", "Rice Mill Factory", "Animal Food Factory", "Animal Shed Farm", "Feed Mill Factory"],
-      brochure: "Agri-industry Solutions Brochure",
-    },
-    {
-      title: "Residential",
-      applications: ["Steel Roofing", "Steel Cladding"],
-      brochure: "Roofing Systems & Solutions Manual",
-    },
-  ];
-
   const systems = [
     {
       title: "ISI PEB (Pre-Engineered Buildings)",
@@ -197,55 +162,6 @@ const BuildingSystems = () => {
                 </p>
               </motion.div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Industry Vertical Solutions */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-px bg-accent"></div>
-              <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Industry Specific
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight uppercase">
-              Solutions by Sector
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {industryVerticals.map((sector, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-surface-light p-8 border-t-2 border-accent/20 hover:border-accent transition-colors group flex flex-col h-full"
-              >
-                <h3 className="text-xl font-bold text-primary mb-6">{sector.title}</h3>
-                <ul className="space-y-3 mb-8 flex-grow">
-                  {sector.applications.map((app, i) => (
-                    <li key={i} className="text-steel text-sm flex items-start gap-2">
-                      <div className="w-1 h-1 bg-accent mt-1.5 flex-shrink-0"></div>
-                      {app}
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-4 border-t border-slate-200 mt-auto">
-                    <span className="text-[10px] font-bold text-accent uppercase tracking-widest block mb-1">Resource</span>
-                    <span className="text-xs font-bold text-primary group-hover:text-accent transition-colors">{sector.brochure}</span>
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
