@@ -1,11 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const BuildingSystems = () => {
-  const [activeSlide, setActiveSlide] = useState(0);
 
   const systems = [
     {

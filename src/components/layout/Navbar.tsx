@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Menu, X, ChevronDown, ArrowRight, Box, PenTool, Landmark, Users, Truck, Sprout, Utensils, Home } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Box, Landmark, Users, Truck, Sprout, Utensils, Home } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
