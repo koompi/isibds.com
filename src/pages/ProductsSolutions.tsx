@@ -4,7 +4,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const BuildingSystems = () => {
+const ProductsSolutions = () => {
 
   const systems = [
     {
@@ -311,4 +311,4 @@ const BuildingSystems = () => {
   );
 };
 
-export default BuildingSystems;
+export default ProductsSolutions;

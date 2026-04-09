@@ -38,7 +38,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, delay: 0.15 }}
-                className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem] font-bold text-white leading-[1.05] tracking-tight mb-8"
+                className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.05] tracking-tight mb-8"
               >
                 Leader in
                 <br />

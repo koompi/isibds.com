@@ -35,7 +35,7 @@ const Navbar = () => {
 		},
 		{
 			name: "Products & Solutions",
-			path: "/services/building-systems",
+			path: "/products-solutions",
 			hasDropdown: false,
 		},
 		{
@@ -125,7 +125,7 @@ const Navbar = () => {
 					</Link>
 
 					{/* Desktop Menu */}
-					<div className="hidden lg:flex items-center gap-1">
+					<div className="hidden lg:flex items-center gap-0.5">
 						{navItems.map((item, index) => {
 							if (item.hasDropdown && item.items) {
 								const isActive = isDropdownActive(item.items);
@@ -137,7 +137,7 @@ const Navbar = () => {
 										onMouseLeave={scheduleClose}
 									>
 										<button
-											className={`relative px-3 xl:px-4 py-2 text-[13px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer flex items-center gap-1.5 ${
+											className={`relative px-2.5 xl:px-3 py-2 text-[11px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer flex items-center gap-1.5 ${
 												isActive
 													? "text-accent"
 													: "text-primary hover:text-primary-dark"
@@ -165,7 +165,7 @@ const Navbar = () => {
 									<Link
 										key={index}
 										to={item.path || "#"}
-										className={`relative px-3 xl:px-4 py-2 text-[13px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer ${
+										className={`relative px-2.5 xl:px-3 py-2 text-[11px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer ${
 											isActive
 												? "text-accent"
 												: "text-primary hover:text-primary-dark"
@@ -188,7 +188,7 @@ const Navbar = () => {
 					<div className="flex items-center gap-3">
 						<button
 							onClick={() => setPdfOpen(true)}
-							className="hidden lg:inline-flex items-center gap-1.5 text-[13px] font-semibold px-5 py-2.5 bg-accent text-white hover:bg-accent-dark transition-all duration-200 cursor-pointer"
+							className="hidden lg:inline-flex items-center gap-1.5 text-[11px] font-semibold px-4 py-2 bg-accent text-white hover:bg-accent-dark transition-all duration-200 cursor-pointer"
 						>
 							Download
 							<ArrowRight size={14} />

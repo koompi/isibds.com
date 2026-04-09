@@ -8,7 +8,7 @@ const IndustrySpecific = () => {
     {
       title: "Manufacturing",
       icon: Factory,
-      link: "/services/building-systems#isi-peb-pre-engineered-buildings",
+      link: "/products-solutions#isi-peb-pre-engineered-buildings",
       applications: [
         "Garment and Textile Factory",
         "Fabric Processing Factory",
@@ -22,7 +22,7 @@ const IndustrySpecific = () => {
     {
       title: "Foods & Beverages",
       icon: Utensils,
-      link: "/services/building-systems#isi-peb-pre-engineered-buildings",
+      link: "/products-solutions#isi-peb-pre-engineered-buildings",
       applications: [
         "Brewery Factory",
         "Beverage Production Factory",
@@ -33,7 +33,7 @@ const IndustrySpecific = () => {
     {
       title: "Logistics",
       icon: Truck,
-      link: "/services/building-systems#isi-peb-pre-engineered-buildings",
+      link: "/products-solutions#isi-peb-pre-engineered-buildings",
       applications: [
         "Distribution Center",
         "Warehouse",
@@ -45,7 +45,7 @@ const IndustrySpecific = () => {
     {
       title: "Agriculture",
       icon: Sprout,
-      link: "/services/building-systems#isi-greenhouse",
+      link: "/products-solutions#isi-greenhouse",
       applications: [
         "Greenhouse",
         "Rice Mill Factory",
@@ -58,7 +58,7 @@ const IndustrySpecific = () => {
     {
       title: "Residential",
       icon: Home,
-      link: "/services/building-systems#isi-home",
+      link: "/products-solutions#isi-home",
       applications: ["Steel Roofing", "Steel Cladding"],
       brochure: "Roofing Systems & Solutions Manual",
     },

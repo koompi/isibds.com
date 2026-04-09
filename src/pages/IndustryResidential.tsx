@@ -104,7 +104,7 @@ const IndustryResidential = () => {
 
               <div className="mt-12">
                 <Link
-                  to="/services/building-systems"
+                  to="/products-solutions"
                   className="inline-flex items-center gap-3 bg-accent text-white font-bold text-sm py-4 px-8 hover:bg-accent-dark transition-all"
                 >
                   VIEW PRODUCTS & SOLUTIONS <ArrowRight size={16} />

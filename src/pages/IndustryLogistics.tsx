@@ -14,7 +14,7 @@ const IndustryLogistics = () => {
   const projects = [
     {
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/logistic-1.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/logistic-warehouse.jpg",
     },
     {
       image:
@@ -106,7 +106,7 @@ const IndustryLogistics = () => {
 
               <div className="mt-12">
                 <Link
-                  to="/services/building-systems"
+                  to="/products-solutions"
                   className="inline-flex items-center gap-3 bg-accent text-white font-bold text-sm py-4 px-8 hover:bg-accent-dark transition-all"
                 >
                   VIEW PRODUCTS & SOLUTIONS <ArrowRight size={16} />

@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Portfolios from "./pages/Portfolios";
-import BuildingSystems from "./pages/BuildingSystems";
+import ProductsSolutions from "./pages/ProductsSolutions";
 import IndustryManufacturing from "./pages/IndustryManufacturing";
 import IndustryAgriculture from "./pages/IndustryAgriculture";
 import IndustryFoodBeverage from "./pages/IndustryFoodBeverage";
@@ -24,8 +24,8 @@ function App() {
 					<Route path="/about" element={<About />} />
 					<Route path="/services" element={<Services />} />
 					<Route
-						path="/services/building-systems"
-						element={<BuildingSystems />}
+						path="/products-solutions"
+						element={<ProductsSolutions />}
 					/>
 					<Route
 						path="/services/industry-specific/manufacturing"

@@ -204,7 +204,7 @@ const Portfolios = () => {
       year: "2025",
       category: "Pre-Engineered Buildings",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-vital.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-steel/3D-assets/images/Vital.JPG",
     },
     {
       id: 8,
