@@ -24,7 +24,7 @@ const PeopleCultureSection = () => {
   ];
 
   return (
-    <section className="py-28 bg-white">
+    <section className="hidden py-28 bg-white">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
           {/* Content — left */}

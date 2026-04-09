@@ -46,7 +46,7 @@ const ServicesSection = () => {
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
               Products &<br />
-              Services
+              Solutions
             </h2>
           </motion.div>
           <motion.div

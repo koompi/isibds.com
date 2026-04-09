@@ -94,7 +94,7 @@ const HeroSection = () => {
               <div className="grid grid-cols-2 lg:grid-cols-2 border-t lg:border-t-0 lg:border-l border-white/10 py-8 lg:py-0 lg:pl-12">
                 {[
                   { value: 1000, suffix: "+", label: "Projects Completed" },
-                  { value: 12, suffix: "+", label: "Years of Innovation" },
+                  { value: 15, suffix: "+", label: "Years of Innovation" },
                   { value: 300, suffix: "+", label: "Team Members" },
                   {
                     value: 0,

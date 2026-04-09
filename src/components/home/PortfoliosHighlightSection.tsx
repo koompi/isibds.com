@@ -5,22 +5,22 @@ import { Link } from "react-router-dom";
 const PortfoliosHighlightSection = () => {
   const portfolios = [
     {
-      title: "Aeon Mall 2 Parking Structure",
-      category: "Commercial",
+      title: "Sunfair Garment Factory",
+      category: "Pre-Engineered Buildings",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/Homes-2.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
     },
     {
-      title: "International Exhibition Hall",
-      category: "Public Infrastructure",
+      title: "Khmer Beverages",
+      category: "Pre-Engineered Buildings",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/Homes-6.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg",
     },
     {
-      title: "KMH Industrial Park",
-      category: "Industrial",
+      title: "AEON Mall Meanchey",
+      category: "Heavy Steel Structures",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/Homes-10.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
     },
   ];
 

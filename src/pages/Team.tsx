@@ -168,7 +168,7 @@ const Team = () => {
                     label: "Departments",
                   },
                   {
-                    value: 12,
+                    value: 15,
                     suffix: "+",
                     label: "Years Together",
                   },

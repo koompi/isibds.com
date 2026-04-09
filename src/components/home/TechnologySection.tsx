@@ -27,6 +27,12 @@ const TechnologySection = () => {
     },
   ];
 
+  const techMetrics = [
+    { label: "Model Coordination", value: "99.2%" },
+    { label: "Fabrication Precision", value: "±1.5mm" },
+    { label: "Delivery Visibility", value: "24/7" },
+  ];
+
   return (
     <section className="py-28 bg-primary-dark relative overflow-hidden">
       {/* Blueprint grid */}
@@ -48,88 +54,109 @@ const TechnologySection = () => {
       <div className="absolute left-0 top-0 h-40 w-1 bg-accent" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
-          {/* Image — left */}
+        <div className="lg:grid lg:grid-cols-12 lg:gap-10 items-stretch">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-6 mb-12 lg:mb-0"
+            className="lg:col-span-5 mb-10 lg:mb-0"
           >
-            <div className="relative">
-              <img
-                src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/Homes-7-1.jpg"
-                alt="Advanced Technology"
-                className="w-full"
-              />
-              {/* Accent offset frame */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/30 -z-10" />
+            <div className="h-full flex flex-col">
+              <div>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-8 h-px bg-accent" />
+                  <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
+                    Innovation Engine
+                  </span>
+                </div>
+
+                <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-6 leading-tight tracking-tight">
+                  Software &amp;
+                  <br />
+                  Technology
+                </h2>
+                <p className="text-white/45 text-base leading-relaxed mb-8">
+                  Utilizing practical technologies to improve productivity and
+                  accelerate toward a sustainable future. We integrate advanced
+                  software solutions in design and manufacturing to ensure precision
+                  and efficiency.
+                </p>
+              </div>
+
+              <div className="mt-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-px border border-white/10 mb-8">
+                  {techMetrics.map((metric, index) => (
+                    <div
+                      key={index}
+                      className="bg-white/[0.03] px-5 py-4 hover:bg-white/[0.06] transition-colors duration-300"
+                    >
+                      <p className="text-[11px] uppercase tracking-[0.16em] text-white/35 mb-1">
+                        {metric.label}
+                      </p>
+                      <p className="text-lg font-bold text-white tracking-tight">
+                        {metric.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <Link
+                  to="/technology"
+                  className="group inline-flex items-center gap-2 bg-accent text-white font-semibold text-sm py-3.5 px-7 hover:bg-accent-dark transition-colors cursor-pointer"
+                >
+                  Discover Our Tech
+                  <ChevronRight
+                    size={16}
+                    className="group-hover:translate-x-0.5 transition-transform"
+                  />
+                </Link>
+              </div>
             </div>
           </motion.div>
 
-          {/* Content — right */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-5 lg:col-start-8"
+            className="lg:col-span-7"
           >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-px bg-accent" />
-              <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Innovation Engine
-              </span>
-            </div>
+            <div className="relative h-full border border-white/10 bg-primary-dark/70 overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_20%,rgba(212,98,43,0.2),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(255,255,255,0.08),transparent_40%)]" />
+              <div className="absolute left-8 right-8 top-1/2 h-px bg-white/10 pointer-events-none" />
+              <div className="absolute left-1/2 top-8 bottom-8 w-px bg-white/10 pointer-events-none" />
 
-            <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-6 leading-tight tracking-tight">
-              Software &amp;
-              <br />
-              Technology
-            </h2>
-            <p className="text-white/45 text-base leading-relaxed mb-10">
-              Utilizing practical technologies to improve productivity and
-              accelerate toward a sustainable future. We integrate advanced
-              software solutions in design and manufacturing to ensure precision
-              and efficiency.
-            </p>
-
-            {/* Numbered spec feature list */}
-            <div className="space-y-px mb-10">
-              {techFeatures.map((feat, i) => (
-                <div
-                  key={i}
-                  className="group flex items-start gap-5 p-5 border border-white/10 hover:border-accent/50 hover:bg-white/[0.05] transition-all duration-300"
-                >
-                  <div className="w-10 h-10 border border-white/15 flex items-center justify-center flex-shrink-0 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300">
-                    <feat.icon size={16} className="text-accent" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-white/25 tracking-[0.2em] uppercase font-mono mb-1">
-                      {feat.num} —
-                    </div>
-                    <h4 className="font-bold text-white text-sm tracking-tight mb-1">
-                      {feat.title}
-                    </h4>
-                    <p className="text-white/40 text-[13px] leading-relaxed">
-                      {feat.description}
-                    </p>
-                  </div>
+              <div className="relative z-10 p-6 md:p-8 lg:p-10 h-full">
+                <div className="text-[11px] uppercase tracking-[0.2em] text-accent font-bold mb-6">
+                  Digital Workflow Stack
                 </div>
-              ))}
-            </div>
 
-            <Link
-              to="/technology"
-              className="group inline-flex items-center gap-2 bg-accent text-white font-semibold text-sm py-3.5 px-7 hover:bg-accent-dark transition-colors cursor-pointer"
-            >
-              Discover Our Tech
-              <ChevronRight
-                size={16}
-                className="group-hover:translate-x-0.5 transition-transform"
-              />
-            </Link>
+                <div className="space-y-px border border-white/10">
+                  {techFeatures.map((feat, i) => (
+                    <div
+                      key={i}
+                      className="group flex items-start gap-5 p-5 bg-primary-dark/60 hover:bg-white/[0.04] transition-all duration-300"
+                    >
+                      <div className="w-10 h-10 border border-white/15 flex items-center justify-center flex-shrink-0 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-300">
+                        <feat.icon size={16} className="text-accent" />
+                      </div>
+                      <div>
+                        <div className="text-[10px] text-white/25 tracking-[0.2em] uppercase font-mono mb-1">
+                          {feat.num} —
+                        </div>
+                        <h4 className="font-bold text-white text-sm md:text-base tracking-tight mb-1">
+                          {feat.title}
+                        </h4>
+                        <p className="text-white/45 text-[13px] md:text-sm leading-relaxed">
+                          {feat.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

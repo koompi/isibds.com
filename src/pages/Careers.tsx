@@ -7,6 +7,9 @@ import {
   Users,
   Briefcase,
   GraduationCap,
+  Cog,
+  TrendingUp,
+  Sprout,
 } from "lucide-react";
 
 const Careers = () => {
@@ -121,49 +124,41 @@ const Careers = () => {
       </section>
 
       {/* Culture & Philosophy */}
-      <section className="py-28 bg-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-center">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-12 items-start">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="lg:col-span-6 mb-12 lg:mb-0"
+              className="lg:col-span-6 mb-10 lg:mb-0"
             >
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
                   Why Join Us
                 </span>
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-6">
+              <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-5">
                 Realize Your
                 <br />
                 Potential With Us
               </h2>
-              <p className="text-steel text-base leading-relaxed mb-6">
+              <p className="text-steel text-base leading-relaxed mb-4">
                 We are committed to engineering and innovation, employing over
                 300 engineers and skilled technicians across multiple
                 disciplines including engineering, manufacturing, fabrication,
                 construction, project management, architecture, and business
                 administration.
               </p>
-              <p className="text-steel text-base leading-relaxed mb-8">
+              <p className="text-steel text-base leading-relaxed mb-6">
                 We are the breeding ground for young professionals — more than
                 half our workforce is homegrown talent. We position ourselves as
                 "The Employer of Choice" in our industries, actively recruiting
                 "The Right People" and investing heavily in employee
                 development.
               </p>
-
-              <div className="bg-surface-light p-6 border-l-4 border-accent">
-                <p className="text-primary text-lg font-semibold">
-                  Over the next 2-3 years, we will actively look for 'The Right
-                  People' to join our team while investing in professional
-                  development to support exponential growth.
-                </p>
-              </div>
             </motion.div>
 
             <motion.div
@@ -173,17 +168,52 @@ const Careers = () => {
               transition={{ duration: 0.7, delay: 0.15 }}
               className="lg:col-span-6"
             >
-              <div className="relative">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-project-management.jpg"
-                    alt="Our Team"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/20 -z-10"></div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  {
+                    icon: Cog,
+                    title: "Engineering & Innovation",
+                    desc: "Work with cutting-edge prefabrication and steel structure technologies.",
+                  },
+                  {
+                    icon: Users,
+                    title: "300+ Professionals",
+                    desc: "Join a team of engineers, technicians, and specialists across disciplines.",
+                  },
+                  {
+                    icon: Sprout,
+                    title: "Homegrown Talent",
+                    desc: "More than half our workforce is developed from within — we invest in you.",
+                  },
+                  {
+                    icon: TrendingUp,
+                    title: "Exponential Growth",
+                    desc: "Be part of a company scaling rapidly across Cambodia and the region.",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-surface-light p-5 border border-slate-100"
+                  >
+                    <div className="w-10 h-10 bg-accent/10 flex items-center justify-center mb-3">
+                      <item.icon size={20} className="text-accent" />
+                    </div>
+                    <h3 className="text-sm font-bold text-primary mb-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-steel text-xs leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </motion.div>
+          </div>
+
+          <div className="mt-10 bg-surface-light py-5 px-6 border-l-4 border-accent">
+            <p className="text-primary text-base font-semibold">
+              Over the next 2-3 years, we will actively look for 'The Right People' to join our team while investing in professional development to support exponential growth.
+            </p>
           </div>
         </div>
       </section>
@@ -281,7 +311,7 @@ const Careers = () => {
       </section>
 
       {/* Current Openings */}
-      <section className="py-28 bg-primary-dark relative overflow-hidden">
+      <section className="hidden py-28 bg-primary-dark relative overflow-hidden">
         {/* Blueprint grid */}
         <div
           className="absolute inset-0 pointer-events-none"

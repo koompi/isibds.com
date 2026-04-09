@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Menu, X, ChevronDown, ArrowRight, Box, Landmark, Users, Truck, Sprout, Utensils, Home } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Box, Truck, Sprout, Utensils, Home } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
@@ -30,24 +30,8 @@ const Navbar = () => {
 	const navItems: NavItem[] = [
 		{
 			name: "About",
-			hasDropdown: true,
-			isMega: true,
-			items: [
-				{
-					name: "ISI Building Solutions",
-					path: "/about",
-					icon: Landmark,
-					description:
-						"Cambodia's leader in pre-engineered buildings and steel structures since our founding.",
-				},
-				{
-					name: "Our Team",
-					path: "/about/team",
-					icon: Users,
-					description:
-						"Meet the engineers, managers, and professionals driving every project forward.",
-				},
-			],
+			path: "/about",
+			hasDropdown: false,
 		},
 		{
 			name: "Products & Solutions",
@@ -61,44 +45,38 @@ const Navbar = () => {
 			items: [
 				{
 					name: "Manufacturing",
-					path: "/services/building-systems#isi-peb-pre-engineered-buildings",
+					path: "/services/industry-specific/manufacturing",
 					icon: Box,
 					description:
 						"Garment, Textile, Automotive, and Electronic factory solutions.",
 				},
 				{
 					name: "Foods & Beverages",
-					path: "/services/building-systems#isi-peb-pre-engineered-buildings",
+					path: "/services/industry-specific/food-beverage",
 					icon: Utensils,
 					description:
 						"Brewery, Beverage, and Food processing facility systems.",
 				},
 				{
 					name: "Logistics",
-					path: "/services/building-systems#isi-peb-pre-engineered-buildings",
+					path: "/services/industry-specific/logistics",
 					icon: Truck,
 					description:
 						"Distribution centers, Warehouses, and Cold storage solutions.",
 				},
 				{
 					name: "Agriculture",
-					path: "/services/building-systems#isi-greenhouse",
+					path: "/services/industry-specific/agriculture",
 					icon: Sprout,
 					description:
 						"Greenhouse, Rice mills, and Agri-industry building systems.",
 				},
 				{
 					name: "Residential",
-					path: "/services/building-systems#isi-home",
+					path: "/services/industry-specific/residential",
 					icon: Home,
 					description:
 						"Steel roofing, cladding, and modern Khmer housing solutions.",
-				},
-				{
-					name: "View All Industries",
-					path: "/services/industry-specific",
-					icon: Landmark,
-					description: "Full sector analysis and downloadable brochures.",
 				},
 			],
 		},
@@ -236,12 +214,12 @@ const Navbar = () => {
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: 8 }}
 						transition={{ duration: 0.18 }}
-						className="hidden lg:block w-full bg-white border-t border-slate-200 shadow-xl"
+						className="hidden lg:block w-full bg-white/50 backdrop-blur-xl border-t border-white/30 shadow-xl"
 						onMouseEnter={() => openDropdown(activeMegaItem.name)}
 						onMouseLeave={scheduleClose}
 					>
-						<div className="container mx-auto px-4 lg:px-8 py-10">
-							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+						<div className="container mx-auto px-4 lg:px-8 py-8">
+							<div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
 								{activeMegaItem.items.map((subItem, subIndex) => {
 									const subActive = isPathActive(subItem.path);
 									const Icon = subItem.icon;
@@ -250,16 +228,16 @@ const Navbar = () => {
 											key={subIndex}
 											to={subItem.path}
 											onClick={() => setActiveDropdown(null)}
-											className={`group/card p-5 border transition-all duration-200 flex flex-col ${
+											className={`group/card p-4 border transition-all duration-200 flex flex-col ${
 												subActive
-													? "border-accent/40 bg-accent/5"
-													: "border-slate-100 hover:border-accent/30 hover:bg-surface-light"
+													? "border-accent/40 bg-accent/5 backdrop-blur-sm"
+													: "border-slate-200 bg-white/30 backdrop-blur-sm hover:border-accent/30 hover:bg-white/50"
 											}`}
 										>
-											<div className="flex items-center gap-3 mb-3">
+											<div className="flex items-center gap-3 mb-2">
 												{Icon && (
-													<div className="w-10 h-10 flex items-center justify-center bg-accent/5 text-accent group-hover/card:bg-accent group-hover/card:text-white transition-all duration-200 flex-shrink-0">
-														<Icon size={18} />
+													<div className="w-9 h-9 flex items-center justify-center bg-accent/5 text-accent group-hover/card:bg-accent group-hover/card:text-white transition-all duration-200 flex-shrink-0">
+														<Icon size={16} />
 													</div>
 												)}
 												<h4
@@ -271,7 +249,7 @@ const Navbar = () => {
 												</h4>
 											</div>
 											{subItem.description && (
-												<p className="text-steel text-xs leading-relaxed mb-4 flex-grow">
+												<p className="text-steel text-xs leading-relaxed mb-3 flex-grow">
 													{subItem.description}
 												</p>
 											)}

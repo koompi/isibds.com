@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Shield, Lightbulb, Heart, Leaf } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Shield, Lightbulb, Heart, Leaf } from "lucide-react";
 import { AnimatedCounter } from "../components/ui/AnimatedCounter";
 
 const About = () => {
@@ -188,16 +187,6 @@ const About = () => {
                 project we undertake.
               </p>
 
-              <Link
-                to="/about/team"
-                className="group inline-flex items-center gap-3 text-sm text-accent font-semibold hover:text-primary transition-colors cursor-pointer"
-              >
-                <span>Meet Our Team</span>
-                <ArrowRight
-                  size={14}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </Link>
             </motion.div>
 
             {/* Image */}

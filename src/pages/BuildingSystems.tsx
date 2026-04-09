@@ -52,9 +52,9 @@ const BuildingSystems = () => {
         "Aesthetic design, built for multi-purpose creativity",
       ],
       images: [
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/fdbb47e0-1a89-4d40-873f-db814d12c4fc.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/29e4080a-07b0-43e5-a85d-d6ab1b9b4bb3.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/b606730b-936b-421f-8047-dacdc4e39861.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/29e4080a-07b0-43e5-a85d-d6ab1b9b4bb3.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/fdbb47e0-1a89-4d40-873f-db814d12c4fc.jpg",
       ],
     },
     {
@@ -84,27 +84,12 @@ const BuildingSystems = () => {
         "Quick on-site assembly without cutting quality.",
       ],
       images: [
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-1.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-2.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-1.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-3.jpg",
       ],
     },
-    {
-      title: "ISI Truss",
-      description:
-        "High-strength, lightweight steel truss systems engineered for precision and durability. Ideal for residential and commercial roofing support, providing a cost-effective alternative to traditional timber while ensuring long-term structural integrity.",
-      benefits: [
-        "Precision-engineered for perfect fit and alignment",
-        "High-quality galvanized steel for corrosion resistance",
-        "Lightweight design reducing load on building structures",
-        "Termite-proof and non-combustible material",
-        "Fast installation process on-site",
-      ],
-      images: [
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/building-systems.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/product-and-service-1.jpg",
-      ],
-    },
+
   ];
 
   return (

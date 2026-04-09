@@ -4,9 +4,12 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Portfolios from "./pages/Portfolios";
-import Team from "./pages/Team";
 import BuildingSystems from "./pages/BuildingSystems";
-import IndustrySpecific from "./pages/IndustrySpecific";
+import IndustryManufacturing from "./pages/IndustryManufacturing";
+import IndustryAgriculture from "./pages/IndustryAgriculture";
+import IndustryFoodBeverage from "./pages/IndustryFoodBeverage";
+import IndustryResidential from "./pages/IndustryResidential";
+import IndustryLogistics from "./pages/IndustryLogistics";
 import DesignBuild from "./pages/DesignBuild";
 import Technology from "./pages/Technology";
 import Careers from "./pages/Careers";
@@ -19,15 +22,30 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/about" element={<About />} />
-					<Route path="/about/team" element={<Team />} />
 					<Route path="/services" element={<Services />} />
 					<Route
 						path="/services/building-systems"
 						element={<BuildingSystems />}
 					/>
 					<Route
-						path="/services/industry-specific"
-						element={<IndustrySpecific />}
+						path="/services/industry-specific/manufacturing"
+						element={<IndustryManufacturing />}
+					/>
+					<Route
+						path="/services/industry-specific/agriculture"
+						element={<IndustryAgriculture />}
+					/>
+					<Route
+						path="/services/industry-specific/food-beverage"
+						element={<IndustryFoodBeverage />}
+					/>
+					<Route
+						path="/services/industry-specific/residential"
+						element={<IndustryResidential />}
+					/>
+					<Route
+						path="/services/industry-specific/logistics"
+						element={<IndustryLogistics />}
 					/>
 					<Route
 						path="/services/design-build"

@@ -20,7 +20,7 @@ const Portfolios = () => {
       id: 28,
       title: "OCIC Leasing Factories",
       location: "Phnom Penh",
-      year: "2023",
+      year: "2026",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-ocic-leasing.jpg",
@@ -28,8 +28,8 @@ const Portfolios = () => {
     {
       id: 29,
       title: "TH Automotive Manufacturing",
-      location: "Phnom Penh",
-      year: "2023",
+      location: "Kampong Chhnang Province",
+      year: "2026",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-th-automotive.jpg",
@@ -38,7 +38,7 @@ const Portfolios = () => {
       id: 19,
       title: "Techo International Airport",
       location: "Kandal Province",
-      year: "2023",
+      year: "2025",
       category: "Architectural Steel Structures and Roofing Solutions",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-techo-airport.jpg",
@@ -47,7 +47,7 @@ const Portfolios = () => {
       id: 20,
       title: "Hanuman Brewery Factory",
       location: "Phnom Penh",
-      year: "2022",
+      year: "2025",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-hanuman.jpg",
@@ -55,8 +55,8 @@ const Portfolios = () => {
     {
       id: 23,
       title: "Taral Factory",
-      location: "Phnom Penh",
-      year: "2022",
+      location: "Kampong Speu Province",
+      year: "2024",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-taral.jpg",
@@ -64,7 +64,7 @@ const Portfolios = () => {
     {
       id: 25,
       title: "New Wide Factory",
-      location: "Phnom Penh",
+      location: "ISI Park 2",
       year: "2022",
       category: "Pre-Engineered Buildings",
       image:
@@ -73,8 +73,8 @@ const Portfolios = () => {
     {
       id: 27,
       title: "Heng Pao He Factory",
-      location: "Phnom Penh",
-      year: "2022",
+      location: "ISI Park 2",
+      year: "2025",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-heng-pao-he.jpg",
@@ -82,8 +82,8 @@ const Portfolios = () => {
     {
       id: 30,
       title: "Carina Factory",
-      location: "Phnom Penh",
-      year: "2022",
+      location: "Kandal Province",
+      year: "2025",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-carina-factory.jpg",
@@ -91,8 +91,8 @@ const Portfolios = () => {
     {
       id: 31,
       title: "Orlon Zinc Factory",
-      location: "Phnom Penh",
-      year: "2022",
+      location: "Sihanoukville",
+      year: "2025",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-orlon-zinc.jpg",
@@ -101,7 +101,7 @@ const Portfolios = () => {
       id: 14,
       title: "Aeon Mall Mean Chey",
       location: "Phnom Penh",
-      year: "2022",
+      year: "2023",
       category: "Heavy Steel Structures",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
@@ -119,7 +119,7 @@ const Portfolios = () => {
       id: 21,
       title: "Khmer Beverages Factory",
       location: "Phnom Penh",
-      year: "2021",
+      year: "2024",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg",
@@ -128,7 +128,7 @@ const Portfolios = () => {
       id: 22,
       title: "Sunfair Factory",
       location: "Phnom Penh",
-      year: "2021",
+      year: "2025",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
@@ -137,7 +137,7 @@ const Portfolios = () => {
       id: 24,
       title: "Marvel Factory",
       location: "Phnom Penh",
-      year: "2021",
+      year: "2022",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-marvel.jpg",
@@ -145,8 +145,8 @@ const Portfolios = () => {
     {
       id: 26,
       title: "Bonny Factory",
-      location: "Phnom Penh",
-      year: "2021",
+      location: "ISI Park 2",
+      year: "2025",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-bonny.jpg",
@@ -154,8 +154,8 @@ const Portfolios = () => {
     {
       id: 15,
       title: "ISI Training Ground",
-      location: "Phnom Penh",
-      year: "2021",
+      location: "ISI Park",
+      year: "2026",
       category: "Heavy Steel Structures",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isi-tranning-ground.jpg",
@@ -173,20 +173,12 @@ const Portfolios = () => {
       id: 18,
       title: "Chip Mong Mega Mall",
       location: "Phnom Penh",
-      year: "2021",
+      year: "2023",
       category: "Heavy Steel Structures",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/ChipMongMegaMall.webp",
     },
-    {
-      id: 13,
-      title: "One KMH Tower",
-      location: "Phnom Penh",
-      year: "2020",
-      category: "Architectural Steel Structures and Roofing Solutions",
-      image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-techo-airport-2.jpg",
-    },
+
     {
       id: 10,
       title: "Chip Mong Baktouk Commercial Center",
@@ -209,7 +201,7 @@ const Portfolios = () => {
       id: 7,
       title: "Vital Premium Water Factory",
       location: "Phnom Penh",
-      year: "2018",
+      year: "2025",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/portfolio-vital.jpg",
@@ -236,7 +228,7 @@ const Portfolios = () => {
       id: 32,
       title: "Elysian Dreams International Factory",
       location: "Phnom Penh",
-      year: "2023",
+      year: "2026",
       category: "Pre-Engineered Buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/project-elysian-dreams.jpg",

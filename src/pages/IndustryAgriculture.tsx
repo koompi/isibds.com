@@ -1,0 +1,148 @@
+import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const IndustryAgriculture = () => {
+  const applications = [
+    "Greenhouse",
+    "Rice Mill Factory",
+    "Animal Food Factory",
+    "Animal Shed Farm",
+    "Feed Mill Factory",
+  ];
+
+  const projects = [
+    {
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/boiler-factory.jpg",
+    },
+    {
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/cp-cassava-warehouse.jpg",
+    },
+    {
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/m's-pig-acmc.png",
+    },
+    {
+      image:
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/tropicam-fruit-vegetable.jpg",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen">
+      <Helmet>
+        <title>Agriculture Solutions | ISI Building Solutions</title>
+        <meta
+          name="description"
+          content="Pre-engineered building solutions for agriculture — greenhouses, rice mills, animal sheds, and more."
+        />
+      </Helmet>
+
+      {/* Hero Banner */}
+      <section className="relative pt-[72px]">
+        <div className="relative h-[40vh] min-h-[300px] overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/boiler-factory.jpg')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-primary-dark/85"></div>
+          <div className="relative z-10 h-full flex items-center">
+            <div className="container mx-auto px-4 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-px bg-accent"></div>
+                  <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
+                    Industry Specific
+                  </span>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight max-w-3xl uppercase">
+                  Agriculture
+                </h1>
+                <p className="text-white/60 text-lg mt-6 max-w-2xl leading-relaxed">
+                  Durable steel structures designed for modern farming —
+                  greenhouses, rice mills, animal sheds, and agri-industry
+                  facilities.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content — Two Column */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-start">
+            {/* Left — Applications */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="lg:col-span-5 mb-12 lg:mb-0"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-px bg-accent"></div>
+                <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
+                  Applications
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight tracking-tight mb-10 uppercase">
+                Agriculture
+              </h2>
+
+              <ul className="space-y-5">
+                {applications.map((app, i) => (
+                  <li key={i} className="flex items-center gap-4">
+                    <div className="w-2 h-2 bg-accent rounded-full flex-shrink-0"></div>
+                    <span className="text-lg font-semibold text-primary">
+                      {app}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-12">
+                <Link
+                  to="/services/building-systems"
+                  className="inline-flex items-center gap-3 bg-accent text-white font-bold text-sm py-4 px-8 hover:bg-accent-dark transition-all"
+                >
+                  VIEW PRODUCTS & SOLUTIONS <ArrowRight size={16} />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right — 2x2 Photo Grid */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="lg:col-span-7"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                {projects.map((project, i) => (
+                  <div key={i} className="overflow-hidden">
+                    <div className="aspect-[4/3]">
+                      <img
+                        src={project.image}
+                        alt="Agriculture project"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default IndustryAgriculture;

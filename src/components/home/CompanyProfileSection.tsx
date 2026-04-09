@@ -91,7 +91,7 @@ const CompanyProfileSection = () => {
             <div className="grid grid-cols-3 divide-x divide-white/10">
               {[
                 { value: 1000, suffix: "+", label: "Projects" },
-                { value: 12, suffix: "+", label: "Years" },
+                { value: 15, suffix: "+", label: "Years" },
                 { value: 300, suffix: "+", label: "Team" },
               ].map((stat, i) => (
                 <div key={i} className="py-6 px-6 first:pl-0">
