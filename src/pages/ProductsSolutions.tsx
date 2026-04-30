@@ -1,10 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const ProductsSolutions = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.querySelector(hash);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [hash]);
 
   const systems = [
     {
@@ -58,9 +65,9 @@ const ProductsSolutions = () => {
       ],
     },
     {
-      title: "ISI Roofing Solutions",
+      title: "ISI TRUSS",
       description:
-        "ISI Roofing Solutions offers a comprehensive range of roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates. We cater to residential, commercial, warehouse, and heavy industrial applications, focusing on advanced coating technologies and structural integrity.",
+        "ISI TRUSS offers a comprehensive range of roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates. We cater to residential, commercial, warehouse, and heavy industrial applications, focusing on advanced coating technologies and structural integrity.",
       benefits: [
         "Water leakage prevention",
         "Lower electricity bills with heat-reflecting advanced insulation",
@@ -173,12 +180,12 @@ const ProductsSolutions = () => {
                     duration: 0.6,
                     delay: index * 0.05,
                   }}
-                  className={`lg:grid lg:grid-cols-12 lg:gap-16 items-center pt-16 -mt-16 ${index % 2 === 1 ? "lg:direction-rtl" : ""
+                  className={`lg:grid lg:grid-cols-12 lg:gap-16 items-center pt-16 -mt-16 scroll-mt-24 ${index % 2 === 1 ? "lg:direction-rtl" : ""
                     }`}
                 >
                   {/* Content */}
                   <div
-                    className={`lg:col-span-6 mb-12 lg:mb-0 ${index % 2 === 1 ? "lg:col-start-7 text-right" : ""
+                    className={`lg:col-span-6 mb-12 lg:mb-0 lg:min-h-[440px] flex flex-col justify-center ${index % 2 === 1 ? "lg:col-start-7 text-right" : ""
                       }`}
                   >
                     <div className={`flex items-center gap-4 mb-4 ${index % 2 === 1 ? "justify-end" : ""}`}>
@@ -213,7 +220,7 @@ const ProductsSolutions = () => {
                       }`}
                   >
                     <div className="relative group">
-                      <div className="aspect-[4/3] overflow-hidden bg-slate-100">
+                      <div className="h-[440px] overflow-hidden bg-slate-100">
                         <AnimatePresence mode="wait">
                           <motion.img
                             key={currentImg}

@@ -12,8 +12,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
 	// Reset scroll on route change
 	React.useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [location.pathname]);
+		if (!location.hash) {
+			window.scrollTo(0, 0);
+		}
+	}, [location.pathname, location.hash]);
 
 	return (
 		<div className="flex flex-col min-h-screen">

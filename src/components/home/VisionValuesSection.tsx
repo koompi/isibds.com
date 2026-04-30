@@ -28,7 +28,7 @@ const VisionValuesSection = () => {
 			num: "03",
 			title: "Values",
 			description:
-				"Integrity, Innovation, Excellence, and Customer-Centricity in everything we do.",
+				"Our Core Values are Innovation, Striving, Integrity and Growing Together (ISIG).",
 		},
 	];
 

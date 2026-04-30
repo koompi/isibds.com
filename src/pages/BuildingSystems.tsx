@@ -58,9 +58,9 @@ const BuildingSystems = () => {
       ],
     },
     {
-      title: "ISI Roofing Solutions",
+      title: "ISI TRUSS",
       description:
-        "ISI Roofing Solutions offers a comprehensive range of roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates. We cater to residential, commercial, warehouse, and heavy industrial applications, focusing on advanced coating technologies and structural integrity.",
+        "ISI TRUSS offers a comprehensive range of roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates. We cater to residential, commercial, warehouse, and heavy industrial applications, focusing on advanced coating technologies and structural integrity.",
       benefits: [
         "Water leakage prevention",
         "Lower electricity bills with heat-reflecting advanced insulation",

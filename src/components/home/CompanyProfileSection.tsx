@@ -42,7 +42,7 @@ const CompanyProfileSection = () => {
 
             {/* Certifications */}
             <div className="flex items-center gap-6 mb-10 pb-10 border-b border-white/10">
-              {["ISO 9001:2015", "Expert Engineers", "Sustainable"].map(
+              {["ISO 9001:2015", "Expert Engineers", "Sustainability"].map(
                 (cert, i) => (
                   <div key={i} className="text-center">
                     <div className="w-12 h-12 border border-white/15 flex items-center justify-center mb-2 mx-auto">

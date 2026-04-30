@@ -7,6 +7,7 @@ const IndustryResidential = () => {
   const applications = [
     "Steel Roofing",
     "Steel Cladding",
+    "ISI Home",
   ];
 
   const projects = [

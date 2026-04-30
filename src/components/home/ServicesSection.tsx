@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Box, Building2, Sprout, Shield, Home } from "lucide-react";
+import { ArrowRight, Factory, Building2, Sprout, Layers, House } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
@@ -8,7 +8,7 @@ const ServicesSection = () => {
   const services = [
     {
       num: "01",
-      icon: Box,
+      icon: Factory,
       title: "ISI PEB",
       description:
         "Complete pre-engineered building systems with standing seam roofing, wall cladding, and accessories for industrial and commercial applications.",
@@ -28,11 +28,11 @@ const ServicesSection = () => {
     },
     {
       num: "03",
-      icon: Shield,
-      title: "ISI Roofing Solutions",
+      icon: Layers,
+      title: "ISI TRUSS",
       description:
         "Comprehensive roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates.",
-      link: "/products-solutions#isi-roofing-solutions",
+      link: "/products-solutions#isi-truss",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-solution-1.jpg",
     },
@@ -48,7 +48,7 @@ const ServicesSection = () => {
     },
     {
       num: "05",
-      icon: Home,
+      icon: House,
       title: "ISI Home",
       description:
         "Innovative housing solutions blending traditional Khmer aesthetics with modern steel engineering for safe, affordable living.",
@@ -97,54 +97,52 @@ const ServicesSection = () => {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {services.map((service, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: index * 0.06 }}
-            className="group flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-[42vw] lg:w-[30vw] xl:w-[23vw] border border-slate-200 hover:border-accent/40 bg-white hover:shadow-lg transition-all duration-300"
-          >
-            {/* Image with number overlay */}
-            <div className="relative overflow-hidden">
-              <div className="aspect-[16/10] overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent"></div>
-              <span className="absolute bottom-3 left-5 text-5xl font-bold text-white/15 select-none">
-                {service.num}
-              </span>
-            </div>
-
-            {/* Content */}
-            <div className="p-5 lg:p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-8 h-8 border border-slate-200 flex items-center justify-center group-hover:border-accent group-hover:bg-accent/5 transition-colors">
-                  <service.icon size={15} className="text-accent" />
+          <Link key={index} to={service.link} className="flex-shrink-0 w-[85vw] sm:w-[60vw] md:w-[42vw] lg:w-[30vw] xl:w-[23vw]">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.06 }}
+              className="group h-full border border-slate-200 hover:border-accent/40 bg-white hover:shadow-lg transition-all duration-300"
+            >
+              {/* Image with number overlay */}
+              <div className="relative overflow-hidden">
+                <div className="aspect-[16/10] overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
                 </div>
-                <h3 className="text-base font-bold text-primary tracking-tight group-hover:text-accent transition-colors">
-                  {service.title}
-                </h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent"></div>
+                <span className="absolute bottom-3 left-5 text-5xl font-bold text-white/15 select-none">
+                  {service.num}
+                </span>
               </div>
-              <p className="text-steel text-sm leading-relaxed mb-5 line-clamp-3">
-                {service.description}
-              </p>
-              <Link
-                to={service.link}
-                className="inline-flex items-center gap-2 text-xs font-bold tracking-wide uppercase text-primary group-hover:text-accent transition-colors cursor-pointer"
-              >
-                Learn More
-                <ArrowRight
-                  size={13}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </Link>
-            </div>
-          </motion.div>
+
+              {/* Content */}
+              <div className="p-5 lg:p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 border border-slate-200 flex items-center justify-center group-hover:border-accent group-hover:bg-accent/5 transition-colors">
+                    <service.icon size={15} className="text-accent" />
+                  </div>
+                  <h3 className="text-base font-bold text-primary tracking-tight group-hover:text-accent transition-colors">
+                    {service.title}
+                  </h3>
+                </div>
+                <p className="text-steel text-sm leading-relaxed mb-5 line-clamp-3">
+                  {service.description}
+                </p>
+                <span className="inline-flex items-center gap-2 text-xs font-bold tracking-wide uppercase text-primary group-hover:text-accent transition-colors">
+                  Learn More
+                  <ArrowRight
+                    size={13}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
+                </span>
+              </div>
+            </motion.div>
+          </Link>
         ))}
       </motion.div>
     </section>

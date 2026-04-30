@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Menu, X, ChevronDown, ArrowRight, Box, Truck, Sprout, Utensils, Home } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Warehouse, Truck, Sprout, Utensils, Home, Building2, Triangle, TentTree, HousePlus, Factory } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
@@ -36,7 +36,40 @@ const Navbar = () => {
 		{
 			name: "Products & Solutions",
 			path: "/products-solutions",
-			hasDropdown: false,
+			hasDropdown: true,
+			isMega: true,
+			items: [
+				{
+					name: "ISI PEB",
+					path: "/products-solutions#isi-peb-pre-engineered-buildings",
+					icon: Warehouse,
+					description: "Complete pre-engineered building systems for industrial and commercial applications.",
+				},
+				{
+					name: "Heavy Steel Structures",
+					path: "/products-solutions#heavy-steel-structures",
+					icon: Building2,
+					description: "Specialized steel structural systems for office buildings, malls, and mixed-use developments.",
+				},
+				{
+					name: "ISI TRUSS",
+					path: "/products-solutions#isi-truss",
+					icon: Triangle,
+					description: "Comprehensive roofing systems for durability and high performance in tropical climates.",
+				},
+				{
+					name: "ISI Greenhouse",
+					path: "/products-solutions#isi-greenhouse",
+					icon: TentTree,
+					description: "Pre-engineered structural solutions for modern agriculture and sustainable farming.",
+				},
+				{
+					name: "ISI Home",
+					path: "/products-solutions#isi-home",
+					icon: HousePlus,
+					description: "Innovative housing blending Khmer aesthetics with modern steel engineering.",
+				},
+			],
 		},
 		{
 			name: "Industry Specific",
@@ -46,7 +79,7 @@ const Navbar = () => {
 				{
 					name: "Manufacturing",
 					path: "/services/industry-specific/manufacturing",
-					icon: Box,
+					icon: Factory,
 					description:
 						"Garment, Textile, Automotive, and Electronic factory solutions.",
 				},
@@ -76,7 +109,7 @@ const Navbar = () => {
 					path: "/services/industry-specific/residential",
 					icon: Home,
 					description:
-						"Steel roofing, cladding, and modern Khmer housing solutions.",
+						"Steel roofing, cladding, and modern housing solutions.",
 				},
 			],
 		},
