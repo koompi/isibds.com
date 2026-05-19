@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(superpowers:brainstorming)",
+      "Skill(superpowers:brainstorming:*)",
+      "Bash(mkdir -p /Users/batman/Desktop/isibds.com/docs/superpowers/specs)",
+      "Bash(npx tsc *)",
+      "Bash(python3 -)",
+      "Bash(npm run *)"
+    ],
+    "additionalDirectories": [
+      "/Users/batman/Desktop/isibds.com/docs/superpowers"
+    ]
+  }
+}

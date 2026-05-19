@@ -169,28 +169,46 @@ const Contact = () => {
                     <h3 className="text-white font-bold text-lg tracking-tight mb-4">
                       Call Us
                     </h3>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-4">
-                        <span className="text-[10px] border border-white/20 px-2.5 py-1 text-white/40 tracking-[0.12em] uppercase font-mono flex-shrink-0">
-                          KH / ENG
-                        </span>
-                        <a
-                          href="tel:+85511919202"
-                          className="text-white/70 text-[15px] hover:text-accent transition-colors"
-                        >
-                          +855 (0) 11 919 202
-                        </a>
+                    <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 sm:items-start">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-4">
+                          <span className="text-[10px] border border-white/20 px-2.5 py-1 text-white/40 tracking-[0.12em] uppercase font-mono flex-shrink-0">
+                            KH / ENG
+                          </span>
+                          <a
+                            href="tel:+85511919202"
+                            className="text-white/70 text-[15px] hover:text-accent transition-colors"
+                          >
+                            +855 (0) 11 919 202
+                          </a>
+                        </div>
+                        <div className="flex items-center gap-4">
+                          <span className="text-[10px] border border-white/20 px-2.5 py-1 text-white/40 tracking-[0.12em] uppercase font-mono flex-shrink-0">
+                            CH
+                          </span>
+                          <a
+                            href="tel:+85511919212"
+                            className="text-white/70 text-[15px] hover:text-accent transition-colors"
+                          >
+                            +855 (0) 11 919 212
+                          </a>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-4">
-                        <span className="text-[10px] border border-white/20 px-2.5 py-1 text-white/40 tracking-[0.12em] uppercase font-mono flex-shrink-0">
-                          CH
-                        </span>
-                        <a
-                          href="tel:+85511919212"
-                          className="text-white/70 text-[15px] hover:text-accent transition-colors"
-                        >
-                          +855 (0) 11 919 212
-                        </a>
+
+                      {/* QR Codes */}
+                      <div className="flex items-end gap-4">
+                        <div className="flex flex-col items-center gap-2">
+                          <img src="/images/kh-en-qr.png" alt="Telegram QR KH/ENG" className="w-28 h-28 object-contain" />
+                          <span className="text-[10px] text-white/35 tracking-[0.15em] uppercase font-mono">KH/ENG</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                          <img src="/images/ch-qr.png" alt="Telegram QR CH" className="w-28 h-28 object-contain" />
+                          <span className="text-[10px] text-white/35 tracking-[0.15em] uppercase font-mono">CH</span>
+                        </div>
+                        <div className="flex flex-col items-center gap-2">
+                          <img src="/wechat-contact-bds.png" alt="WeChat QR" className="w-28 h-28 object-contain" />
+                          <span className="text-[10px] text-white/35 tracking-[0.15em] uppercase font-mono">WeChat</span>
+                        </div>
                       </div>
                     </div>
                   </div>
