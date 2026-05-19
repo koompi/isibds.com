@@ -91,7 +91,7 @@ const ServicesSection = () => {
       {/* Drag-scrollable carousel — bleeds to edge, peeks next card */}
       <motion.div
         ref={scrollRef}
-        className="flex gap-5 cursor-grab active:cursor-grabbing overflow-x-auto scrollbar-hide pl-4 lg:pl-[max(2rem,calc((100vw-1280px)/2+2rem))] pr-8"
+        className="flex gap-6 cursor-grab active:cursor-grabbing overflow-x-auto scrollbar-hide pl-4 lg:pl-[max(2rem,calc((100vw-1280px)/2+2rem))] pr-4 lg:pr-[max(2rem,calc((100vw-1280px)/2+2rem))]"
         drag="x"
         dragConstraints={scrollRef}
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}

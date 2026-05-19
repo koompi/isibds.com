@@ -315,7 +315,7 @@ const Navbar = () => {
 						transition={{ duration: 0.25 }}
 						className="lg:hidden bg-white border-t border-slate-200 shadow-xl overflow-hidden"
 					>
-						<div className="flex flex-col px-6 py-4 gap-1">
+						<div className="flex flex-col px-6 py-4 gap-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
 							{navItems.map((item, index) => {
 								if (item.hasDropdown && item.items) {
 									const isActive = isDropdownActive(item.items);

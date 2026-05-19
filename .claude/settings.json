@@ -6,7 +6,11 @@
       "Bash(mkdir -p /Users/batman/Desktop/isibds.com/docs/superpowers/specs)",
       "Bash(npx tsc *)",
       "Bash(python3 -)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Skill(superpowers:using-superpowers)",
+      "Skill(superpowers:using-superpowers:*)",
+      "Skill(superpowers:systematic-debugging)",
+      "Skill(superpowers:systematic-debugging:*)"
     ],
     "additionalDirectories": [
       "/Users/batman/Desktop/isibds.com/docs/superpowers"
