@@ -47,6 +47,23 @@ const ProductsSolutions = () => {
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/aeon.jpg",
       ],
     },
+
+    {
+      title: "ISI TRUSS",
+      description:
+        "ISI TRUSS offers a comprehensive range of roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates. We cater to residential, commercial, warehouse, and heavy industrial applications, focusing on advanced coating technologies and structural integrity.",
+      benefits: [
+        "Water leakage prevention",
+        "Lower electricity bills with heat-reflecting advanced insulation",
+        "Lock out water with 360-degree seaming technology.",
+        "Extend building life with climate-resistant protective coatings.",
+      ],
+      images: [
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-solution-1.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-2.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-3.jpg",
+      ],
+    },
     {
       title: "ISI Greenhouse",
       description:
@@ -65,22 +82,6 @@ const ProductsSolutions = () => {
       ],
     },
     {
-      title: "ISI TRUSS",
-      description:
-        "ISI TRUSS offers a comprehensive range of roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates. We cater to residential, commercial, warehouse, and heavy industrial applications, focusing on advanced coating technologies and structural integrity.",
-      benefits: [
-        "Water leakage prevention",
-        "Lower electricity bills with heat-reflecting advanced insulation",
-        "Lock out water with 360-degree seaming technology.",
-        "Extend building life with climate-resistant protective coatings.",
-      ],
-      images: [
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-solution-1.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-2.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-3.jpg",
-      ],
-    },
-    {
       title: "ISI Home",
       description:
         "ISI Homes offers innovative housing solutions that blend traditional Khmer aesthetics with modern engineering. Designed for safety, health, and affordability, we provide rural and suburban communities with high-quality homes built for lasting stability.",
@@ -96,7 +97,6 @@ const ProductsSolutions = () => {
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-3.jpg",
       ],
     },
-
   ];
 
   return (
@@ -120,10 +120,7 @@ const ProductsSolutions = () => {
           property="og:url"
           content="https://isibds.com/products-solutions"
         />
-        <link
-          rel="canonical"
-          href="https://isibds.com/products-solutions"
-        />
+        <link rel="canonical" href="https://isibds.com/products-solutions" />
       </Helmet>
       {/* Hero Banner */}
       <section className="relative pt-[72px]">
@@ -163,11 +160,19 @@ const ProductsSolutions = () => {
           <div className="space-y-32">
             {systems.map((system, index) => {
               const [currentImg, setCurrentImg] = useState(0);
-              const nextImg = () => setCurrentImg((prev) => (prev + 1) % system.images.length);
-              const prevImg = () => setCurrentImg((prev) => (prev - 1 + system.images.length) % system.images.length);
+              const nextImg = () =>
+                setCurrentImg((prev) => (prev + 1) % system.images.length);
+              const prevImg = () =>
+                setCurrentImg(
+                  (prev) =>
+                    (prev - 1 + system.images.length) % system.images.length,
+                );
 
               // Generate ID for industry menu links
-              const sectionId = system.title.toLowerCase().replace(/\s+/g, '-').replace(/[()]/g, '');
+              const sectionId = system.title
+                .toLowerCase()
+                .replace(/\s+/g, "-")
+                .replace(/[()]/g, "");
 
               return (
                 <motion.div
@@ -180,16 +185,22 @@ const ProductsSolutions = () => {
                     duration: 0.6,
                     delay: index * 0.05,
                   }}
-                  className={`lg:grid lg:grid-cols-12 lg:gap-16 items-center pt-16 -mt-16 scroll-mt-24 ${index % 2 === 1 ? "lg:direction-rtl" : ""
-                    }`}
+                  className={`lg:grid lg:grid-cols-12 lg:gap-16 items-center pt-16 -mt-16 scroll-mt-24 ${
+                    index % 2 === 1 ? "lg:direction-rtl" : ""
+                  }`}
                 >
                   {/* Content */}
                   <div
-                    className={`lg:col-span-6 mb-12 lg:mb-0 lg:min-h-[440px] flex flex-col justify-center ${index % 2 === 1 ? "lg:col-start-7 text-right" : ""
-                      }`}
+                    className={`lg:col-span-6 mb-12 lg:mb-0 lg:min-h-[440px] flex flex-col justify-center ${
+                      index % 2 === 1 ? "lg:col-start-7 text-right" : ""
+                    }`}
                   >
-                    <div className={`flex items-center gap-4 mb-4 ${index % 2 === 1 ? "justify-end" : ""}`}>
-                      <span className="text-accent/40 text-4xl font-black tracking-tighter">0{index + 1}</span>
+                    <div
+                      className={`flex items-center gap-4 mb-4 ${index % 2 === 1 ? "justify-end" : ""}`}
+                    >
+                      <span className="text-accent/40 text-4xl font-black tracking-tighter">
+                        0{index + 1}
+                      </span>
                       <div className="h-px w-8 bg-accent/20"></div>
                     </div>
                     <h3 className="text-3xl md:text-4xl font-bold text-primary tracking-tight mb-6 uppercase">
@@ -199,12 +210,19 @@ const ProductsSolutions = () => {
                       {system.description}
                     </p>
 
-                    <div className={`grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 ${index % 2 === 1 ? "text-right" : ""}`}>
+                    <div
+                      className={`grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 ${index % 2 === 1 ? "text-right" : ""}`}
+                    >
                       <div className="col-span-full mb-2">
-                        <h4 className="text-accent text-[11px] font-bold tracking-[0.2em] uppercase">Key Features & Benefits</h4>
+                        <h4 className="text-accent text-[11px] font-bold tracking-[0.2em] uppercase">
+                          Key Features & Benefits
+                        </h4>
                       </div>
                       {system.benefits.map((benefit, i) => (
-                        <div key={i} className={`flex items-start gap-3 ${index % 2 === 1 ? "flex-row-reverse" : ""}`}>
+                        <div
+                          key={i}
+                          className={`flex items-start gap-3 ${index % 2 === 1 ? "flex-row-reverse" : ""}`}
+                        >
                           <div className="w-1.5 h-1.5 bg-accent flex-shrink-0 mt-2"></div>
                           <span className="text-steel text-[15px] font-medium leading-snug">
                             {benefit}
@@ -216,8 +234,9 @@ const ProductsSolutions = () => {
 
                   {/* Slider Image */}
                   <div
-                    className={`lg:col-span-6 ${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
-                      }`}
+                    className={`lg:col-span-6 ${
+                      index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
+                    }`}
                   >
                     <div className="relative group">
                       <div className="h-[440px] overflow-hidden bg-slate-100">
@@ -236,27 +255,33 @@ const ProductsSolutions = () => {
                       </div>
 
                       {/* Navigation Controls */}
-                      <div className={`absolute bottom-6 ${index % 2 === 1 ? "left-6" : "right-6"} flex gap-2 z-10`}>
+                      <div
+                        className={`absolute bottom-6 ${index % 2 === 1 ? "left-6" : "right-6"} flex gap-2 z-10`}
+                      >
                         <button
                           onClick={prevImg}
-                          className="w-12 h-12 bg-white/90 hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center cursor-pointer shadow-lg"
+                          className="w-12 h-12 bg-white/40 text-white hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center cursor-pointer shadow-lg"
                         >
                           <ChevronLeft size={20} />
                         </button>
                         <button
                           onClick={nextImg}
-                          className="w-12 h-12 bg-white/90 hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center cursor-pointer shadow-lg"
+                          className="w-12 h-12 bg-white/40 text-white hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center cursor-pointer shadow-lg"
                         >
                           <ChevronRight size={20} />
                         </button>
                       </div>
 
                       {/* Counter */}
-                      <div className={`absolute top-6 ${index % 2 === 1 ? "right-6 font-bold" : "left-6 font-bold"} text-white drop-shadow-md text-xs tracking-widest`}>
+                      <div
+                        className={`absolute top-6 ${index % 2 === 1 ? "right-6 font-bold" : "left-6 font-bold"} text-white drop-shadow-md text-xs tracking-widest`}
+                      >
                         {currentImg + 1} / {system.images.length}
                       </div>
 
-                      <div className={`absolute -bottom-6 ${index % 2 === 1 ? "-left-6" : "-right-6"} w-full h-full border-2 border-accent/10 -z-10`}></div>
+                      <div
+                        className={`absolute -bottom-6 ${index % 2 === 1 ? "-left-6" : "-right-6"} w-full h-full border-2 border-accent/10 -z-10`}
+                      ></div>
                     </div>
                   </div>
                 </motion.div>
