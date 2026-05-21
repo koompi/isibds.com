@@ -91,8 +91,9 @@ const ProductsSolutions = () => {
         "Aesthetic design, built for multi-purpose creativity",
       ],
       images: [
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/29e4080a-07b0-43e5-a85d-d6ab1b9b4bb3.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/fdbb47e0-1a89-4d40-873f-db814d12c4fc.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/Greenhouse/20250521_GREENHOUSE-3.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/Greenhouse/20250521_GREENHOUSE-2.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/Greenhouse/20250521_GREENHOUSE-1.jpg",
       ],
     },
     {

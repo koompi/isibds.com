@@ -48,7 +48,7 @@ const ServicesSection = () => {
         "High-quality pre-engineered structural solutions tailored for modern agriculture, focusing on durability, climate control, and rapid assembly.",
       link: "/products-solutions#isi-greenhouse",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/29e4080a-07b0-43e5-a85d-d6ab1b9b4bb3.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/Greenhouse/20250521_GREENHOUSE-3.jpg",
     },
     {
       num: "05",
