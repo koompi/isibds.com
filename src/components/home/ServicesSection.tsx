@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Factory, Building2, Sprout, Layers, House } from "lucide-react";
+import {
+  ArrowRight,
+  Factory,
+  Building2,
+  Sprout,
+  Layers,
+  House,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 const ServicesSection = () => {
   const services = [
@@ -41,7 +48,7 @@ const ServicesSection = () => {
         "High-quality pre-engineered structural solutions tailored for modern agriculture, focusing on durability, climate control, and rapid assembly.",
       link: "/products-solutions#isi-greenhouse",
       image:
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/b606730b-936b-421f-8047-dacdc4e39861.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/29e4080a-07b0-43e5-a85d-d6ab1b9b4bb3.jpg",
     },
     {
       num: "05",
@@ -77,9 +84,9 @@ const ServicesSection = () => {
               Solutions
             </h2>
             <p className="text-steel text-base leading-relaxed mt-6 max-w-2xl">
-              Offering practical solutions that streamline steel structure design
-              and build process, improving manufacturing productivity, and
-              providing superior quality buildings.
+              Offering practical solutions that streamline steel structure
+              design and build process, improving manufacturing productivity,
+              and providing superior quality buildings.
             </p>
           </motion.div>
         </div>
