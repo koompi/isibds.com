@@ -29,6 +29,13 @@ const ProductsSolutions = () => {
       images: [
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-marvel.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/PEB/Bonny Factory-5.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/PEB/Carina Factory-6.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/PEB/Heng Pao He Factory-6.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/PEB/ISI Training Ground-3.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/PEB/OCIC Leasing Factories-2.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/PEB/Orlon Zinc Factory-2.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/PEB/Vital Premium Water Factory-2.jpg",
       ],
     },
     {
@@ -45,6 +52,8 @@ const ProductsSolutions = () => {
       images: [
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/aeon.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-maha-vihara.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/portfolios/af8a41b7-628c-4d2d-9a90-45d3f951b66d.jpg",
       ],
     },
 
@@ -62,6 +71,12 @@ const ProductsSolutions = () => {
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-solution-1.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-2.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-3.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-10.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-13.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-21.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-33.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-38.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-39.jpg",
       ],
     },
     {
@@ -76,7 +91,6 @@ const ProductsSolutions = () => {
         "Aesthetic design, built for multi-purpose creativity",
       ],
       images: [
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/b606730b-936b-421f-8047-dacdc4e39861.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/29e4080a-07b0-43e5-a85d-d6ab1b9b4bb3.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/fdbb47e0-1a89-4d40-873f-db814d12c4fc.jpg",
       ],
