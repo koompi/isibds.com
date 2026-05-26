@@ -92,30 +92,50 @@ const Footer = () => {
                   ISI Park National Road 2, Phum Kraing Sbov, Preah Puth
                   Commune, Kandal Steung District, Kandal Province, Cambodia
                 </p>
-                <a
-                  href="tel:+85511919202"
-                  className="flex items-center gap-2 hover:text-accent transition-colors"
-                >
-                  <Phone size={14} className="flex-shrink-0 text-accent" />
-                  +855 11 919 202
-                </a>
+                {contacts.map((c, i) => (
+                  <a
+                    key={i}
+                    href={`tel:${c.phone.replace(/\s|\(0\)/g, "")}`}
+                    className="flex items-center gap-2 hover:text-accent transition-colors"
+                  >
+                    <Phone size={14} className="flex-shrink-0 text-accent" />
+                    <span className="text-xs font-bold tracking-[0.08em] text-white/50 uppercase mr-1">
+                      {c.sublabel}
+                    </span>
+                    {c.phone}
+                  </a>
+                ))}
                 <a
                   href="mailto:sales@isibds.com"
                   className="text-accent hover:text-accent/80 transition-colors"
                 >
                   sales@isibds.com
                 </a>
-                {/* <div className="pt-2 space-y-3">
-								<button
-									onClick={() => setActivePopup("telegram")}
-									className="flex items-center gap-3 border border-white/20 px-4 py-2.5 hover:border-accent/50 transition-colors cursor-pointer w-full text-left"
-								>
-									<Send size={16} className="text-white/70" />
-									<span className="text-xs font-bold tracking-[0.1em] uppercase">
-										Telegram
-									</span>
-								</button>
-							</div> */}
+                {/* QR Codes */}
+                <div className="flex gap-3 pt-2">
+                  {contacts.map((c, i) => (
+                    <div key={i} className="flex flex-col items-center gap-1">
+                      <img
+                        src={c.qr}
+                        alt={`${c.sublabel} QR`}
+                        className="w-14 h-14 object-contain"
+                      />
+                      <span className="text-[9px] font-bold tracking-[0.12em] uppercase text-white/50">
+                        {c.sublabel}
+                      </span>
+                    </div>
+                  ))}
+                  <div className="flex flex-col items-center gap-1">
+                    <img
+                      src="/wechat-contact-bds.png"
+                      alt="WeChat QR"
+                      className="w-14 h-14 object-contain"
+                    />
+                    <span className="text-[9px] font-bold tracking-[0.12em] uppercase text-white/50">
+                      WeChat
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
 

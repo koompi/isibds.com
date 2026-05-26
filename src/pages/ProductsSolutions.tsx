@@ -17,7 +17,7 @@ const ProductsSolutions = () => {
     {
       title: "ISI PEB (Pre-Engineered Buildings)",
       description:
-        "ISI Pre-Engineered Buildings (PEB) is a complete systems package that incorporates new features of standing seam roofing solution, attractive wall cladding, standardized trim, and other accessories, providing excellent performance in terms of speed, cost effectiveness, long-term durability, functionality, appearance, and especially water leakage prevention. Ideal for both industrial and commercial applications such as warehouses, logistics facilities, and complex structures.",
+        "ISI Pre-Engineered Buildings (PEB) is a complete system that incorporates new features of standing seam roofing solution, attractive wall cladding, standardized trim, and other accessories, providing excellent performance in terms of speed, cost effectiveness, long-term durability, functionality, appearance, and especially water leakage prevention. Ideal for both industrial and commercial applications such as warehouses, logistics facilities, and complex structures.",
       benefits: [
         "Adaptable building codes",
         "Superior materials specifications",
@@ -68,15 +68,11 @@ const ProductsSolutions = () => {
         "Extend building life with climate-resistant protective coatings.",
       ],
       images: [
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-solution-1.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-2.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-3.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-10.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-13.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-21.jpg",
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-33.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-38.jpg",
-        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-39.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260512_Chankiri_Roofing-38.jpg",
+        "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260512_Chankiri_Roofing-39.jpg",
       ],
     },
     {

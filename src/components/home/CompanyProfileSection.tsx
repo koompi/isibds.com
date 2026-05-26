@@ -37,7 +37,12 @@ const CompanyProfileSection = () => {
               Pre-engineered Buildings
             </h2>
             <p className="text-white/50 mb-10 text-base leading-relaxed max-w-md">
-              We have successfully completed over 1,000 projects, ranging from essential industrial hubs like the KMH Industrial Park to iconic landmarks such as the AEON Mall Parking Structure. Our expertise demonstrates a superior ability to deliver high-performance steel solutions tailored to the diverse and complex requirements of your business and investment.
+              We have successfully completed over 1,000 projects, ranging from
+              essential industrial hubs like the ISI Industrial Parks to iconic
+              landmarks such as the AEON Mall Parking Structure. Our expertise
+              demonstrates a superior ability to deliver high-performance steel
+              solutions tailored to the diverse and complex requirements of your
+              business and investment.
             </p>
 
             {/* Certifications */}
