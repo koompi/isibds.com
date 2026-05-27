@@ -27,8 +27,7 @@ const VisionValuesSection = () => {
     {
       num: "03",
       title: "Integrity",
-      description:
-        "Building trust through transparency and reliable delivery.",
+      description: "Building trust through transparency and reliable delivery.",
     },
     {
       num: "04",
@@ -51,7 +50,7 @@ const VisionValuesSection = () => {
 
       {/* Ghost watermark */}
       <div className="absolute -bottom-8 right-0 text-[22vw] font-bold text-white/[0.025] leading-none select-none pointer-events-none tracking-tighter">
-        VISION
+        VALUES
       </div>
 
       {/* Accent spine */}
