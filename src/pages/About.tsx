@@ -1,33 +1,33 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { Shield, Lightbulb, Heart, Leaf } from "lucide-react";
+import { Shield, Lightbulb, Target, Users } from "lucide-react";
 import { AnimatedCounter } from "../components/ui/AnimatedCounter";
 
 const About = () => {
   const values = [
     {
       icon: Lightbulb,
-      title: "Engineering & Innovation",
+      title: "Innovation",
       description:
-        "Our DNA is rooted in engineering excellence and continuous innovation across design, fabrication, and construction.",
+        "Driving change through cutting-edge prefabrication technology.",
+    },
+    {
+      icon: Target,
+      title: "Striving",
+      description:
+        "Pursuing excellence in every bolt, beam, and building we create.",
     },
     {
       icon: Shield,
-      title: "Integrity & Dedication",
+      title: "Integrity",
       description:
-        "Integrity is the foundation where we stand for centuries. We believe in dedication and hard work.",
+        "Building trust through transparency and reliable delivery.",
     },
     {
-      icon: Heart,
-      title: "Harmony & Wellbeing",
+      icon: Users,
+      title: "Growing Together",
       description:
-        "We foster harmony, work-life balance, and wellbeing as the most fundamental source of act of kindness.",
-    },
-    {
-      icon: Leaf,
-      title: "Environmental Sustainability",
-      description:
-        "Blending with nature is the most efficient way in maintaining environmental sustainability.",
+        "Empowering communities and advancing Cambodia's development.",
     },
   ];
 
@@ -138,7 +138,7 @@ const About = () => {
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-xl leading-relaxed">
                   A member of ISI Group — one of Cambodia's most respected and
-                  diversified corporations with 25+ years of experience.
+                  diversified corporations with nearly 30 years of experience.
                 </p>
               </motion.div>
             </div>
@@ -186,7 +186,6 @@ const About = () => {
                 reinforcing our unwavering commitment to quality in every
                 project we undertake.
               </p>
-
             </motion.div>
 
             {/* Image */}
@@ -358,7 +357,7 @@ const About = () => {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-px bg-white/[0.06]">
             {values.map((item, index) => (
               <motion.div
                 key={index}
@@ -425,15 +424,17 @@ const About = () => {
                     duration: 0.5,
                     delay: index * 0.1,
                   }}
-                  className={`lg:grid lg:grid-cols-2 lg:gap-16 lg:py-10 relative ${index % 2 === 0 ? "" : "lg:direction-rtl"
-                    }`}
+                  className={`lg:grid lg:grid-cols-2 lg:gap-16 lg:py-10 relative ${
+                    index % 2 === 0 ? "" : "lg:direction-rtl"
+                  }`}
                 >
                   {/* Content */}
                   <div
-                    className={`${index % 2 === 0
-                      ? "lg:text-right lg:pr-16"
-                      : "lg:col-start-2 lg:pl-16"
-                      }`}
+                    className={`${
+                      index % 2 === 0
+                        ? "lg:text-right lg:pr-16"
+                        : "lg:col-start-2 lg:pl-16"
+                    }`}
                   >
                     <span className="text-accent text-sm font-bold tracking-wider">
                       {item.year}
