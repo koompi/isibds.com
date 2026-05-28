@@ -2,12 +2,15 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const IndustryFoodBeverage = () => {
+  const { t } = useTranslation();
+
   const applications = [
-    "Brewery Factory",
-    "Beverage Production Factory",
-    "Food Processing Factory",
+    t("industry.foodBeverage_app1"),
+    t("industry.foodBeverage_app2"),
+    t("industry.foodBeverage_app3"),
   ];
 
   const projects = [
@@ -32,11 +35,8 @@ const IndustryFoodBeverage = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Food & Beverage Solutions | ISI Building Solutions</title>
-        <meta
-          name="description"
-          content="Pre-engineered building solutions for food and beverage — breweries, beverage production, and food processing facilities."
-        />
+        <title>{t("industry.foodBeverage_metaTitle")}</title>
+        <meta name="description" content={t("industry.foodBeverage_metaDesc")} />
       </Helmet>
 
       {/* Hero Banner */}
@@ -54,15 +54,14 @@ const IndustryFoodBeverage = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Industry Specific
+                    {t("industry.foodBeverage_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight max-w-3xl uppercase">
-                  Food & Beverage
+                  {t("industry.foodBeverage_title")}
                 </h1>
                 <p className="text-white/60 text-lg mt-6 max-w-2xl leading-relaxed">
-                  Purpose-built steel structures for breweries, beverage
-                  production lines, and food processing facilities.
+                  {t("industry.foodBeverage_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -85,11 +84,11 @@ const IndustryFoodBeverage = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Applications
+                  {t("industry.applications")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight tracking-tight mb-10 uppercase">
-                Food & Beverage
+                {t("industry.foodBeverage_title")}
               </h2>
 
               <ul className="space-y-5">
@@ -108,7 +107,7 @@ const IndustryFoodBeverage = () => {
                   to="/products-solutions"
                   className="inline-flex items-center gap-3 bg-accent text-white font-bold text-sm py-4 px-8 hover:bg-accent-dark transition-all"
                 >
-                  VIEW PRODUCTS & SOLUTIONS <ArrowRight size={16} />
+                  {t("industry.viewProducts")} <ArrowRight size={16} />
                 </Link>
               </div>
             </motion.div>
@@ -127,7 +126,7 @@ const IndustryFoodBeverage = () => {
                     <div className="aspect-[4/3]">
                       <img
                         src={project.image}
-                        alt="Food and Beverage project"
+                        alt={t("industry.foodBeverage_title")}
                         className="w-full h-full object-cover"
                       />
                     </div>

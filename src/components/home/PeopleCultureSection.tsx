@@ -1,25 +1,26 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PeopleCultureSection = () => {
+  const { t } = useTranslation();
+
   const highlights = [
     {
       num: "01",
-      title: "Career Development",
-      description:
-        "Continuous training programs and mentorship from senior engineers.",
+      title: t("peopleCulture.01_title"),
+      description: t("peopleCulture.01_desc"),
     },
     {
       num: "02",
-      title: "Inclusive Environment",
-      description: "A workplace where every voice plays a part in our success.",
+      title: t("peopleCulture.02_title"),
+      description: t("peopleCulture.02_desc"),
     },
     {
       num: "03",
-      title: "Growth Opportunities",
-      description:
-        "Clear pathways for professional advancement and leadership.",
+      title: t("peopleCulture.03_title"),
+      description: t("peopleCulture.03_desc"),
     },
   ];
 
@@ -38,19 +39,17 @@ const PeopleCultureSection = () => {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                People & Culture
+                {t("peopleCulture.eyebrow")}
               </span>
             </div>
 
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary mb-6 leading-tight tracking-tight">
-              Fostering Harmony,
+              {t("peopleCulture.titleLine1")}
               <br />
-              Promoting Growth
+              {t("peopleCulture.titleLine2")}
             </h2>
             <p className="text-steel text-base leading-relaxed mb-10">
-              At ISI Building Solutions, we believe our people are our greatest
-              asset. We cultivate a culture of harmony, respect, and continuous
-              learning while driving professional excellence.
+              {t("peopleCulture.description")}
             </p>
 
             {/* Numbered highlights */}
@@ -76,7 +75,7 @@ const PeopleCultureSection = () => {
               to="/careers"
               className="group inline-flex items-center gap-3 text-sm text-accent font-semibold hover:text-primary transition-colors cursor-pointer"
             >
-              <span>Join Our Team</span>
+              <span>{t("peopleCulture.cta")}</span>
               <ArrowRight
                 size={14}
                 className="group-hover:translate-x-1 transition-transform"

@@ -2,80 +2,74 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnimatedCounter } from "../components/ui/AnimatedCounter";
+import { useTranslation } from "react-i18next";
 
 const Team = () => {
+  const { t } = useTranslation();
+
   const leadership = [
     {
       name: "Sen KANG",
       role: "CEO & Co-Founder",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/kang-sen.jpg",
-      education:
-        "Bachelor's in Civil Engineering (UNSW), Master's in Construction Management (USC)",
-      bio: "Returned to Cambodia in 2011 with a focus on prefabrication and safer construction. Co-founded FUXIN and Mekong Homes under ISI GROUP. Also involved in ventures including BROWN Coffee and KMH Football Tournaments.",
+      education: t("team.kang_edu"),
+      bio: t("team.kang_bio"),
     },
     {
       name: "Pav Ing CHAO",
       role: "Finance Director",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/pav-ing.jpg",
-      education:
-        "Associate's in Art (Marymount College), Bachelor's in Business Administration (CSU Long Beach)",
-      bio: "Manages Finance and Accounting functions while championing people-focused culture initiatives. Brings international experience and a passion for building strong teams.",
+      education: t("team.pav_edu"),
+      bio: t("team.pav_bio"),
     },
     {
       name: "Sovanara IM",
       role: "Supply Chain Director",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/im-sovanara-2.png",
-      education:
-        "Bachelor's in Civil Engineering (Institute of Technology Cambodia)",
-      bio: "A homegrown talent who progressed internally from intern to production supervisor to plant manager over seven years. Now oversees Engineering, Production, and Project Management.",
+      education: t("team.sovanara_edu"),
+      bio: t("team.sovanara_bio"),
     },
   ];
 
   const departments = [
     {
-      name: "Engineering",
+      name: t("team.dept_engineering"),
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-1.jpg",
-      description:
-        "Our engineering team drives innovation in structural design, BIM modeling, and pre-engineered building systems.",
+      description: t("team.dept_engineering_desc"),
     },
     {
-      name: "Finance & Accounting",
+      name: t("team.dept_finance"),
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-2.jpg",
-      description:
-        "Managing financial operations with transparency and precision to support sustainable growth.",
+      description: t("team.dept_finance_desc"),
     },
     {
-      name: "Operation, HR & IT",
+      name: t("team.dept_operations"),
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-3.jpg",
-      description:
-        "The backbone of our organization — ensuring smooth operations, talent development, and technology infrastructure.",
+      description: t("team.dept_operations_desc"),
     },
     {
-      name: "Project Management",
+      name: t("team.dept_projectMgmt"),
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-4.jpg",
-      description:
-        "Coordinating end-to-end project delivery from planning through construction to handover.",
+      description: t("team.dept_projectMgmt_desc"),
     },
     {
-      name: "Project Sales",
+      name: t("team.dept_sales"),
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-5.jpg",
-      description:
-        "Connecting clients with the right solutions and building lasting partnerships across industries.",
+      description: t("team.dept_sales_desc"),
     },
     {
-      name: "Production",
+      name: t("team.dept_production"),
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-6.jpg",
-      description:
-        "Operating our manufacturing facility with precision — from steel fabrication to quality assurance.",
+      description: t("team.dept_production_desc"),
     },
   ];
 
@@ -96,16 +90,14 @@ const Team = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    People & Culture
+                    {t("team.hero_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-3xl">
-                  Our Team
+                  {t("team.hero_title")}
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
-                  The right people at ISI Building Solutions are those who have
-                  the right mindset — who are daring and fun, persevering and
-                  resilient in pursuing our passion.
+                  {t("team.hero_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -127,24 +119,19 @@ const Team = () => {
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Our Culture
+                  {t("team.culture_eyebrow")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-6">
-                Young & Dynamic
+                {t("team.culture_titleLine1")}
                 <br />
-                Professionals
+                {t("team.culture_titleLine2")}
               </h2>
               <p className="text-steel text-base leading-relaxed mb-6">
-                We are a team of young and dynamic professionals creating an
-                environment where people can thrive. Our shared core values of
-                Hard Work, Integrity, and Innovation guide every member of our
-                team.
+                {t("team.culture_p1")}
               </p>
               <p className="text-steel text-base leading-relaxed">
-                We seek team members who are dedicated, resilient, and
-                passionate about the organization's success — those who dare to
-                innovate and find joy in building something meaningful together.
+                {t("team.culture_p2")}
               </p>
             </motion.div>
 
@@ -160,17 +147,17 @@ const Team = () => {
                   {
                     value: 300,
                     suffix: "+",
-                    label: "Team Members",
+                    label: t("team.stat_teamMembers"),
                   },
                   {
                     value: 6,
                     suffix: "",
-                    label: "Departments",
+                    label: t("team.stat_departments"),
                   },
                   {
                     value: 15,
                     suffix: "+",
-                    label: "Years Together",
+                    label: t("team.stat_yearsTogether"),
                   },
                 ].map((stat, i) => (
                   <div
@@ -204,11 +191,11 @@ const Team = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Leadership
+                {t("team.leadership_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              Meet Our Leaders
+              {t("team.leadership_title")}
             </h2>
           </motion.div>
 
@@ -250,7 +237,7 @@ const Team = () => {
                   </p>
                   <div className="pt-4 border-t border-slate-100">
                     <span className="text-xs text-steel-light tracking-wider uppercase">
-                      Education
+                      {t("team.edu_label")}
                     </span>
                     <p className="text-sm text-primary font-medium mt-1">
                       {person.education}
@@ -276,11 +263,11 @@ const Team = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Our Departments
+                {t("team.departments_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              Teams That Build
+              {t("team.departments_title")}
             </h2>
           </motion.div>
 
@@ -329,13 +316,12 @@ const Team = () => {
               className="lg:col-span-7 mb-8 lg:mb-0"
             >
               <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
-                Want to Join
+                {t("team.cta_titleLine1")}
                 <br />
-                Our Team?
+                {t("team.cta_titleLine2")}
               </h2>
               <p className="text-white/45 text-base leading-relaxed mt-4 max-w-lg">
-                We're always looking for passionate, dedicated people who share
-                our values of hard work, integrity, and innovation.
+                {t("team.cta_subtitle")}
               </p>
             </motion.div>
             <motion.div
@@ -349,7 +335,7 @@ const Team = () => {
                 to="/careers"
                 className="group inline-flex items-center justify-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
               >
-                View Open Positions
+                {t("team.cta_viewPositions")}
                 <ArrowRight
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"
@@ -359,7 +345,7 @@ const Team = () => {
                 to="/contact"
                 className="inline-flex items-center justify-center gap-3 border border-white/20 text-white font-semibold text-sm py-4 px-8 hover:bg-white/5 transition-all duration-200 cursor-pointer"
               >
-                Contact Us
+                {t("team.cta_contactUs")}
               </Link>
             </motion.div>
           </div>

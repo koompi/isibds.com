@@ -2,6 +2,7 @@ import { Facebook, Linkedin, Phone, Send, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const contacts = [
   {
@@ -25,9 +26,17 @@ const WeChatIcon = () => (
 );
 
 const Footer = () => {
-  const [activePopup, setActivePopup] = useState<"telegram" | "wechat" | null>(
-    null,
-  );
+  const [activePopup, setActivePopup] = useState<"telegram" | "wechat" | null>(null);
+  const { t } = useTranslation();
+
+  const navLinks = [
+    { nameKey: "nav.about", path: "/about" },
+    { nameKey: "nav.products", path: "/products-solutions" },
+    { nameKey: "nav.portfolios", path: "/portfolios" },
+    { nameKey: "nav.technology", path: "/technology" },
+    { nameKey: "nav.careers", path: "/careers" },
+    { nameKey: "nav.contact", path: "/contact" },
+  ];
 
   return (
     <>
@@ -43,8 +52,7 @@ const Footer = () => {
                 className="h-16 mb-6"
               />
               <p className="text-white text-sm leading-relaxed mb-8 max-w-xs">
-                A Leader in Pre-engineered Building, Specialist in Steel
-                Structure, and Pioneer in Prefabrication.
+                {t("footer.tagline")}
               </p>
               <div className="flex gap-3">
                 <a
@@ -85,7 +93,7 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="mb-10 lg:mb-0">
               <h4 className="text-xs font-bold tracking-[0.15em] uppercase text-accent mb-6">
-                Contact Info
+                {t("footer.contactInfo")}
               </h4>
               <div className="space-y-4 text-sm text-white">
                 <p className="leading-relaxed">
@@ -142,23 +150,16 @@ const Footer = () => {
             {/* Navigation */}
             <div className="mb-10 lg:mb-0">
               <h4 className="text-xs font-bold tracking-[0.15em] uppercase text-accent mb-6">
-                Navigation
+                {t("footer.navigation")}
               </h4>
               <ul className="space-y-3 text-sm">
-                {[
-                  { name: "About", path: "/about" },
-                  { name: "Products & Solutions", path: "/products-solutions" },
-                  { name: "Portfolios", path: "/portfolios" },
-                  { name: "Technology", path: "/technology" },
-                  { name: "Careers", path: "/careers" },
-                  { name: "Contact Us", path: "/contact" },
-                ].map((link) => (
+                {navLinks.map((link) => (
                   <li key={link.path}>
                     <Link
                       to={link.path}
                       className="text-white font-bold text-xs tracking-[0.1em] uppercase hover:text-accent transition-colors cursor-pointer"
                     >
-                      {link.name}
+                      {t(link.nameKey)}
                     </Link>
                   </li>
                 ))}
@@ -168,16 +169,16 @@ const Footer = () => {
             {/* Inquiry */}
             <div>
               <h4 className="text-xs font-bold tracking-[0.15em] uppercase text-accent mb-6">
-                Inquiry
+                {t("footer.inquiry")}
               </h4>
               <p className="text-sm text-white leading-relaxed mb-6">
-                Ready to start your next industrial project?
+                {t("footer.inquiryText")}
               </p>
               <a
                 href="mailto:sales@isibds.com"
                 className="inline-flex items-center gap-2 bg-accent px-6 py-3 text-white text-xs font-bold tracking-[0.1em] uppercase hover:bg-accent/90 transition-colors cursor-pointer"
               >
-                Get Expert Advice
+                {t("footer.getExpertAdvice")}
                 <ArrowRight size={16} />
               </a>
             </div>
@@ -186,11 +187,10 @@ const Footer = () => {
           {/* Bottom bar */}
           <div className="border-t border-white/10 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-xs text-white">
-              &copy; {new Date().getFullYear()} ISI Building Solutions. All
-              Rights Reserved.
+              &copy; {new Date().getFullYear()} ISI Building Solutions. {t("footer.copyright")}
             </p>
             <p className="text-xs text-white tracking-wider uppercase hover:text-accent transition-colors cursor-pointer">
-              Privacy Policy
+              {t("footer.privacyPolicy")}
             </p>
           </div>
         </div>
@@ -209,7 +209,7 @@ const Footer = () => {
             {/* Header */}
             <div className="flex items-center justify-between px-8 py-6 border-b border-slate-100">
               <h3 className="text-sm font-bold tracking-[0.18em] uppercase text-primary">
-                Contact Our Sales Team
+                {t("footer.contactSalesTeam")}
               </h3>
               <button
                 onClick={() => setActivePopup(null)}

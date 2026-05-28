@@ -1,36 +1,36 @@
 import { motion } from "framer-motion";
 import { ChevronRight, Monitor, Cog, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const TechnologySection = () => {
+  const { t } = useTranslation();
+
   const techFeatures = [
     {
       icon: Monitor,
       num: "01",
-      title: "BIM & 3D Modeling",
-      description:
-        "Full building information modeling for precision engineering and clash detection.",
+      title: t("techSection.bim_title"),
+      description: t("techSection.bim_desc"),
     },
     {
       icon: Cog,
       num: "02",
-      title: "Automated Manufacturing",
-      description:
-        "CNC-driven fabrication lines ensuring consistent quality at scale.",
+      title: t("techSection.mfg_title"),
+      description: t("techSection.mfg_desc"),
     },
     {
       icon: BarChart3,
       num: "03",
-      title: "Project Analytics",
-      description:
-        "Real-time data dashboards for project tracking and resource optimization.",
+      title: t("techSection.analytics_title"),
+      description: t("techSection.analytics_desc"),
     },
   ];
 
   const techMetrics = [
-    { label: "Model Coordination", value: "99.2%" },
-    { label: "Fabrication Precision", value: "±1.5mm" },
-    { label: "Delivery Visibility", value: "24/7" },
+    { label: t("techSection.metricModelCoord"), value: "99.2%" },
+    { label: t("techSection.metricFabPrecision"), value: "±1.5mm" },
+    { label: t("techSection.metricDelivery"), value: "24/7" },
   ];
 
   return (
@@ -67,20 +67,17 @@ const TechnologySection = () => {
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-8 h-px bg-accent" />
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Innovation Engine
+                    {t("techSection.eyebrow")}
                   </span>
                 </div>
 
                 <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white mb-6 leading-tight tracking-tight">
-                  Software &amp;
+                  {t("techSection.titleLine1")}
                   <br />
-                  Technology
+                  {t("techSection.titleLine2")}
                 </h2>
                 <p className="text-white/45 text-base leading-relaxed mb-8">
-                  Utilizing practical technologies to improve productivity and
-                  accelerate toward a sustainable future. We integrate advanced
-                  software solutions in design and manufacturing to ensure precision
-                  and efficiency.
+                  {t("techSection.description")}
                 </p>
               </div>
 
@@ -105,7 +102,7 @@ const TechnologySection = () => {
                   to="/technology"
                   className="group inline-flex items-center gap-2 bg-accent text-white font-semibold text-sm py-3.5 px-7 hover:bg-accent-dark transition-colors cursor-pointer"
                 >
-                  Discover Our Tech
+                  {t("techSection.cta")}
                   <ChevronRight
                     size={16}
                     className="group-hover:translate-x-0.5 transition-transform"
@@ -129,7 +126,7 @@ const TechnologySection = () => {
 
               <div className="relative z-10 p-6 md:p-8 lg:p-10 h-full">
                 <div className="text-[11px] uppercase tracking-[0.2em] text-accent font-bold mb-6">
-                  Digital Workflow Stack
+                  {t("techSection.stackLabel")}
                 </div>
 
                 <div className="space-y-px border border-white/10">

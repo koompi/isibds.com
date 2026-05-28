@@ -3,8 +3,10 @@ import { Helmet } from "react-helmet-async";
 import { useState, useEffect } from "react";
 import { MapPin, Calendar, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatedCounter } from "../components/ui/AnimatedCounter";
+import { useTranslation } from "react-i18next";
 
 const Portfolios = () => {
+  const { t } = useTranslation();
   const [activeFilter, setActiveFilter] = useState("All");
   const [selectedProjectIndex, setSelectedProjectIndex] = useState<
     number | null
@@ -17,6 +19,19 @@ const Portfolios = () => {
     "Heavy Steel Structures",
     "Architectural Steel Structures and Roofing Solutions",
   ];
+
+  const filterLabels: Record<string, string> = {
+    "All": t("portfolios.filter_all"),
+    "Pre-Engineered Buildings": t("portfolios.filter_peb"),
+    "Heavy Steel Structures": t("portfolios.filter_heavy"),
+    "Architectural Steel Structures and Roofing Solutions": t("portfolios.filter_arch"),
+  };
+
+  const catAbbrevs: Record<string, string> = {
+    "Pre-Engineered Buildings": t("portfolios.catAbbrev_peb"),
+    "Heavy Steel Structures": t("portfolios.catAbbrev_heavy"),
+    "Architectural Steel Structures and Roofing Solutions": t("portfolios.catAbbrev_arch"),
+  };
 
   const projects = [
     {
@@ -357,13 +372,8 @@ const Portfolios = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>
-          Project Portfolio — 1000+ Landmark Projects | ISI Building Solutions
-        </title>
-        <meta
-          name="description"
-          content="Browse ISI Building Solutions' portfolio of 1000+ landmark projects in Cambodia including pre-engineered buildings, heavy steel structures, and architectural steel."
-        />
+        <title>{t("portfolios.metaTitle")}</title>
+        <meta name="description" content={t("portfolios.metaDesc")} />
       </Helmet>
 
       {/* Hero Banner */}
@@ -381,16 +391,14 @@ const Portfolios = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Our Work
+                    {t("portfolios.hero_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-                  Portfolios
+                  {t("portfolios.hero_title")}
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
-                  Over 1000 completed projects showcasing our expertise in
-                  pre-engineered buildings, heavy steel structures, and
-                  architectural steel solutions.
+                  {t("portfolios.hero_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -412,7 +420,7 @@ const Portfolios = () => {
                     : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                 }`}
               >
-                {filter}
+                {filterLabels[filter]}
               </button>
             ))}
           </div>
@@ -439,10 +447,6 @@ const Portfolios = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent"></div>
-
-                  {/* <div className="absolute top-4 right-4 w-10 h-10 border border-white/20 group-hover:border-accent group-hover:bg-accent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                    <ArrowUpRight size={16} className="text-white" />
-                  </div> */}
                 </div>
 
                 <div className="p-6">
@@ -451,13 +455,7 @@ const Portfolios = () => {
                       {project.title}
                     </h3>
                     <span className="text-base font-semibold tracking-wider uppercase text-steel/30 whitespace-nowrap pt-1">
-                      {project.category
-                        .replace("Pre-Engineered Buildings", "PEB")
-                        .replace("Heavy Steel Structures", "Heavy Steel")
-                        .replace(
-                          "Architectural Steel Structures and Roofing Solutions",
-                          "Arch Steel",
-                        )}
+                      {catAbbrevs[project.category] ?? project.category}
                     </span>
                   </div>
                   <div className="flex items-center gap-4 text-steel text-sm">
@@ -478,7 +476,7 @@ const Portfolios = () => {
           {filteredProjects.length === 0 && (
             <div className="text-center py-20">
               <p className="text-steel text-lg">
-                No projects found in this category.
+                {t("portfolios.noProjects")}
               </p>
             </div>
           )}
@@ -493,26 +491,26 @@ const Portfolios = () => {
               {
                 value: 300,
                 suffix: "+",
-                label: "Skilled Professionals",
+                label: t("portfolios.stat_skilledProfessionals"),
                 icon: "/icons/skills-professionals.svg",
               },
               {
                 value: 0,
                 suffix: "",
-                label: "Manufacturer in Cambodia",
+                label: t("portfolios.stat_manufacturer"),
                 icon: "/icons/1st-peb.svg",
                 text: "1st PEB",
               },
               {
                 value: 1000,
                 suffix: "+",
-                label: "Landmark Projects",
+                label: t("portfolios.stat_landmarkProjects"),
                 icon: "/icons/landmark-projects.svg",
               },
               {
                 value: 0,
                 suffix: "",
-                label: "for Steel Constractor",
+                label: t("portfolios.stat_bestAward"),
                 icon: "/icons/best-award.svg",
                 text: "Best Award",
               },
@@ -627,7 +625,7 @@ const Portfolios = () => {
                 <div>
                   <div className="w-10 h-1 bg-accent mb-5"></div>
                   <span className="text-accent text-xs font-bold tracking-widest uppercase">
-                    {filteredProjects[selectedProjectIndex].category}
+                    {filterLabels[filteredProjects[selectedProjectIndex].category] ?? filteredProjects[selectedProjectIndex].category}
                   </span>
                   <h3 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight mt-2 mb-8 leading-tight">
                     {filteredProjects[selectedProjectIndex].title}

@@ -2,14 +2,17 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const IndustryAgriculture = () => {
+  const { t } = useTranslation();
+
   const applications = [
-    "Greenhouse",
-    "Rice Mill Factory",
-    "Animal Food Factory",
-    "Animal Shed Farm",
-    "Feed Mill Factory",
+    t("industry.agriculture_app1"),
+    t("industry.agriculture_app2"),
+    t("industry.agriculture_app3"),
+    t("industry.agriculture_app4"),
+    t("industry.agriculture_app5"),
   ];
 
   const projects = [
@@ -34,11 +37,8 @@ const IndustryAgriculture = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Agriculture Solutions | ISI Building Solutions</title>
-        <meta
-          name="description"
-          content="Pre-engineered building solutions for agriculture — greenhouses, rice mills, animal sheds, and more."
-        />
+        <title>{t("industry.agriculture_metaTitle")}</title>
+        <meta name="description" content={t("industry.agriculture_metaDesc")} />
       </Helmet>
 
       {/* Hero Banner */}
@@ -56,16 +56,14 @@ const IndustryAgriculture = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Industry Specific
+                    {t("industry.agriculture_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight max-w-3xl uppercase">
-                  Agriculture
+                  {t("industry.agriculture_title")}
                 </h1>
                 <p className="text-white/60 text-lg mt-6 max-w-2xl leading-relaxed">
-                  Durable steel structures designed for modern farming —
-                  greenhouses, rice mills, animal sheds, and agri-industry
-                  facilities.
+                  {t("industry.agriculture_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -88,11 +86,11 @@ const IndustryAgriculture = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Applications
+                  {t("industry.applications")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight tracking-tight mb-10 uppercase">
-                Agriculture
+                {t("industry.agriculture_title")}
               </h2>
 
               <ul className="space-y-5">
@@ -111,7 +109,7 @@ const IndustryAgriculture = () => {
                   to="/products-solutions"
                   className="inline-flex items-center gap-3 bg-accent text-white font-bold text-sm py-4 px-8 hover:bg-accent-dark transition-all"
                 >
-                  VIEW PRODUCTS & SOLUTIONS <ArrowRight size={16} />
+                  {t("industry.viewProducts")} <ArrowRight size={16} />
                 </Link>
               </div>
             </motion.div>
@@ -130,7 +128,7 @@ const IndustryAgriculture = () => {
                     <div className="aspect-[4/3]">
                       <img
                         src={project.image}
-                        alt="Agriculture project"
+                        alt={t("industry.agriculture_title")}
                         className="w-full h-full object-cover"
                       />
                     </div>

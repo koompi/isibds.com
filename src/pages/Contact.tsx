@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const containerVariants = {
   hidden: {},
@@ -13,28 +14,21 @@ const cardVariants = {
 };
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   const businessHours = [
-    { day: "Monday – Friday", hours: "8:00 AM – 5:00 PM", open: true },
-    { day: "Saturday", hours: "8:00 AM – 12:00 PM", open: true },
-    { day: "Sunday", hours: "Closed", open: false },
+    { day: t("contact.hours_monFri"), hours: t("contact.hours_monFriTime"), open: true },
+    { day: t("contact.hours_sat"), hours: t("contact.hours_satTime"), open: true },
+    { day: t("contact.hours_sun"), hours: t("contact.hours_sunTime"), open: false },
   ];
 
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Contact Us | ISI Building Solutions Cambodia</title>
-        <meta
-          name="description"
-          content="Contact ISI Building Solutions at ISI Park, National Road 2, Kandal Province, Cambodia. Email: sales@isibds.com. Get a quote for your next steel structure project."
-        />
-        <meta
-          property="og:title"
-          content="Contact Us | ISI Building Solutions Cambodia"
-        />
-        <meta
-          property="og:description"
-          content="Contact ISI Building Solutions at ISI Park, National Road 2, Kandal Province, Cambodia. Email: sales@isibds.com. Get a quote for your next steel structure project."
-        />
+        <title>{t("contact.metaTitle")}</title>
+        <meta name="description" content={t("contact.metaDesc")} />
+        <meta property="og:title" content={t("contact.metaTitle")} />
+        <meta property="og:description" content={t("contact.metaDesc")} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://isibds.com/contact" />
         <link rel="canonical" href="https://isibds.com/contact" />
@@ -55,15 +49,14 @@ const Contact = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent" />
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Get In Touch
+                    {t("contact.hero_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
-                  Contact Us
+                  {t("contact.hero_title")}
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
-                  We're here to answer your questions and discuss how we can
-                  help with your next construction project.
+                  {t("contact.hero_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -78,9 +71,9 @@ const Contact = () => {
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage: `
-							linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-							linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)
-						`,
+              linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)
+            `,
             backgroundSize: "64px 64px",
           }}
         />
@@ -96,7 +89,7 @@ const Contact = () => {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-start">
-            {/* Left — Intro + Stats */}
+            {/* Left — Intro */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -107,17 +100,16 @@ const Contact = () => {
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-px bg-accent" />
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Reach Us
+                  {t("contact.reach_eyebrow")}
                 </span>
               </div>
               <h2 className="text-4xl lg:text-5xl font-bold text-white leading-[1.05] tracking-tight mb-8">
-                Let's Start
+                {t("contact.reach_titleLine1")}
                 <br />
-                <span className="text-accent">Your Project</span>
+                <span className="text-accent">{t("contact.reach_titleAccent")}</span>
               </h2>
               <p className="text-white/45 text-[15px] leading-relaxed mb-12 max-w-xs">
-                Ready to build something extraordinary? Our engineers and
-                specialists are here to make your vision a reality.
+                {t("contact.reach_subtitle")}
               </p>
             </motion.div>
 
@@ -140,10 +132,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-[10px] text-white/25 tracking-[0.25em] uppercase mb-2 font-mono">
-                      01 — Location
+                      01 — {t("contact.location_label")}
                     </div>
                     <h3 className="text-white font-bold text-lg tracking-tight mb-3">
-                      Office &amp; Factory
+                      {t("contact.location_title")}
                     </h3>
                     <p className="text-white/50 text-[15px] leading-relaxed max-w-lg">
                       ISI Park National Road 2, Phum Kraing Sbov, Preah Puth
@@ -164,10 +156,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-[10px] text-white/25 tracking-[0.25em] uppercase mb-2 font-mono">
-                      02 — Phone
+                      02 — {t("contact.phone_label")}
                     </div>
                     <h3 className="text-white font-bold text-lg tracking-tight mb-4">
-                      Call Us
+                      {t("contact.phone_title")}
                     </h3>
                     <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 sm:items-start">
                       <div className="space-y-3">
@@ -226,10 +218,10 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-[10px] text-white/25 tracking-[0.25em] uppercase mb-2 font-mono">
-                      03 — Email
+                      03 — {t("contact.email_label")}
                     </div>
                     <h3 className="text-white font-bold text-lg tracking-tight mb-3">
-                      Write to Us
+                      {t("contact.email_title")}
                     </h3>
                     <a
                       href="mailto:sales@isibds.com"
@@ -243,7 +235,7 @@ const Contact = () => {
             </motion.div>
           </div>
 
-          {/* Business Hours — Full-width schedule strip */}
+          {/* Business Hours */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -254,7 +246,7 @@ const Contact = () => {
             <div className="flex items-center gap-3 px-8 py-5 border-b border-white/10 bg-white/[0.02]">
               <Clock size={15} className="text-accent" />
               <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-white/50 font-mono">
-                Business Hours
+                {t("contact.hours_title")}
               </span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">

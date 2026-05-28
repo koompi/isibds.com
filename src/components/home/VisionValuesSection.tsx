@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const containerVariants = {
   hidden: {},
@@ -11,29 +12,28 @@ const cardVariants = {
 };
 
 const VisionValuesSection = () => {
+  const { t } = useTranslation();
+
   const items = [
     {
       num: "01",
-      title: "Innovation",
-      description:
-        "Driving change through cutting-edge prefabrication technology.",
+      title: t("visionValues.01_title"),
+      description: t("visionValues.01_desc"),
     },
     {
       num: "02",
-      title: "Striving",
-      description:
-        "Pursuing excellence in every bolt, beam, and building we create.",
+      title: t("visionValues.02_title"),
+      description: t("visionValues.02_desc"),
     },
     {
       num: "03",
-      title: "Integrity",
-      description: "Building trust through transparency and reliable delivery.",
+      title: t("visionValues.03_title"),
+      description: t("visionValues.03_desc"),
     },
     {
       num: "04",
-      title: "Growing Together",
-      description:
-        "Empowering communities and advancing Cambodia's development.",
+      title: t("visionValues.04_title"),
+      description: t("visionValues.04_desc"),
     },
   ];
 
@@ -70,13 +70,13 @@ const VisionValuesSection = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent" />
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Our Foundation
+                {t("visionValues.eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-tight tracking-tight">
-              Our Core
+              {t("visionValues.titleLine1")}
               <br />
-              Values
+              {t("visionValues.titleLine2")}
             </h2>
           </motion.div>
         </div>

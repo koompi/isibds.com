@@ -2,81 +2,75 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Technology = () => {
+  const { t } = useTranslation();
+
   const software = [
     {
       name: "Microsoft Dynamics AX",
-      category: "ERP System",
-      description:
-        "Manages finance and operations with comprehensive functionality for managing resources and processes connected to manufacturing, planning, supply chain, sales, financials and more.",
+      category: t("technology.tool_microsoftDynamics_cat"),
+      description: t("technology.tool_microsoftDynamics_desc"),
       logo: "/images/micro.png",
     },
     {
       name: "Tekla BIM",
-      category: "Building Information Modeling",
-      description:
-        "Creates structure models with accurate, reliable detailed information and generates automated shop and erection drawings for production.",
+      category: t("technology.tool_teklaBim_cat"),
+      description: t("technology.tool_teklaBim_desc"),
       logo: "/images/tekla.png",
     },
     {
       name: "Metal Building Software (MBS)",
-      category: "Design & Engineering",
-      description:
-        "Provides design, detailing, costing, and drafting of metal buildings compliant with US and international codes, generating bills of materials and customized erection drawings.",
+      category: t("technology.tool_mbs_cat"),
+      description: t("technology.tool_mbs_desc"),
       logo: "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/logo-mbs.png",
     },
     {
       name: "SCIA Engineer",
-      category: "Structural Analysis",
-      description:
-        "Specialized software for analyzing and designing complex structures and challenging architectural projects with precision.",
+      category: t("technology.tool_scia_cat"),
+      description: t("technology.tool_scia_desc"),
       logo: "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/logo-scia.png",
     },
     {
       name: "ETABS",
-      category: "Building Analysis",
-      description:
-        "Analyzes and designs buildings from low-rise to high-rise structures, including composite structures with advanced modeling capabilities.",
+      category: t("technology.tool_etabs_cat"),
+      description: t("technology.tool_etabs_desc"),
       logo: "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/logo-etabs.png",
     },
     {
       name: "CFS",
-      category: "Cold-Formed Steel",
-      description:
-        "Specializes in cold-formed steel structural member design using American Iron and Steel Institute (AISI) standards.",
+      category: t("technology.tool_cfs_cat"),
+      description: t("technology.tool_cfs_desc"),
       logo: "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/logo-cfs.png",
     },
     {
       name: "Framecad",
-      category: "Light-Gauge Steel",
-      description:
-        "Designs light-gauge steel structures with automated drawings and production files for efficient manufacturing.",
+      category: t("technology.tool_framecad_cat"),
+      description: t("technology.tool_framecad_desc"),
       logo: "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/logo-framecad.png",
     },
   ];
 
   const systems = [
     {
-      title: "Building Information Modeling (BIM)",
-      description:
-        "We are implementing BIM technology throughout our entire business process—from project conception through design, modeling, procurement, manufacturing, quality assurance, to transportation and installation—to achieve full system integration.",
+      title: t("technology.bim_title"),
+      description: t("technology.bim_desc"),
       benefits: [
-        "Complete project lifecycle management",
-        "Enhanced collaboration across teams",
-        "Accurate clash detection and resolution",
-        "Automated documentation generation",
+        t("technology.bim_b1"),
+        t("technology.bim_b2"),
+        t("technology.bim_b3"),
+        t("technology.bim_b4"),
       ],
     },
     {
-      title: "Manufacturing Systems",
-      description:
-        "Developing integrated systems including Customer Relationship Management (CRM), Enterprise Resource Planning (ERP), and Manufacturing Execution System (MES) to optimize our production processes.",
+      title: t("technology.mfgSystems_title"),
+      description: t("technology.mfgSystems_desc"),
       benefits: [
-        "Real-time production monitoring",
-        "Streamlined supply chain management",
-        "Quality control automation",
-        "Data-driven decision making",
+        t("technology.mfgSystems_b1"),
+        t("technology.mfgSystems_b2"),
+        t("technology.mfgSystems_b3"),
+        t("technology.mfgSystems_b4"),
       ],
     },
   ];
@@ -84,19 +78,10 @@ const Technology = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Software &amp; Technology | ISI Building Solutions</title>
-        <meta
-          name="description"
-          content="ISI uses Tekla BIM, MBS, ETABS, and Microsoft Dynamics AX to deliver precision-engineered steel buildings with full digital integration from design to installation."
-        />
-        <meta
-          property="og:title"
-          content="Software &amp; Technology | ISI Building Solutions"
-        />
-        <meta
-          property="og:description"
-          content="ISI uses Tekla BIM, MBS, ETABS, and Microsoft Dynamics AX to deliver precision-engineered steel buildings with full digital integration from design to installation."
-        />
+        <title>{t("technology.metaTitle")}</title>
+        <meta name="description" content={t("technology.metaDesc")} />
+        <meta property="og:title" content={t("technology.metaTitle")} />
+        <meta property="og:description" content={t("technology.metaDesc")} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://isibds.com/technology" />
         <link rel="canonical" href="https://isibds.com/technology" />
@@ -116,17 +101,16 @@ const Technology = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Innovation Engine
+                    {t("technology.hero_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-3xl">
-                  Software &<br />
-                  Technology
+                  {t("technology.hero_titleLine1")}
+                  <br />
+                  {t("technology.hero_titleLine2")}
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
-                  Utilizing practical technologies to streamline design,
-                  fabrication, and construction processes, providing competitive
-                  advantage through innovation.
+                  {t("technology.hero_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -148,24 +132,19 @@ const Technology = () => {
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Our Approach
+                  {t("technology.approach_eyebrow")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-6">
-                Technology-Driven
+                {t("technology.approach_titleLine1")}
                 <br />
-                Excellence
+                {t("technology.approach_titleLine2")}
               </h2>
               <p className="text-steel text-base leading-relaxed mb-6">
-                We continuously seek suitable technologies and develop in-house
-                solutions when necessary to maintain our competitive edge and
-                deliver superior results for our clients.
+                {t("technology.approach_p1")}
               </p>
               <p className="text-steel text-base leading-relaxed">
-                Our technology strategy focuses on full system integration
-                across all business processes, from initial concept through
-                final installation, ensuring efficiency, accuracy, and quality
-                at every step.
+                {t("technology.approach_p2")}
               </p>
             </motion.div>
 
@@ -204,12 +183,12 @@ const Technology = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Core Systems
+                {t("technology.coreSystems_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary tracking-tight leading-tight">
-              <span className="block mb-2 lg:mb-3">Integrated Technology</span>
-              <span className="block">Platform</span>
+              <span className="block mb-2 lg:mb-3">{t("technology.coreSystems_titleLine1")}</span>
+              <span className="block">{t("technology.coreSystems_titleLine2")}</span>
             </h2>
           </motion.div>
 
@@ -260,11 +239,11 @@ const Technology = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Our Toolkit
+                {t("technology.toolkit_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              Software & Technologies
+              {t("technology.toolkit_title")}
             </h2>
           </motion.div>
 
@@ -317,17 +296,16 @@ const Technology = () => {
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  The Result
+                  {t("technology.impact_eyebrow")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight tracking-tight mb-6">
-                Accelerating Toward
-                <br />a Sustainable Future
+                {t("technology.impact_titleLine1")}
+                <br />
+                {t("technology.impact_titleLine2")}
               </h2>
               <p className="text-white/50 text-base leading-relaxed">
-                By integrating advanced software solutions in our design and
-                manufacturing processes, we ensure precision, efficiency, and
-                environmental sustainability in every project we deliver.
+                {t("technology.impact_desc")}
               </p>
             </motion.div>
 
@@ -340,19 +318,10 @@ const Technology = () => {
             >
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { value: "50%+", label: "Time Reduction" },
-                  {
-                    value: "99.9%",
-                    label: "Design Accuracy",
-                  },
-                  {
-                    value: "100%",
-                    label: "Digital Integration",
-                  },
-                  {
-                    value: "30%+",
-                    label: "Cost Efficiency",
-                  },
+                  { value: "50%+", label: t("technology.impact_timeReduction") },
+                  { value: "99.9%", label: t("technology.impact_designAccuracy") },
+                  { value: "100%", label: t("technology.impact_digitalIntegration") },
+                  { value: "30%+", label: t("technology.impact_costEfficiency") },
                 ].map((stat, i) => (
                   <div
                     key={i}
@@ -384,13 +353,12 @@ const Technology = () => {
               className="lg:col-span-7 mb-8 lg:mb-0"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight tracking-tight">
-                See Our Technology
+                {t("technology.cta_titleLine1")}
                 <br />
-                in Action
+                {t("technology.cta_titleLine2")}
               </h2>
               <p className="text-steel text-base leading-relaxed mt-4 max-w-lg">
-                Discover how our technology stack delivers superior results
-                across all our projects.
+                {t("technology.cta_subtitle")}
               </p>
             </motion.div>
             <motion.div
@@ -404,7 +372,7 @@ const Technology = () => {
                 to="/portfolios"
                 className="group inline-flex items-center justify-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
               >
-                View Projects
+                {t("technology.cta_button")}
                 <ArrowRight
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"

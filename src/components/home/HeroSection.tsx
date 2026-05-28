@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnimatedCounter } from "../ui/AnimatedCounter";
+import { useTranslation } from "react-i18next";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex items-end overflow-hidden pb-0">
       {/* Background */}
@@ -30,7 +33,7 @@ const HeroSection = () => {
               >
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  ISI Building Solutions
+                  {t("hero.eyebrow")}
                 </span>
               </motion.div>
 
@@ -40,13 +43,13 @@ const HeroSection = () => {
                 transition={{ duration: 0.9, delay: 0.15 }}
                 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-[1.05] tracking-tight mb-8"
               >
-                Leader in
+                {t("hero.line1")}
                 <br />
-                <span className="text-accent">Pre-Engineered</span>
+                <span className="text-accent">{t("hero.line2")}</span>
                 <br />
-                Building &
+                {t("hero.line3")}
                 <br className="hidden xl:block" />
-                Steel Structures
+                {t("hero.line4")}
               </motion.h1>
 
               <motion.p
@@ -55,8 +58,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.35 }}
                 className="text-base md:text-lg text-white/50 mb-12 max-w-lg leading-relaxed"
               >
-                Pioneering prefabrication to transform the construction industry
-                for safer working conditions and environmental sustainability.
+                {t("hero.subtitle")}
               </motion.p>
 
               <motion.div
@@ -69,7 +71,7 @@ const HeroSection = () => {
                   to="/portfolios"
                   className="group inline-flex items-center justify-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
                 >
-                  Explore Projects
+                  {t("hero.exploreProjects")}
                   <ArrowRight
                     size={16}
                     className="group-hover:translate-x-1 transition-transform"
@@ -79,7 +81,7 @@ const HeroSection = () => {
                   to="/contact"
                   className="inline-flex items-center justify-center gap-3 border border-white/20 text-white font-semibold text-sm py-4 px-8 hover:bg-white/5 transition-all duration-200 cursor-pointer"
                 >
-                  Contact Us
+                  {t("hero.contactUs")}
                 </Link>
               </motion.div>
             </div>
@@ -93,15 +95,15 @@ const HeroSection = () => {
             >
               <div className="grid grid-cols-2 lg:grid-cols-2 border-t lg:border-t-0 lg:border-l border-white/10 py-8 lg:py-0 lg:pl-12">
                 {[
-                  { value: 1000, suffix: "+", label: "Projects Completed" },
-                  { value: 15, suffix: "+", label: "Years of Innovation" },
-                  { value: 300, suffix: "+", label: "Team Members" },
+                  { value: 1000, suffix: "+", label: t("hero.projectsCompleted") },
+                  { value: 15, suffix: "+", label: t("hero.yearsOfInnovation") },
+                  { value: 300, suffix: "+", label: t("hero.teamMembers") },
                   {
                     value: 0,
                     suffix: "",
                     label: "ISO",
                     text: "ISO",
-                    subtext: "9001:2015 Certified",
+                    subtext: t("hero.isoCertified"),
                   },
                 ].map((stat, i) => (
                   <div key={i} className="py-5 lg:py-8 pr-8">

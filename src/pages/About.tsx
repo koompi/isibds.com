@@ -2,65 +2,59 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { Shield, Lightbulb, Target, Users } from "lucide-react";
 import { AnimatedCounter } from "../components/ui/AnimatedCounter";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
+
   const values = [
     {
       icon: Lightbulb,
-      title: "Innovation",
-      description:
-        "Driving change through cutting-edge prefabrication technology.",
+      title: t("visionValues.01_title"),
+      description: t("visionValues.01_desc"),
     },
     {
       icon: Target,
-      title: "Striving",
-      description:
-        "Pursuing excellence in every bolt, beam, and building we create.",
+      title: t("visionValues.02_title"),
+      description: t("visionValues.02_desc"),
     },
     {
       icon: Shield,
-      title: "Integrity",
-      description:
-        "Building trust through transparency and reliable delivery.",
+      title: t("visionValues.03_title"),
+      description: t("visionValues.03_desc"),
     },
     {
       icon: Users,
-      title: "Growing Together",
-      description:
-        "Empowering communities and advancing Cambodia's development.",
+      title: t("visionValues.04_title"),
+      description: t("visionValues.04_desc"),
     },
   ];
 
   const milestones = [
     {
-      year: "2012",
-      title: "Founded",
-      description:
-        "Established with 4 fresh graduate engineers and a mission to transform conventional truss design to pre-engineered building.",
+      year: t("about.m1_year"),
+      title: t("about.m1_title"),
+      description: t("about.m1_desc"),
     },
     {
-      year: "2015",
-      title: "First Major Projects",
-      description:
-        "Completed early industrial and commercial projects, establishing a reputation for quality and efficiency.",
+      year: t("about.m2_year"),
+      title: t("about.m2_title"),
+      description: t("about.m2_desc"),
     },
     {
-      year: "2019",
-      title: "ISO 9001:2015",
-      description:
-        "Achieved ISO 9001:2015 accreditation, reinforcing our commitment to quality management systems.",
+      year: t("about.m3_year"),
+      title: t("about.m3_title"),
+      description: t("about.m3_desc"),
     },
     {
-      year: "2022",
-      title: "300+ Team Members",
-      description:
-        "Grew from 4 engineers to over 300 dedicated staff, completing landmark projects like Aeon Mall Parking Structure.",
+      year: t("about.m4_year"),
+      title: t("about.m4_title"),
+      description: t("about.m4_desc"),
     },
     {
-      year: "Today",
-      title: "1000+ Projects",
-      description:
-        "Continuing to lead the pre-engineered building industry in Cambodia with over 1000 completed projects.",
+      year: t("about.m5_year"),
+      title: t("about.m5_title"),
+      description: t("about.m5_desc"),
     },
   ];
 
@@ -68,26 +62,26 @@ const About = () => {
     {
       value: 300,
       suffix: "+",
-      label: "Skilled Professionals",
+      label: t("about.stat_skilledProfessionals"),
       icon: "/icons/skills-professionals.svg",
     },
     {
       value: 0,
       suffix: "",
-      label: "Manufacturer in Cambodia",
+      label: t("about.stat_manufacturer"),
       icon: "/icons/1st-peb.svg",
       text: "1st PEB",
     },
     {
       value: 1000,
       suffix: "+",
-      label: "Landmark Projects",
+      label: t("about.stat_landmarkProjects"),
       icon: "/icons/landmark-projects.svg",
     },
     {
       value: 0,
       suffix: "",
-      label: "for Steel Constractor",
+      label: t("about.stat_bestAward"),
       icon: "/icons/best-award.svg",
       text: "Best Award",
     },
@@ -96,19 +90,10 @@ const About = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>About Us | ISI Building Solutions Cambodia</title>
-        <meta
-          name="description"
-          content="Discover ISI Building Solutions — Cambodia's pioneer in pre-engineered steel buildings with 300+ professionals, 1000+ landmark projects, and ISO 9001:2015 certification."
-        />
-        <meta
-          property="og:title"
-          content="About Us | ISI Building Solutions Cambodia"
-        />
-        <meta
-          property="og:description"
-          content="Discover ISI Building Solutions — Cambodia's pioneer in pre-engineered steel buildings with 300+ professionals, 1000+ landmark projects, and ISO 9001:2015 certification."
-        />
+        <title>{t("about.metaTitle")}</title>
+        <meta name="description" content={t("about.metaDesc")} />
+        <meta property="og:title" content={t("about.metaTitle")} />
+        <meta property="og:description" content={t("about.metaDesc")} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://isibds.com/about" />
         <link rel="canonical" href="https://isibds.com/about" />
@@ -128,17 +113,16 @@ const About = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    About ISI Building Solutions
+                    {t("about.hero_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-3xl">
-                  Transforming Construction
+                  {t("about.hero_titleLine1")}
                   <br />
-                  Through Prefabrication
+                  {t("about.hero_titleLine2")}
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-xl leading-relaxed">
-                  A member of ISI Group — one of Cambodia's most respected and
-                  diversified corporations with nearly 30 years of experience.
+                  {t("about.hero_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -161,30 +145,22 @@ const About = () => {
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Our Story
+                  {t("about.story_eyebrow")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-6">
-                From 4 Engineers
+                {t("about.story_titleLine1")}
                 <br />
-                to 300+ Strong
+                {t("about.story_titleLine2")}
               </h2>
               <p className="text-steel text-base leading-relaxed mb-6">
-                ISI Building Solutions was established in 2012 with the mission
-                to transform the construction of warehouse and factory from
-                using conventional truss design to pre-engineered building.
+                {t("about.story_p1")}
               </p>
               <p className="text-steel text-base leading-relaxed mb-6">
-                Starting with just four fresh graduate engineers, we have grown
-                to over three hundred dedicated staff members. We have
-                successfully completed over 1000 projects, including iconic
-                structures such as the Aeon Mall Sen Sok Parking Structure and
-                the International Exhibition Hall.
+                {t("about.story_p2")}
               </p>
               <p className="text-steel text-base leading-relaxed mb-8">
-                In 2019, we obtained our ISO 9001:2015 accreditation,
-                reinforcing our unwavering commitment to quality in every
-                project we undertake.
+                {t("about.story_p3")}
               </p>
             </motion.div>
 
@@ -221,10 +197,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: i * 0.1,
-                }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="py-10 px-6 lg:px-8 text-center"
               >
                 <div className="w-14 h-14 rounded-full border-[3px] border-accent/50 flex items-center justify-center mx-auto mb-4">
@@ -259,17 +232,16 @@ const About = () => {
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Our Direction
+                  {t("about.vision_eyebrow")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-6">
-                Vision &<br />
-                Aspiration
+                {t("about.vision_titleLine1")}
+                <br />
+                {t("about.vision_titleLine2")}
               </h2>
               <p className="text-steel text-base leading-relaxed">
-                Within 10-20 years, we envision leading the pre-engineered
-                building industry, specializing in steel structures, and
-                pioneering prefabrication that transforms regional construction.
+                {t("about.vision_desc")}
               </p>
             </motion.div>
 
@@ -286,13 +258,10 @@ const About = () => {
                   01
                 </span>
                 <h3 className="text-xl font-bold text-primary tracking-tight mt-4 mb-3">
-                  Vision
+                  {t("about.vision_01_title")}
                 </h3>
                 <p className="text-steel text-[15px] leading-relaxed">
-                  To transform the construction industry through prefabrication
-                  for safer working conditions and environmental sustainability.
-                  To be the Leader in Pre-engineered Building, Specialist in
-                  Steel Structure, and Pioneer in Prefabrication.
+                  {t("about.vision_01_text")}
                 </p>
               </motion.div>
 
@@ -307,14 +276,10 @@ const About = () => {
                   02
                 </span>
                 <h3 className="text-xl font-bold text-primary tracking-tight mt-4 mb-3">
-                  Aspiration
+                  {t("about.vision_02_title")}
                 </h3>
                 <p className="text-steel text-[15px] leading-relaxed">
-                  We focus on designing and building faster, better, beautiful,
-                  and efficient structures. By applying Building Information
-                  Modeling (BIM), we streamline design, fabrication, and
-                  construction processes — our strategic intersection is "Prefab
-                  Design-Build."
+                  {t("about.vision_02_text")}
                 </p>
               </motion.div>
             </div>
@@ -349,11 +314,11 @@ const About = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent" />
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                What We Stand For
+                {t("about.values_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-tight tracking-tight">
-              Our Values &amp; Beliefs
+              {t("about.values_title")}
             </h2>
           </motion.div>
 
@@ -364,10 +329,7 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group cursor-pointer bg-primary-dark p-8 lg:p-10 border border-white/10 hover:border-transparent hover:bg-white hover:shadow-2xl transition-all duration-500"
               >
                 <div className="text-[10px] text-white/25 group-hover:text-primary/20 tracking-[0.25em] uppercase font-mono mb-5 transition-colors duration-500">
@@ -401,11 +363,11 @@ const About = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Our Journey
+                {t("about.milestones_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight tracking-tight">
-              Key Milestones
+              {t("about.milestones_title")}
             </h2>
           </motion.div>
 
@@ -420,10 +382,7 @@ const About = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                  }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`lg:grid lg:grid-cols-2 lg:gap-16 lg:py-10 relative ${
                     index % 2 === 0 ? "" : "lg:direction-rtl"
                   }`}
@@ -470,27 +429,20 @@ const About = () => {
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Part of Something Bigger
+                  {t("about.isiGroup_eyebrow")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-6">
-                A Member of
+                {t("about.isiGroup_titleLine1")}
                 <br />
-                ISI Group
+                {t("about.isiGroup_titleLine2")}
               </h2>
               <p className="text-steel text-base leading-relaxed mb-6">
-                ISI Group is one of Cambodia's most respected, successful, and
-                diversified corporations with over 25 years of experience. The
-                group operates across building materials, building solutions,
-                property development, education, and food & beverage sectors.
+                {t("about.isiGroup_p1")}
               </p>
               <p className="text-steel text-base leading-relaxed mb-8">
-                Our core values — Innovation, Striving, Integrity, Growing
-                Together — guide everything we do as a group, with active CSR
-                initiatives in education, environment, sports, and healthcare.
+                {t("about.isiGroup_p2")}
               </p>
-
-              {/* ISI Group sectors removed as requested */}
             </motion.div>
 
             <motion.div

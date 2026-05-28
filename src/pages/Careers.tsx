@@ -11,8 +11,11 @@ import {
   TrendingUp,
   Sprout,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Careers = () => {
+  const { t } = useTranslation();
+
   const openings = [
     {
       title: "Project Manager",
@@ -40,53 +43,41 @@ const Careers = () => {
   const benefits = [
     {
       icon: Users,
-      title: "Young & Dynamic Team",
-      description:
-        "Work alongside over 300 professionals in a collaborative, innovative environment.",
+      title: t("careers.ben_young_title"),
+      description: t("careers.ben_young_desc"),
     },
     {
       icon: GraduationCap,
-      title: "Professional Development",
-      description:
-        "Continuous learning opportunities and career advancement through training and mentorship.",
+      title: t("careers.ben_dev_title"),
+      description: t("careers.ben_dev_desc"),
     },
     {
       icon: Briefcase,
-      title: "Challenging Projects",
-      description:
-        "Work on landmark projects that shape Cambodia's construction landscape.",
+      title: t("careers.ben_projects_title"),
+      description: t("careers.ben_projects_desc"),
     },
   ];
 
   const disciplines = [
-    "Engineering",
-    "Manufacturing",
-    "Fabrication",
-    "Construction",
-    "Project Management",
-    "Architecture",
-    "Master Planning",
-    "Sales & Marketing",
-    "Finance",
-    "Business Administration",
+    t("careers.disc_engineering"),
+    t("careers.disc_manufacturing"),
+    t("careers.disc_fabrication"),
+    t("careers.disc_construction"),
+    t("careers.disc_projectMgmt"),
+    t("careers.disc_architecture"),
+    t("careers.disc_masterPlanning"),
+    t("careers.disc_salesMarketing"),
+    t("careers.disc_finance"),
+    t("careers.disc_businessAdmin"),
   ];
 
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Careers | Join ISI Building Solutions</title>
-        <meta
-          name="description"
-          content="Build your career with ISI Building Solutions — Cambodia's leading steel structure company with 300+ professionals and a commitment to innovation and excellence."
-        />
-        <meta
-          property="og:title"
-          content="Careers | Join ISI Building Solutions"
-        />
-        <meta
-          property="og:description"
-          content="Build your career with ISI Building Solutions — Cambodia's leading steel structure company with 300+ professionals and a commitment to innovation and excellence."
-        />
+        <title>{t("careers.metaTitle")}</title>
+        <meta name="description" content={t("careers.metaDesc")} />
+        <meta property="og:title" content={t("careers.metaTitle")} />
+        <meta property="og:description" content={t("careers.metaDesc")} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://isibds.com/careers" />
         <link rel="canonical" href="https://isibds.com/careers" />
@@ -106,16 +97,14 @@ const Careers = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Join Our Team
+                    {t("careers.hero_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-3xl">
-                  Careers
+                  {t("careers.hero_title")}
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
-                  If you are a committed individual who wants to be part of
-                  building this GOOD company to a GREAT one, ISI Building
-                  Solutions surely has a spot for you.
+                  {t("careers.hero_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -137,27 +126,19 @@ const Careers = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Why Join Us
+                  {t("careers.why_eyebrow")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-5">
-                Realize Your
+                {t("careers.why_titleLine1")}
                 <br />
-                Potential With Us
+                {t("careers.why_titleLine2")}
               </h2>
               <p className="text-steel text-base leading-relaxed mb-4">
-                We are committed to engineering and innovation, employing over
-                300 engineers and skilled technicians across multiple
-                disciplines including engineering, manufacturing, fabrication,
-                construction, project management, architecture, and business
-                administration.
+                {t("careers.why_p1")}
               </p>
               <p className="text-steel text-base leading-relaxed mb-6">
-                We are the breeding ground for young professionals — more than
-                half our workforce is homegrown talent. We position ourselves as
-                "The Employer of Choice" in our industries, actively recruiting
-                "The Right People" and investing heavily in employee
-                development.
+                {t("careers.why_p2")}
               </p>
             </motion.div>
 
@@ -172,23 +153,23 @@ const Careers = () => {
                 {[
                   {
                     icon: Cog,
-                    title: "Engineering & Innovation",
-                    desc: "Work with cutting-edge prefabrication and steel structure technologies.",
+                    title: t("careers.card_engineering_title"),
+                    desc: t("careers.card_engineering_desc"),
                   },
                   {
                     icon: Users,
-                    title: "300+ Professionals",
-                    desc: "Join a team of engineers, technicians, and specialists across disciplines.",
+                    title: t("careers.card_professionals_title"),
+                    desc: t("careers.card_professionals_desc"),
                   },
                   {
                     icon: Sprout,
-                    title: "Homegrown Talent",
-                    desc: "More than half our workforce is developed from within — we invest in you.",
+                    title: t("careers.card_homegrown_title"),
+                    desc: t("careers.card_homegrown_desc"),
                   },
                   {
                     icon: TrendingUp,
-                    title: "Exponential Growth",
-                    desc: "Be part of a company scaling rapidly across Cambodia and the region.",
+                    title: t("careers.card_growth_title"),
+                    desc: t("careers.card_growth_desc"),
                   },
                 ].map((item, index) => (
                   <div
@@ -212,7 +193,7 @@ const Careers = () => {
 
           <div className="mt-10 bg-surface-light py-5 px-6 border-l-4 border-accent">
             <p className="text-primary text-base font-semibold">
-              Over the next 2-3 years, we will actively look for 'The Right People' to join our team while investing in professional development to support exponential growth.
+              {t("careers.quote")}
             </p>
           </div>
         </div>
@@ -231,11 +212,11 @@ const Careers = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Opportunities Across
+                {t("careers.disciplines_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              Multiple Disciplines
+              {t("careers.disciplines_title")}
             </h2>
           </motion.div>
 
@@ -246,10 +227,7 @@ const Careers = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.4,
-                  delay: index * 0.05,
-                }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="bg-white p-6 border border-slate-200 text-center"
               >
                 <span className="text-sm font-semibold text-primary">
@@ -274,11 +252,11 @@ const Careers = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Why Work Here
+                {t("careers.benefits_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              What We Offer
+              {t("careers.benefits_title")}
             </h2>
           </motion.div>
 
@@ -289,10 +267,7 @@ const Careers = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.12,
-                }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
                 className="bg-white border border-slate-200 p-8 lg:p-10"
               >
                 <div className="w-12 h-12 border border-slate-200 flex items-center justify-center mb-6">
@@ -310,9 +285,8 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* Current Openings */}
+      {/* Current Openings — hidden */}
       <section className="hidden py-28 bg-primary-dark relative overflow-hidden">
-        {/* Blueprint grid */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -352,10 +326,7 @@ const Careers = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group bg-primary-dark border border-white/10 p-8 hover:border-accent/50 hover:bg-white/[0.05] transition-all duration-300"
               >
                 <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
@@ -381,10 +352,7 @@ const Careers = () => {
                       {job.type}
                     </span>
                     <span className="border border-white/15 px-3 py-1.5 text-[11px] font-mono tracking-[0.1em] text-white/40 uppercase flex items-center gap-2">
-                      <Calendar
-                        size={11}
-                        className="text-accent flex-shrink-0"
-                      />
+                      <Calendar size={11} className="text-accent flex-shrink-0" />
                       By {job.deadline}
                     </span>
                   </div>

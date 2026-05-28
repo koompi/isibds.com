@@ -2,76 +2,79 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, Factory, Utensils, Truck, Sprout, Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const IndustrySpecific = () => {
+  const { t } = useTranslation();
+
   const industries = [
     {
-      title: "Manufacturing",
+      title: t("industry.manufacturing_title"),
       icon: Factory,
       link: "/products-solutions#isi-peb-pre-engineered-buildings",
       applications: [
-        "Garment and Textile Factory",
-        "Fabric Processing Factory",
-        "Footwear Factory",
-        "Automotive Assembly Plant",
-        "Electronic Factory",
-        "Steel Furniture Factory",
+        t("industry.manufacturing_app1"),
+        t("industry.manufacturing_app2"),
+        t("industry.manufacturing_app3"),
+        t("industry.manufacturing_app4"),
+        t("industry.manufacturing_app5"),
+        t("industry.manufacturing_app6"),
       ],
-      brochure: "Manufacturing Solutions Brochure",
+      brochure: t("industrySpecific.mfg_brochure"),
     },
     {
-      title: "Foods & Beverages",
+      title: t("industry.foodBeverage_title"),
       icon: Utensils,
       link: "/products-solutions#isi-peb-pre-engineered-buildings",
       applications: [
-        "Brewery Factory",
-        "Beverage Production Factory",
-        "Food Processing Factory",
+        t("industry.foodBeverage_app1"),
+        t("industry.foodBeverage_app2"),
+        t("industry.foodBeverage_app3"),
       ],
-      brochure: "F&B Solutions Brochure",
+      brochure: t("industrySpecific.fb_brochure"),
     },
     {
-      title: "Logistics",
+      title: t("industry.logistics_title"),
       icon: Truck,
       link: "/products-solutions#isi-peb-pre-engineered-buildings",
       applications: [
-        "Distribution Center",
-        "Warehouse",
-        "Logistics Center",
-        "Cold Storage",
+        t("industry.logistics_app1"),
+        t("industry.logistics_app2"),
+        t("industry.logistics_app3"),
+        t("industry.logistics_app4"),
       ],
-      brochure: "Logistics Solutions Brochure",
+      brochure: t("industrySpecific.logistics_brochure"),
     },
     {
-      title: "Agriculture",
+      title: t("industry.agriculture_title"),
       icon: Sprout,
       link: "/products-solutions#isi-greenhouse",
       applications: [
-        "Greenhouse",
-        "Rice Mill Factory",
-        "Animal Food Factory",
-        "Animal Shed Farm",
-        "Feed Mill Factory",
+        t("industry.agriculture_app1"),
+        t("industry.agriculture_app2"),
+        t("industry.agriculture_app3"),
+        t("industry.agriculture_app4"),
+        t("industry.agriculture_app5"),
       ],
-      brochure: "Agri-industry Solutions Brochure",
+      brochure: t("industrySpecific.agri_brochure"),
     },
     {
-      title: "Residential",
+      title: t("industry.residential_title"),
       icon: Home,
       link: "/products-solutions#isi-home",
-      applications: ["Steel Roofing", "Steel Cladding"],
-      brochure: "Roofing Systems & Solutions Manual",
+      applications: [
+        t("industry.residential_app1"),
+        t("industry.residential_app2"),
+      ],
+      brochure: t("industrySpecific.residential_brochure"),
     },
   ];
 
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Industry Specific Solutions | ISI Building Solutions</title>
-        <meta
-          name="description"
-          content="Specialized steel building solutions tailored for Manufacturing, F&B, Logistics, Agriculture, and Residential sectors."
-        />
+        <title>{t("industrySpecific.metaTitle")}</title>
+        <meta name="description" content={t("industrySpecific.metaDesc")} />
       </Helmet>
 
       {/* Hero Banner */}
@@ -89,14 +92,14 @@ const IndustrySpecific = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Our Expertise
+                    {t("industrySpecific.hero_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight max-w-3xl uppercase">
-                  Industry Specific Solutions
+                  {t("industrySpecific.hero_title")}
                 </h1>
                 <p className="text-white/60 text-lg mt-6 max-w-2xl leading-relaxed">
-                  Tailored structural engineering and building systems designed to meet the unique operational requirements of diverse industries.
+                  {t("industrySpecific.hero_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -121,11 +124,11 @@ const IndustrySpecific = () => {
                   <industry.icon size={40} className="text-accent group-hover:scale-110 transition-transform duration-300" />
                   <span className="text-slate-100 text-6xl font-black group-hover:text-accent/5 transition-colors">0{idx + 1}</span>
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-primary mb-6 uppercase tracking-tight">
                   {industry.title}
                 </h3>
-                
+
                 <ul className="space-y-4 mb-10 flex-grow">
                   {industry.applications.map((app, i) => (
                     <li key={i} className="text-steel flex items-start gap-3">
@@ -140,11 +143,11 @@ const IndustrySpecific = () => {
                     to={industry.link}
                     className="inline-flex items-center gap-2 text-accent text-xs font-bold uppercase tracking-widest hover:gap-3 transition-all"
                   >
-                    View Products <ArrowRight size={14} />
+                    {t("industrySpecific.viewProducts")} <ArrowRight size={14} />
                   </Link>
 
                   <div className="pt-4 border-t border-slate-50">
-                    <span className="text-[10px] font-bold text-accent uppercase tracking-widest block mb-1">Downloads</span>
+                    <span className="text-[10px] font-bold text-accent uppercase tracking-widest block mb-1">{t("industrySpecific.downloads")}</span>
                     <span className="text-sm font-bold text-primary">{industry.brochure}</span>
                   </div>
                 </div>
@@ -157,15 +160,17 @@ const IndustrySpecific = () => {
       {/* CTA */}
       <section className="py-20 bg-primary-dark">
         <div className="container mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">Need a specialized solution?</h2>
+          <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">
+            {t("industrySpecific.cta_title")}
+          </h2>
           <p className="text-white/50 mb-10 max-w-2xl mx-auto">
-            Our engineering team can customize any of our products to fit your specific industry needs.
+            {t("industrySpecific.cta_desc")}
           </p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-3 bg-accent text-white font-bold text-sm py-4 px-10 hover:bg-accent-dark transition-all"
           >
-            LET'S DISCUSS YOUR PROJECT <ArrowRight size={16} />
+            {t("industrySpecific.cta_button")} <ArrowRight size={16} />
           </Link>
         </div>
       </section>

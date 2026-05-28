@@ -10,7 +10,11 @@
       "Skill(superpowers:using-superpowers)",
       "Skill(superpowers:using-superpowers:*)",
       "Skill(superpowers:systematic-debugging)",
-      "Skill(superpowers:systematic-debugging:*)"
+      "Skill(superpowers:systematic-debugging:*)",
+      "Bash(npm install *)",
+      "Bash(cat /Users/batman/.npm/_logs/2026-05-28T04_25_15_144Z-debug-0.log | tail -30)",
+      "Read(//Users/batman/.npm/_logs/**)",
+      "Bash(pnpm add *)"
     ],
     "additionalDirectories": [
       "/Users/batman/Desktop/isibds.com/docs/superpowers"

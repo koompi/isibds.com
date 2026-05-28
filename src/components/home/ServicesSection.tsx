@@ -8,14 +8,17 @@ import {
   House,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 const ServicesSection = () => {
+  const { t } = useTranslation();
+
   const services = [
     {
       num: "01",
       icon: Factory,
       title: "ISI PEB",
-      description:
-        "Complete pre-engineered building systems with standing seam roofing, wall cladding, and accessories for industrial and commercial applications.",
+      description: t("services.peb_desc"),
       link: "/products-solutions#isi-peb-pre-engineered-buildings",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
@@ -24,8 +27,7 @@ const ServicesSection = () => {
       num: "02",
       icon: Building2,
       title: "Heavy Steel Structures",
-      description:
-        "Specialized steel structural systems for office buildings, shopping malls, showrooms, parking structures, and mixed-use developments.",
+      description: t("services.heavy_desc"),
       link: "/products-solutions#heavy-steel-structures",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
@@ -34,8 +36,7 @@ const ServicesSection = () => {
       num: "03",
       icon: Layers,
       title: "ISI TRUSS",
-      description:
-        "Comprehensive roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates.",
+      description: t("services.truss_desc"),
       link: "/products-solutions#isi-truss",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/roof-solution-1.jpg",
@@ -44,8 +45,7 @@ const ServicesSection = () => {
       num: "04",
       icon: Sprout,
       title: "ISI Greenhouse",
-      description:
-        "High-quality pre-engineered structural solutions tailored for modern agriculture, focusing on durability, climate control, and rapid assembly.",
+      description: t("services.greenhouse_desc"),
       link: "/products-solutions#isi-greenhouse",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/Greenhouse/20250521_GREENHOUSE-3.jpg",
@@ -54,8 +54,7 @@ const ServicesSection = () => {
       num: "05",
       icon: House,
       title: "ISI Home",
-      description:
-        "Innovative housing solutions blending traditional Khmer aesthetics with modern steel engineering for safe, affordable living.",
+      description: t("services.home_desc"),
       link: "/products-solutions#isi-home",
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-2.jpg",
@@ -76,17 +75,16 @@ const ServicesSection = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                What We Do
+                {t("services.eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              Products &<br />
-              Solutions
+              {t("services.titleLine1")}
+              <br />
+              {t("services.titleLine2")}
             </h2>
             <p className="text-steel text-base leading-relaxed mt-6 max-w-2xl">
-              Offering practical solutions that streamline steel structure
-              design and build process, improving manufacturing productivity,
-              and providing superior quality buildings.
+              {t("services.description")}
             </p>
           </motion.div>
         </div>
@@ -133,7 +131,7 @@ const ServicesSection = () => {
                     {service.description}
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-bold tracking-wide uppercase text-primary group-hover:text-accent transition-colors">
-                    Learn More
+                    {t("services.learnMore")}
                     <ArrowRight
                       size={13}
                       className="group-hover:translate-x-1 transition-transform"

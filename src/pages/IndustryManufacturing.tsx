@@ -2,15 +2,18 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const IndustryManufacturing = () => {
+  const { t } = useTranslation();
+
   const applications = [
-    "Garment and Textile Factory",
-    "Fabric Processing Factory",
-    "Footwear Factory",
-    "Automotive Assembly Plant",
-    "Electronic Factory",
-    "Steel Furniture Factory",
+    t("industry.manufacturing_app1"),
+    t("industry.manufacturing_app2"),
+    t("industry.manufacturing_app3"),
+    t("industry.manufacturing_app4"),
+    t("industry.manufacturing_app5"),
+    t("industry.manufacturing_app6"),
   ];
 
   const projects = [
@@ -39,11 +42,8 @@ const IndustryManufacturing = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Manufacturing Solutions | ISI Building Solutions</title>
-        <meta
-          name="description"
-          content="Pre-engineered building solutions for manufacturing — garment, textile, automotive, electronics, and more."
-        />
+        <title>{t("industry.manufacturing_metaTitle")}</title>
+        <meta name="description" content={t("industry.manufacturing_metaDesc")} />
       </Helmet>
 
       {/* Hero Banner */}
@@ -61,15 +61,14 @@ const IndustryManufacturing = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Industry Specific
+                    {t("industry.manufacturing_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight max-w-3xl uppercase">
-                  Manufacturing
+                  {t("industry.manufacturing_title")}
                 </h1>
                 <p className="text-white/60 text-lg mt-6 max-w-2xl leading-relaxed">
-                  Purpose-built steel structures for high-volume production
-                  environments — from garment lines to automotive assembly.
+                  {t("industry.manufacturing_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -92,11 +91,11 @@ const IndustryManufacturing = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Applications
+                  {t("industry.applications")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight tracking-tight mb-10 uppercase">
-                Manufacturing
+                {t("industry.manufacturing_title")}
               </h2>
 
               <ul className="space-y-5">
@@ -115,7 +114,7 @@ const IndustryManufacturing = () => {
                   to="/products-solutions"
                   className="inline-flex items-center gap-3 bg-accent text-white font-bold text-sm py-4 px-8 hover:bg-accent-dark transition-all"
                 >
-                  VIEW PRODUCTS & SOLUTIONS <ArrowRight size={16} />
+                  {t("industry.viewProducts")} <ArrowRight size={16} />
                 </Link>
               </div>
             </motion.div>
@@ -150,7 +149,6 @@ const IndustryManufacturing = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

@@ -3,7 +3,9 @@ import { Menu, X, ChevronDown, ArrowRight, Warehouse, Truck, Sprout, Utensils, H
 import type { LucideIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import PDFModal from "./PDFModal";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 type SubItem = {
 	name: string;
@@ -26,15 +28,16 @@ const Navbar = () => {
 	const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 	const closeTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 	const location = useLocation();
+	const { t } = useTranslation();
 
 	const navItems: NavItem[] = [
 		{
-			name: "About",
+			name: t("nav.about"),
 			path: "/about",
 			hasDropdown: false,
 		},
 		{
-			name: "Products & Solutions",
+			name: t("nav.products"),
 			path: "/products-solutions",
 			hasDropdown: true,
 			isMega: true,
@@ -43,80 +46,75 @@ const Navbar = () => {
 					name: "ISI PEB",
 					path: "/products-solutions#isi-peb-pre-engineered-buildings",
 					icon: Warehouse,
-					description: "Complete pre-engineered building systems for industrial and commercial applications.",
+					description: t("nav.products_peb_desc"),
 				},
 				{
 					name: "Heavy Steel Structures",
 					path: "/products-solutions#heavy-steel-structures",
 					icon: Building2,
-					description: "Specialized steel structural systems for office buildings, malls, and mixed-use developments.",
+					description: t("nav.products_heavy_desc"),
 				},
 				{
 					name: "ISI TRUSS",
 					path: "/products-solutions#isi-truss",
 					icon: Triangle,
-					description: "Comprehensive roofing systems for durability and high performance in tropical climates.",
+					description: t("nav.products_truss_desc"),
 				},
 				{
 					name: "ISI Greenhouse",
 					path: "/products-solutions#isi-greenhouse",
 					icon: TentTree,
-					description: "Pre-engineered structural solutions for modern agriculture and sustainable farming.",
+					description: t("nav.products_greenhouse_desc"),
 				},
 				{
 					name: "ISI Home",
 					path: "/products-solutions#isi-home",
 					icon: HousePlus,
-					description: "Innovative housing blending Khmer aesthetics with modern steel engineering.",
+					description: t("nav.products_home_desc"),
 				},
 			],
 		},
 		{
-			name: "Industry Specific",
+			name: t("nav.industrySpecific"),
 			hasDropdown: true,
 			isMega: true,
 			items: [
 				{
-					name: "Manufacturing",
+					name: t("industry.manufacturing_title"),
 					path: "/services/industry-specific/manufacturing",
 					icon: Factory,
-					description:
-						"Garment, Textile, Automotive, and Electronic factory solutions.",
+					description: t("nav.industry_manufacturing_desc"),
 				},
 				{
-					name: "Foods & Beverages",
+					name: t("industry.foodBeverage_title"),
 					path: "/services/industry-specific/food-beverage",
 					icon: Utensils,
-					description:
-						"Brewery, Beverage, and Food processing facility systems.",
+					description: t("nav.industry_foodBeverage_desc"),
 				},
 				{
-					name: "Logistics",
+					name: t("industry.logistics_title"),
 					path: "/services/industry-specific/logistics",
 					icon: Truck,
-					description:
-						"Distribution centers, Warehouses, and Cold storage solutions.",
+					description: t("nav.industry_logistics_desc"),
 				},
 				{
-					name: "Agriculture",
+					name: t("industry.agriculture_title"),
 					path: "/services/industry-specific/agriculture",
 					icon: Sprout,
-					description:
-						"Greenhouse, Rice mills, and Agri-industry building systems.",
+					description: t("nav.industry_agriculture_desc"),
 				},
 				{
-					name: "Residential",
+					name: t("industry.residential_title"),
 					path: "/services/industry-specific/residential",
 					icon: Home,
-					description:
-						"Steel roofing, cladding, and modern housing solutions.",
+					description: t("nav.industry_residential_desc"),
 				},
 			],
 		},
-		{ name: "Portfolios", path: "/portfolios", hasDropdown: false },
-		{ name: "Technology", path: "/technology", hasDropdown: false },
-		{ name: "Careers", path: "/careers", hasDropdown: false },
-		{ name: "Contact Us", path: "/contact", hasDropdown: false },
+		{ name: t("nav.portfolios"), path: "/portfolios", hasDropdown: false },
+		{ name: t("nav.technology"), path: "/technology", hasDropdown: false },
+		{ name: t("nav.careers"), path: "/careers", hasDropdown: false },
+		{ name: t("nav.contact"), path: "/contact", hasDropdown: false },
 	];
 
 	const isPathActive = (path: string) =>
@@ -138,7 +136,6 @@ const Navbar = () => {
 		(i) => i.isMega && i.name === activeDropdown
 	);
 
-	// Using the primary logo
 	const logoSrc = "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isibds-logo.png";
 
 	const navBg = "bg-white shadow-md";
@@ -148,7 +145,6 @@ const Navbar = () => {
 		<nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${navBg}`}>
 			<div className="container mx-auto px-4 lg:px-8">
 				<div className="flex justify-between items-center h-16 lg:h-[72px]">
-					{/* Logo — theme-aware: dark-mode version on dark backgrounds */}
 					<Link to="/" className="flex items-center gap-3 cursor-pointer">
 						<img
 							src={logoSrc}
@@ -170,7 +166,7 @@ const Navbar = () => {
 										onMouseLeave={scheduleClose}
 									>
 										<button
-											className={`relative px-2.5 xl:px-3 py-2 text-[11px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer flex items-center gap-1.5 ${
+											className={`relative px-1.5 xl:px-2 py-2 text-[11px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer flex items-center gap-1.5 ${
 												isActive
 													? "text-accent"
 													: "text-primary hover:text-primary-dark"
@@ -186,7 +182,7 @@ const Navbar = () => {
 											{isActive && (
 												<motion.div
 													layoutId="nav-indicator"
-													className="absolute bottom-0 left-3 right-3 h-0.5 bg-accent"
+													className="absolute bottom-0 left-1.5 right-1.5 h-0.5 bg-accent"
 												/>
 											)}
 										</button>
@@ -198,7 +194,7 @@ const Navbar = () => {
 									<Link
 										key={index}
 										to={item.path || "#"}
-										className={`relative px-2.5 xl:px-3 py-2 text-[11px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer ${
+										className={`relative px-1.5 xl:px-2 py-2 text-[11px] font-semibold tracking-[0.08em] uppercase transition-colors duration-200 cursor-pointer ${
 											isActive
 												? "text-accent"
 												: "text-primary hover:text-primary-dark"
@@ -208,7 +204,7 @@ const Navbar = () => {
 										{isActive && (
 											<motion.div
 												layoutId="nav-indicator"
-												className="absolute bottom-0 left-3 right-3 h-0.5 bg-accent"
+												className="absolute bottom-0 left-1.5 right-1.5 h-0.5 bg-accent"
 											/>
 										)}
 									</Link>
@@ -217,13 +213,16 @@ const Navbar = () => {
 						})}
 					</div>
 
-					{/* CTA + Mobile Button */}
+					{/* CTA + Language Switcher + Mobile Button */}
 					<div className="flex items-center gap-3">
+						<div className="hidden lg:flex items-center">
+							<LanguageSwitcher />
+						</div>
 						<button
 							onClick={() => setPdfOpen(true)}
 							className="hidden lg:inline-flex items-center gap-1.5 text-[11px] font-semibold px-4 py-2 bg-accent text-white hover:bg-accent-dark transition-all duration-200 cursor-pointer"
 						>
-							Download
+							{t("nav.download")}
 							<ArrowRight size={14} />
 						</button>
 
@@ -238,7 +237,7 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			{/* Mega Menu — dynamic for any isMega item */}
+			{/* Mega Menu */}
 			<AnimatePresence>
 				{activeMegaItem && activeMegaItem.items && (
 					<motion.div
@@ -293,7 +292,7 @@ const Navbar = () => {
 														: "text-accent/60 group-hover/card:text-accent"
 												}`}
 											>
-												Learn more
+												{t("nav.learnMore")}
 												<ArrowRight size={11} className="group-hover/card:translate-x-0.5 transition-transform" />
 											</span>
 										</Link>
@@ -365,11 +364,14 @@ const Navbar = () => {
 									);
 								}
 							})}
+							<div className="mt-4">
+								<LanguageSwitcher mobile />
+							</div>
 							<button
 								onClick={() => { setIsOpen(false); setPdfOpen(true); }}
-								className="mt-4 text-center bg-accent text-white font-semibold py-3 px-6 text-sm cursor-pointer hover:bg-accent-dark transition-colors"
+								className="mt-2 text-center bg-accent text-white font-semibold py-3 px-6 text-sm cursor-pointer hover:bg-accent-dark transition-colors"
 							>
-								Download
+								{t("nav.download")}
 							</button>
 						</div>
 					</motion.div>

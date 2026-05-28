@@ -10,104 +10,90 @@ import {
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const DesignBuild = () => {
+  const { t } = useTranslation();
+
   const benefits = [
     {
       icon: Leaf,
-      title: "Eco-Friendly",
-      description:
-        "Manufacturing in controlled environments enables enhanced planning, waste reduction, and productivity improvements for sustainable building practices.",
+      title: t("designBuild.ben_eco_title"),
+      description: t("designBuild.ben_eco_desc"),
     },
     {
       icon: ShieldCheck,
-      title: "Consistent Quality",
-      description:
-        "Factory-based assembly by experienced crews with multiple quality checkpoints produces superior results compared to site-built alternatives.",
+      title: t("designBuild.ben_quality_title"),
+      description: t("designBuild.ben_quality_desc"),
     },
     {
       icon: DollarSign,
-      title: "Financial Saving",
-      description:
-        "Modular, repetitive components enable mass production, making projects cost-competitive, particularly for large-scale developments.",
+      title: t("designBuild.ben_financial_title"),
+      description: t("designBuild.ben_financial_desc"),
     },
     {
       icon: Zap,
-      title: "Fast Tracking",
-      description:
-        "Construction timelines can be reduced by over 50% through improved planning and elimination of weather-related delays.",
+      title: t("designBuild.ben_fast_title"),
+      description: t("designBuild.ben_fast_desc"),
     },
     {
       icon: HardHat,
-      title: "Safety",
-      description:
-        "Factory-controlled environments minimize moisture, environmental hazards, and dirt exposure during assembly processes.",
+      title: t("designBuild.ben_safety_title"),
+      description: t("designBuild.ben_safety_desc"),
     },
   ];
 
   const process = [
     {
       step: "01",
-      title: "Project Identification",
-      description:
-        "We identify projects with opportunities for implementing prefabricated construction methods that align with owner goals.",
+      title: t("designBuild.step1_title"),
+      description: t("designBuild.step1_desc"),
     },
     {
       step: "02",
-      title: "Integrated Team Assembly",
-      description:
-        "Architects, contractors, designers, engineers, and specialty trade contractors collaborate early in development.",
+      title: t("designBuild.step2_title"),
+      description: t("designBuild.step2_desc"),
     },
     {
       step: "03",
-      title: "Value Engineering",
-      description:
-        "Our integrated approach enables innovation and cost-effective, constructable solutions from the start.",
+      title: t("designBuild.step3_title"),
+      description: t("designBuild.step3_desc"),
     },
     {
       step: "04",
-      title: "Prefabricated Manufacturing",
-      description:
-        "Components are manufactured in controlled factory environments with rigorous quality control processes.",
+      title: t("designBuild.step4_title"),
+      description: t("designBuild.step4_desc"),
     },
     {
       step: "05",
-      title: "On-Site Assembly",
-      description:
-        "Pre-manufactured components are delivered and assembled on-site with precision and efficiency.",
+      title: t("designBuild.step5_title"),
+      description: t("designBuild.step5_desc"),
     },
     {
       step: "06",
-      title: "Project Completion",
-      description:
-        "Final quality checks, handover, and ongoing support ensure client satisfaction and project success.",
+      title: t("designBuild.step6_title"),
+      description: t("designBuild.step6_desc"),
     },
+  ];
+
+  const collaborators = [
+    t("designBuild.collab_architects"),
+    t("designBuild.collab_designers"),
+    t("designBuild.collab_consultants"),
+    t("designBuild.collab_contractors"),
+    t("designBuild.collab_engineers"),
+    t("designBuild.collab_trades"),
   ];
 
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>
-          Architectural Steel Structures &amp; Roofing Solutions | ISI Building
-          Solutions
-        </title>
-        <meta
-          name="description"
-          content="ISI delivers architectural steel structures and roofing solutions through an integrated design-build approach that saves time, reduces costs, and ensures superior quality."
-        />
-        <meta
-          property="og:title"
-          content="Architectural Steel Structures &amp; Roofing Solutions | ISI Building Solutions"
-        />
-        <meta
-          property="og:description"
-          content="ISI delivers architectural steel structures and roofing solutions through an integrated design-build approach that saves time, reduces costs, and ensures superior quality."
-        />
+        <title>{t("designBuild.metaTitle")}</title>
+        <meta name="description" content={t("designBuild.metaDesc")} />
+        <meta property="og:title" content={t("designBuild.metaTitle")} />
+        <meta property="og:description" content={t("designBuild.metaDesc")} />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://isibds.com/services/design-build"
-        />
+        <meta property="og:url" content="https://isibds.com/services/design-build" />
         <link rel="canonical" href="https://isibds.com/services/design-build" />
       </Helmet>
       {/* Hero Banner */}
@@ -125,18 +111,14 @@ const DesignBuild = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Products & Services
+                    {t("designBuild.hero_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight max-w-3xl">
-                  Architectural Steel Structures
-                  <br />
-                  and Roofing Solutions
+                  {t("designBuild.hero_title")}
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
-                  Identifying projects with opportunities for implementing
-                  prefabricated construction methods that deliver innovation,
-                  efficiency, and value.
+                  {t("designBuild.hero_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -158,34 +140,27 @@ const DesignBuild = () => {
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Our Methodology
+                  {t("designBuild.why_eyebrow")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight mb-6">
-                Why Architectural Steel Structures?
+                {t("designBuild.why_title")}
               </h2>
               <p className="text-steel text-lg leading-relaxed mb-6">
-                Design-Build saves time and money for the owner while providing
-                the opportunity to achieve innovation because Design-build
-                brings value engineering into the process.
+                {t("designBuild.why_p1")}
               </p>
               <p className="text-steel text-base leading-relaxed mb-8">
-                Our methodology integrates architects, contractors, designers,
-                engineers, and specialty trade contractors early in project
-                development to propose cost-effective and constructable
-                solutions.
+                {t("designBuild.why_p2")}
               </p>
 
               <div className="flex items-start gap-4 bg-surface-light p-6 border-l-4 border-accent">
                 <Users size={24} className="text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="text-lg font-bold text-primary mb-2">
-                    Collaborative Approach
+                    {t("designBuild.collab_title")}
                   </h3>
                   <p className="text-steel text-[15px] leading-relaxed">
-                    We partner with owners seeking integrated
-                    design-construction solutions that prioritize sustainable
-                    building methods and value engineering.
+                    {t("designBuild.collab_desc")}
                   </p>
                 </div>
               </div>
@@ -240,11 +215,11 @@ const DesignBuild = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent" />
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Prefabrication Benefits
+                {t("designBuild.prefab_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-white leading-tight tracking-tight">
-              Why Prefab?
+              {t("designBuild.prefab_title")}
             </h2>
           </motion.div>
 
@@ -293,13 +268,13 @@ const DesignBuild = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Our Process
+                {t("designBuild.process_eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-primary leading-tight tracking-tight">
-              From Concept
+              {t("designBuild.process_titleLine1")}
               <br />
-              to Completion
+              {t("designBuild.process_titleLine2")}
             </h2>
           </motion.div>
 
@@ -351,17 +326,16 @@ const DesignBuild = () => {
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Our Approach
+                  {t("designBuild.approach_eyebrow")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight tracking-tight mb-6">
-                Partnership &<br />
-                Collaboration
+                {t("designBuild.approach_titleLine1")}
+                <br />
+                {t("designBuild.approach_titleLine2")}
               </h2>
               <p className="text-white/50 text-base leading-relaxed">
-                We target projects leveraging prefabrication, partnering with
-                owners seeking integrated design-construction solutions that
-                prioritize sustainable building methods.
+                {t("designBuild.approach_desc")}
               </p>
             </motion.div>
 
@@ -373,17 +347,10 @@ const DesignBuild = () => {
               className="lg:col-span-6 lg:col-start-7"
             >
               <h3 className="text-xl font-bold mb-6 tracking-tight">
-                We Collaborate With
+                {t("designBuild.collab_with")}
               </h3>
               <div className="grid grid-cols-2 gap-4">
-                {[
-                  "Architects",
-                  "Designers",
-                  "Consultants",
-                  "Contractors",
-                  "Engineers",
-                  "Specialty Trades",
-                ].map((role, i) => (
+                {collaborators.map((role, i) => (
                   <div
                     key={i}
                     className="flex items-center gap-3 py-4 border-b border-white/10"
@@ -412,13 +379,12 @@ const DesignBuild = () => {
               className="lg:col-span-7 mb-8 lg:mb-0"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight tracking-tight">
-                Ready to Discuss
+                {t("designBuild.cta_titleLine1")}
                 <br />
-                Your Project?
+                {t("designBuild.cta_titleLine2")}
               </h2>
               <p className="text-steel text-base leading-relaxed mt-4 max-w-lg">
-                Let's explore how our integrated approach can bring value to
-                your next steel structure project.
+                {t("designBuild.cta_subtitle")}
               </p>
             </motion.div>
             <motion.div
@@ -432,7 +398,7 @@ const DesignBuild = () => {
                 to="/contact"
                 className="group inline-flex items-center justify-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
               >
-                Contact Us
+                {t("designBuild.cta_contact")}
                 <ArrowRight
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"
@@ -442,7 +408,7 @@ const DesignBuild = () => {
                 to="/portfolios"
                 className="inline-flex items-center justify-center gap-3 border border-slate-300 text-primary font-semibold text-sm py-4 px-8 hover:bg-slate-50 transition-all duration-200 cursor-pointer"
               >
-                View Projects
+                {t("designBuild.cta_viewProjects")}
               </Link>
             </motion.div>
           </div>

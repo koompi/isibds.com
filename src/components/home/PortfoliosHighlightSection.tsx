@@ -1,24 +1,27 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const PortfoliosHighlightSection = () => {
+  const { t } = useTranslation();
+
   const portfolios = [
     {
       title: "Sunfair Garment Factory",
-      category: "Pre-Engineered Buildings",
+      category: t("portfoliosHighlight.catPEB"),
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
     },
     {
       title: "Khmer Beverages",
-      category: "Pre-Engineered Buildings",
+      category: t("portfoliosHighlight.catPEB"),
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg",
     },
     {
       title: "AEON Mall Meanchey",
-      category: "Heavy Steel Structures",
+      category: t("portfoliosHighlight.catHeavy"),
       image:
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
     },
@@ -38,13 +41,13 @@ const PortfoliosHighlightSection = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Selected Work
+                {t("portfoliosHighlight.eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight tracking-tight">
-              Featured
+              {t("portfoliosHighlight.titleLine1")}
               <br />
-              Projects
+              {t("portfoliosHighlight.titleLine2")}
             </h2>
           </motion.div>
           <motion.div
@@ -57,7 +60,7 @@ const PortfoliosHighlightSection = () => {
               to="/portfolios"
               className="hidden md:inline-flex items-center gap-3 text-sm font-semibold text-accent hover:text-white transition-colors cursor-pointer"
             >
-              <span>View All Projects</span>
+              <span>{t("portfoliosHighlight.viewAll")}</span>
               <ArrowRight size={16} />
             </Link>
           </motion.div>
@@ -148,7 +151,7 @@ const PortfoliosHighlightSection = () => {
             to="/portfolios"
             className="inline-flex items-center gap-2 text-accent font-semibold hover:text-white transition-colors cursor-pointer"
           >
-            View All Projects
+            {t("portfoliosHighlight.viewAll")}
             <ArrowRight size={16} />
           </Link>
         </div>

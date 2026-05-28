@@ -3,8 +3,10 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const ProductsSolutions = () => {
+  const { t } = useTranslation();
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -16,15 +18,14 @@ const ProductsSolutions = () => {
   const systems = [
     {
       title: "ISI PEB (Pre-Engineered Buildings)",
-      description:
-        "ISI Pre-Engineered Buildings (PEB) is a complete system that incorporates new features of standing seam roofing solution, attractive wall cladding, standardized trim, and other accessories, providing excellent performance in terms of speed, cost effectiveness, long-term durability, functionality, appearance, and especially water leakage prevention. Ideal for both industrial and commercial applications such as warehouses, logistics facilities, and complex structures.",
+      description: t("productsSolutions.peb_desc"),
       benefits: [
-        "Adaptable building codes",
-        "Superior materials specifications",
-        "Fast design and delivery timelines",
-        "Cost savings up to 30% vs conventional",
-        "Wide clear spans up to 60+ meters",
-        "Easy future expansion capabilities",
+        t("productsSolutions.peb_b1"),
+        t("productsSolutions.peb_b2"),
+        t("productsSolutions.peb_b3"),
+        t("productsSolutions.peb_b4"),
+        t("productsSolutions.peb_b5"),
+        t("productsSolutions.peb_b6"),
       ],
       images: [
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg",
@@ -40,14 +41,13 @@ const ProductsSolutions = () => {
     },
     {
       title: "Heavy Steel Structures",
-      description:
-        "Specialized steel structural systems for vertical construction projects, including office buildings, shopping malls, showrooms, parking structures, and mixed-use developments. Engineered for strength, efficiency, and architectural flexibility. Our steel structures are fabricated into precise shapes and sizes according to the technical requirements of each project.",
+      description: t("productsSolutions.heavy_desc"),
       benefits: [
-        "Launch business sooner with 30% faster construction",
-        "Maximize space with 90-meter column-free spans",
-        "Reduce foundation costs with lightweight steel frames",
-        "Ensure perfect assembly using precision 3D design",
-        "Achieve modern looks impossible with traditional concrete",
+        t("productsSolutions.heavy_b1"),
+        t("productsSolutions.heavy_b2"),
+        t("productsSolutions.heavy_b3"),
+        t("productsSolutions.heavy_b4"),
+        t("productsSolutions.heavy_b5"),
       ],
       images: [
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg",
@@ -59,13 +59,12 @@ const ProductsSolutions = () => {
 
     {
       title: "ISI TRUSS",
-      description:
-        "ISI TRUSS offers a comprehensive range of roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates. We cater to residential, commercial, warehouse, and heavy industrial applications, focusing on advanced coating technologies and structural integrity.",
+      description: t("productsSolutions.truss_desc"),
       benefits: [
-        "Water leakage prevention",
-        "Lower electricity bills with heat-reflecting advanced insulation",
-        "Lock out water with 360-degree seaming technology.",
-        "Extend building life with climate-resistant protective coatings.",
+        t("productsSolutions.truss_b1"),
+        t("productsSolutions.truss_b2"),
+        t("productsSolutions.truss_b3"),
+        t("productsSolutions.truss_b4"),
       ],
       images: [
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/TRUSS/20260430_CHAKIRI_ROOFING_U&C_SHAPE-13.jpg",
@@ -77,14 +76,13 @@ const ProductsSolutions = () => {
     },
     {
       title: "ISI Greenhouse",
-      description:
-        "ISI Greenhouse is designed as a high-quality, pre-engineered structural solution tailored for the modern agricultural landscape. It focuses on durability, climate control, and rapid assembly to support sustainable farming and commercial operations.",
+      description: t("productsSolutions.greenhouse_desc"),
       benefits: [
-        "Control climate for consistent, year-round farming success",
-        "Maximize profits with durable and stable structures",
-        "Withstand high winds using UV-protected, rust-resistant steel",
-        "Expand easily with fast installation and relocation",
-        "Aesthetic design, built for multi-purpose creativity",
+        t("productsSolutions.greenhouse_b1"),
+        t("productsSolutions.greenhouse_b2"),
+        t("productsSolutions.greenhouse_b3"),
+        t("productsSolutions.greenhouse_b4"),
+        t("productsSolutions.greenhouse_b5"),
       ],
       images: [
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/Greenhouse/20250521_GREENHOUSE-3.jpg",
@@ -94,13 +92,12 @@ const ProductsSolutions = () => {
     },
     {
       title: "ISI Home",
-      description:
-        "ISI Homes offers innovative housing solutions that blend traditional Khmer aesthetics with modern engineering. Designed for safety, health, and affordability, we provide rural and suburban communities with high-quality homes built for lasting stability.",
+      description: t("productsSolutions.home_desc"),
       benefits: [
-        "Integrated bathrooms and clean water for a healthy home.",
-        "Advanced insulation to maintain a cool, energy-efficient interior.",
-        "Strong steel frames built to last generations.",
-        "Quick on-site assembly without cutting quality.",
+        t("productsSolutions.home_b1"),
+        t("productsSolutions.home_b2"),
+        t("productsSolutions.home_b3"),
+        t("productsSolutions.home_b4"),
       ],
       images: [
         "https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/home-2.jpg",
@@ -113,24 +110,12 @@ const ProductsSolutions = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Products & Solutions | ISI Building Solutions</title>
-        <meta
-          name="description"
-          content="Explore ISI's pre-engineered building systems and heavy steel structures — delivering cost-efficient, high-quality factory-manufactured buildings across Southeast Asia."
-        />
-        <meta
-          property="og:title"
-          content="Products & Solutions | ISI Building Solutions"
-        />
-        <meta
-          property="og:description"
-          content="Explore ISI's pre-engineered building systems and heavy steel structures — delivering cost-efficient, high-quality factory-manufactured buildings across Southeast Asia."
-        />
+        <title>{t("productsSolutions.metaTitle")}</title>
+        <meta name="description" content={t("productsSolutions.metaDesc")} />
+        <meta property="og:title" content={t("productsSolutions.metaTitle")} />
+        <meta property="og:description" content={t("productsSolutions.metaDesc")} />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:url"
-          content="https://isibds.com/products-solutions"
-        />
+        <meta property="og:url" content="https://isibds.com/products-solutions" />
         <link rel="canonical" href="https://isibds.com/products-solutions" />
       </Helmet>
       {/* Hero Banner */}
@@ -148,16 +133,14 @@ const ProductsSolutions = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Products & Solutions
+                    {t("productsSolutions.hero_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-3xl font-bold text-white leading-tight tracking-tight max-w-3xl uppercase">
-                  Products & Solutions
+                  {t("productsSolutions.hero_title")}
                 </h1>
                 <p className="text-white/50 text-lg mt-6 max-w-2xl leading-relaxed">
-                  Developing practical solutions that streamline steel structure
-                  design and build process, improving manufacturing
-                  productivity, and providing superior quality buildings.
+                  {t("productsSolutions.hero_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -226,7 +209,7 @@ const ProductsSolutions = () => {
                     >
                       <div className="col-span-full mb-2">
                         <h4 className="text-accent text-[11px] font-bold tracking-[0.2em] uppercase">
-                          Key Features & Benefits
+                          {t("productsSolutions.keyFeatures")}
                         </h4>
                       </div>
                       {system.benefits.map((benefit, i) => (
@@ -314,13 +297,12 @@ const ProductsSolutions = () => {
               className="lg:col-span-7 mb-8 lg:mb-0"
             >
               <h2 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
-                Ready to Start
+                {t("productsSolutions.cta_titleLine1")}
                 <br />
-                Your Project?
+                {t("productsSolutions.cta_titleLine2")}
               </h2>
               <p className="text-white/45 text-base leading-relaxed mt-4 max-w-lg">
-                Let's discuss how our building systems can meet your specific
-                requirements.
+                {t("productsSolutions.cta_subtitle")}
               </p>
             </motion.div>
             <motion.div
@@ -334,7 +316,7 @@ const ProductsSolutions = () => {
                 to="/contact"
                 className="group inline-flex items-center justify-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
               >
-                Contact Us
+                {t("productsSolutions.cta_contact")}
                 <ArrowRight
                   size={16}
                   className="group-hover:translate-x-1 transition-transform"
@@ -344,7 +326,7 @@ const ProductsSolutions = () => {
                 to="/portfolios"
                 className="inline-flex items-center justify-center gap-3 border border-white/20 text-white font-semibold text-sm py-4 px-8 hover:bg-white/5 transition-all duration-200 cursor-pointer"
               >
-                View Projects
+                {t("productsSolutions.cta_viewProjects")}
               </Link>
             </motion.div>
           </div>

@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnimatedCounter } from "../ui/AnimatedCounter";
+import { useTranslation } from "react-i18next";
 
 const CompanyProfileSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-28 bg-primary text-white overflow-hidden relative">
       {/* Subtle diagonal pattern */}
@@ -28,46 +31,43 @@ const CompanyProfileSection = () => {
             <div className="flex items-center gap-3 mb-8">
               <div className="w-8 h-px bg-accent"></div>
               <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                Company Profile
+                {t("companyProfile.eyebrow")}
               </span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold leading-tight tracking-tight mb-6">
-              Leader in
+              {t("companyProfile.titleLine1")}
               <br />
-              Pre-engineered Buildings
+              {t("companyProfile.titleLine2")}
             </h2>
             <p className="text-white/50 mb-10 text-base leading-relaxed max-w-md">
-              We have successfully completed over 1,000 projects, ranging from
-              essential industrial hubs like the ISI Industrial Parks to iconic
-              landmarks such as the AEON Mall Parking Structure. Our expertise
-              demonstrates a superior ability to deliver high-performance steel
-              solutions tailored to the diverse and complex requirements of your
-              business and investment.
+              {t("companyProfile.description")}
             </p>
 
             {/* Certifications */}
             <div className="flex items-center gap-6 mb-10 pb-10 border-b border-white/10">
-              {["ISO 9001:2015", "Expert Engineers", "Sustainability"].map(
-                (cert, i) => (
-                  <div key={i} className="text-center">
-                    <div className="w-12 h-12 border border-white/15 flex items-center justify-center mb-2 mx-auto">
-                      <span className="text-accent text-lg font-bold">
-                        {cert.charAt(0)}
-                      </span>
-                    </div>
-                    <span className="text-[10px] text-white/40 tracking-wider uppercase">
-                      {cert}
+              {[
+                "ISO 9001:2015",
+                t("companyProfile.expertEngineers"),
+                t("companyProfile.sustainability"),
+              ].map((cert, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-12 h-12 border border-white/15 flex items-center justify-center mb-2 mx-auto">
+                    <span className="text-accent text-lg font-bold">
+                      {cert.charAt(0)}
                     </span>
                   </div>
-                ),
-              )}
+                  <span className="text-[10px] text-white/40 tracking-wider uppercase">
+                    {cert}
+                  </span>
+                </div>
+              ))}
             </div>
 
             <Link
               to="/about"
               className="group inline-flex items-center gap-3 text-sm text-accent font-semibold hover:text-white transition-colors cursor-pointer"
             >
-              <span>Learn More About Us</span>
+              <span>{t("companyProfile.learnMore")}</span>
               <ArrowRight
                 size={16}
                 className="group-hover:translate-x-1 transition-transform"
@@ -95,9 +95,9 @@ const CompanyProfileSection = () => {
             {/* Stats strip */}
             <div className="grid grid-cols-3 divide-x divide-white/10">
               {[
-                { value: 1000, suffix: "+", label: "Projects" },
-                { value: 15, suffix: "+", label: "Years" },
-                { value: 300, suffix: "+", label: "Team" },
+                { value: 1000, suffix: "+", label: t("companyProfile.statProjects") },
+                { value: 15, suffix: "+", label: t("companyProfile.statYears") },
+                { value: 300, suffix: "+", label: t("companyProfile.statTeam") },
               ].map((stat, i) => (
                 <div key={i} className="py-6 px-6 first:pl-0">
                   <div className="text-3xl lg:text-4xl font-bold text-white tracking-tight">

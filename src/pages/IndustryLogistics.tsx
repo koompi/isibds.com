@@ -2,13 +2,16 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const IndustryLogistics = () => {
+  const { t } = useTranslation();
+
   const applications = [
-    "Distribution Center",
-    "Warehouse",
-    "Logistics Center",
-    "Cold Storage",
+    t("industry.logistics_app1"),
+    t("industry.logistics_app2"),
+    t("industry.logistics_app3"),
+    t("industry.logistics_app4"),
   ];
 
   const projects = [
@@ -33,11 +36,8 @@ const IndustryLogistics = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Logistics Solutions | ISI Building Solutions</title>
-        <meta
-          name="description"
-          content="Pre-engineered building solutions for logistics — distribution centers, warehouses, logistics centers, and cold storage."
-        />
+        <title>{t("industry.logistics_metaTitle")}</title>
+        <meta name="description" content={t("industry.logistics_metaDesc")} />
       </Helmet>
 
       {/* Hero Banner */}
@@ -55,15 +55,14 @@ const IndustryLogistics = () => {
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-8 h-px bg-accent"></div>
                   <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                    Industry Specific
+                    {t("industry.logistics_eyebrow")}
                   </span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight max-w-3xl uppercase">
-                  Logistics
+                  {t("industry.logistics_title")}
                 </h1>
                 <p className="text-white/60 text-lg mt-6 max-w-2xl leading-relaxed">
-                  Purpose-built steel structures for distribution, warehousing,
-                  and cold storage — optimized for efficient operations.
+                  {t("industry.logistics_subtitle")}
                 </p>
               </motion.div>
             </div>
@@ -86,11 +85,11 @@ const IndustryLogistics = () => {
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-accent"></div>
                 <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">
-                  Applications
+                  {t("industry.applications")}
                 </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-primary leading-tight tracking-tight mb-10 uppercase">
-                Logistics
+                {t("industry.logistics_title")}
               </h2>
 
               <ul className="space-y-5">
@@ -109,7 +108,7 @@ const IndustryLogistics = () => {
                   to="/products-solutions"
                   className="inline-flex items-center gap-3 bg-accent text-white font-bold text-sm py-4 px-8 hover:bg-accent-dark transition-all"
                 >
-                  VIEW PRODUCTS & SOLUTIONS <ArrowRight size={16} />
+                  {t("industry.viewProducts")} <ArrowRight size={16} />
                 </Link>
               </div>
             </motion.div>
@@ -128,7 +127,7 @@ const IndustryLogistics = () => {
                     <div className="aspect-[4/3]">
                       <img
                         src={project.image}
-                        alt="Logistics project"
+                        alt={t("industry.logistics_title")}
                         className="w-full h-full object-cover"
                       />
                     </div>
