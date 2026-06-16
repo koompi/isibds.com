@@ -224,6 +224,20 @@ const ProductsSolutions = () => {
                         </div>
                       ))}
                     </div>
+                    {index === 0 && (
+                      <div className="mt-8">
+                        <Link
+                          to="/products-solutions/isi-peb"
+                          className="group inline-flex items-center gap-3 bg-accent text-white font-semibold text-sm py-4 px-8 hover:bg-accent-dark transition-all duration-200 cursor-pointer"
+                        >
+                          {t("isiPeb.exploreBtn")}
+                          <ArrowRight
+                            size={16}
+                            className="group-hover:translate-x-1 transition-transform"
+                          />
+                        </Link>
+                      </div>
+                    )}
                   </div>
 
                   {/* Slider Image */}

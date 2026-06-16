@@ -11,6 +11,9 @@ import IndustryFoodBeverage from "./pages/IndustryFoodBeverage";
 import IndustryResidential from "./pages/IndustryResidential";
 import IndustryLogistics from "./pages/IndustryLogistics";
 import DesignBuild from "./pages/DesignBuild";
+import IsiPeb from "./pages/IsiPeb";
+import PebSystems from "./pages/PebSystems";
+import MultiStorySystems from "./pages/MultiStorySystems";
 import Technology from "./pages/Technology";
 import Careers from "./pages/Careers";
 import Contact from "./pages/Contact";
@@ -50,6 +53,18 @@ function App() {
 					<Route
 						path="/services/design-build"
 						element={<DesignBuild />}
+					/>
+					<Route
+						path="/products-solutions/isi-peb"
+						element={<IsiPeb />}
+					/>
+					<Route
+						path="/products-solutions/isi-peb/pre-engineered-buildings"
+						element={<PebSystems />}
+					/>
+					<Route
+						path="/products-solutions/isi-peb/multi-story-building-systems"
+						element={<MultiStorySystems />}
 					/>
 					<Route path="/technology" element={<Technology />} />
 					<Route path="/portfolios" element={<Portfolios />} />

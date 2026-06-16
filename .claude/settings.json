@@ -14,7 +14,9 @@
       "Bash(npm install *)",
       "Bash(cat /Users/batman/.npm/_logs/2026-05-28T04_25_15_144Z-debug-0.log | tail -30)",
       "Read(//Users/batman/.npm/_logs/**)",
-      "Bash(pnpm add *)"
+      "Bash(pnpm add *)",
+      "WebFetch(domain:www.fuxin.com.kh)",
+      "Bash(npx lucide-react *)"
     ],
     "additionalDirectories": [
       "/Users/batman/Desktop/isibds.com/docs/superpowers"

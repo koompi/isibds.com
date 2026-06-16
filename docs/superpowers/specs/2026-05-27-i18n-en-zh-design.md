@@ -141,7 +141,7 @@ const HeroSection = () => {
 
 ---
 
-## 5. Chinese Translation Quality
+## 5. Chinese Translation Quality 
 
 - **Variant:** Simplified Chinese (简体中文)
 - **Tone:** Formal, professional B2B — standard Mandarin business register
