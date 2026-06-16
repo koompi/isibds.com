@@ -16,10 +16,20 @@
       "Read(//Users/batman/.npm/_logs/**)",
       "Bash(pnpm add *)",
       "WebFetch(domain:www.fuxin.com.kh)",
-      "Bash(npx lucide-react *)"
+      "Bash(npx lucide-react *)",
+      "Read(//Users/batman/Downloads/**)",
+      "Read(//private/tmp/**)",
+      "Bash(find / -maxdepth 4 -iname \"*Web-chinese*\")",
+      "Bash(python3)",
+      "Bash(python3 parse.py)",
+      "Bash(python3 resolve.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 -c \"import json; json.load\\(open\\('src/locales/zh.json', encoding='utf-8'\\)\\); print\\('valid JSON'\\)\")"
     ],
     "additionalDirectories": [
-      "/Users/batman/Desktop/isibds.com/docs/superpowers"
+      "/Users/batman/Desktop/isibds.com/docs/superpowers",
+      "/tmp/docx_extract",
+      "/private/tmp/docx_extract"
     ]
   }
 }
